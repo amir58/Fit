@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/white"
             android:hint="E-mail"
             android:textColorHint="@color/white"
             app:hintTextColor="@color/white"
@@ -39,6 +40,7 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/aeonik_regular"
                 android:maxLines="1"
                 android:inputType="textEmailAddress"/>
 
@@ -48,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/white"
             android:hint="Password"
             android:textColorHint="@color/white"
             app:hintTextColor="@color/white"
@@ -61,6 +64,7 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/aeonik_regular"
                 android:maxLines="1"
                 android:inputType="textPassword"/>
 
@@ -71,35 +75,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Forgot you password?"
-            android:textSize="@dimen/_11ssp"
+            android:textSize="@dimen/_14ssp"
             android:textColor="@color/white"
+            android:fontFamily="@font/sf_pro_display_regular"
             android:layout_margin="@dimen/_10sdp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/activity_login_login_btn"
             android:onClick="loginBtn"
-            android:layout_width="@dimen/_180sdp"
+            android:layout_width="@dimen/_190sdp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/fit_green"
             android:text="Login"
+            android:fontFamily="@font/sf_pro_display_regular"
             android:textAllCaps="false"
             android:textSize="@dimen/_12ssp"
-            android:paddingBottom="@dimen/_7sdp"
-            android:paddingTop="@dimen/_7sdp"
-            app:cornerRadius="@dimen/_15sdp" />
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            app:cornerRadius="@dimen/_30sdp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/activity_login_signup_btn"
             android:onClick="signupBtn"
-            android:layout_width="@dimen/_180sdp"
+            android:layout_width="@dimen/_190sdp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/fit_green"
             android:text="Sign up"
+            android:fontFamily="@font/sf_pro_display_regular"
             android:textAllCaps="false"
             android:textSize="@dimen/_12ssp"
-            android:paddingBottom="@dimen/_7sdp"
-            android:paddingTop="@dimen/_7sdp"
-            app:cornerRadius="@dimen/_15sdp" />
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            app:cornerRadius="@dimen/_30sdp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

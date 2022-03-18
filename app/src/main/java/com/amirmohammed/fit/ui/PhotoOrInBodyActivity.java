@@ -9,22 +9,18 @@ import android.view.WindowManager;
 
 import com.amirmohammed.fit.R;
 
-public class FirstInfoActivity extends AppCompatActivity {
+public class PhotoOrInBodyActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_info);
+        setContentView(R.layout.activity_photo_or_in_body);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
     }
 
     public void back(View view) {
-        startActivity(new Intent(this, RegisterActivity.class));
-    }
-
-    public void next(View view) {
         startActivity(new Intent(this, SecondInfoActivity.class));
     }
 }

@@ -28,9 +28,10 @@
             android:layout_marginBottom="@dimen/_2sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_25sdp"
+            android:fontFamily="@font/aeonik_medium"
             android:text="YOUR WORKING HOURS ?"
             android:textColor="@color/white"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_15ssp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/activity_second_info_working_hours_layout"
@@ -56,6 +57,8 @@
                 android:backgroundTint="#6640D876"
                 android:inputType="text"
                 android:textColor="#8CFFFFFF"
+                android:fontFamily="@font/aeonik_medium"
+                android:textSize="@dimen/_15ssp"
                 app:boxStrokeWidth="0dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -68,7 +71,8 @@
             android:layout_marginStart="@dimen/_25sdp"
             android:text="YOUR EFFORT AT WORK ?"
             android:textColor="@color/white"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_15ssp"
+            android:fontFamily="@font/aeonik_medium"/>
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -84,7 +88,8 @@
                 android:button="@drawable/selector_radio_xl"
                 android:layoutDirection="rtl"
                 android:text="Lightly Active"
-                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/aeonik_medium"
+                android:textSize="@dimen/_15ssp"
                 android:textColor="#8CFFFFFF"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_15sdp"
@@ -98,6 +103,7 @@
                 android:layout_marginStart="@dimen/_35sdp"
                 android:layout_marginEnd="@dimen/_35sdp"
                 android:gravity="center"
+                android:fontFamily="@font/aeonik_regular"
                 android:text="Works a desk job, takes pet for a walk most days in addition to lifting"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_10ssp" />
@@ -108,8 +114,9 @@
                 android:layout_height="wrap_content"
                 android:button="@drawable/selector_radio_xl"
                 android:layoutDirection="rtl"
+                android:fontFamily="@font/aeonik_medium"
                 android:text="Moderately Active"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_15ssp"
                 android:textColor="#8CFFFFFF"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_15sdp"
@@ -123,6 +130,7 @@
                 android:layout_marginStart="@dimen/_35sdp"
                 android:layout_marginEnd="@dimen/_35sdp"
                 android:gravity="center"
+                android:fontFamily="@font/aeonik_regular"
                 android:text="Works as a full-time waitress, Occasionally plays tennis in addition to lifting"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_10ssp" />
@@ -134,7 +142,8 @@
                 android:button="@drawable/selector_radio_xl"
                 android:layoutDirection="rtl"
                 android:text="Highly Active"
-                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/aeonik_medium"
+                android:textSize="@dimen/_15ssp"
                 android:textColor="#8CFFFFFF"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_15sdp"
@@ -148,6 +157,7 @@
                 android:layout_marginStart="@dimen/_35sdp"
                 android:layout_marginEnd="@dimen/_35sdp"
                 android:gravity="center"
+                android:fontFamily="@font/aeonik_regular"
                 android:text="Works as a construction worker, Regular hiking in addition to lifting"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_10ssp" />
@@ -162,7 +172,8 @@
             android:layout_marginStart="@dimen/_25sdp"
             android:text="THE GOAL YOU WANT TO ACHIEVE"
             android:textColor="@color/white"
-            android:textSize="@dimen/_11ssp" />
+            android:textSize="@dimen/_15ssp"
+            android:fontFamily="@font/aeonik_medium"/>
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -178,7 +189,8 @@
                 android:button="@drawable/selector_radio_xl"
                 android:layoutDirection="rtl"
                 android:text="Lose fat"
-                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/aeonik_medium"
+                android:textSize="@dimen/_15ssp"
                 android:textColor="#8CFFFFFF"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_15sdp"
@@ -203,6 +215,7 @@
                     android:text="1/4 KG"
                     android:textColor="@color/white"
                     android:layoutDirection="rtl"
+                    android:fontFamily="@font/aeonik_regular"
                     android:button="@drawable/selector_radio_small"/>
 
                 <androidx.appcompat.widget.AppCompatRadioButton
@@ -214,6 +227,7 @@
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:textColor="@color/white"
                     android:layoutDirection="rtl"
+                    android:fontFamily="@font/aeonik_regular"
                     android:button="@drawable/selector_radio_small"/>
 
                 <androidx.appcompat.widget.AppCompatRadioButton
@@ -223,6 +237,7 @@
                     android:text="1 KG"
                     android:textColor="@color/white"
                     android:layoutDirection="rtl"
+                    android:fontFamily="@font/aeonik_regular"
                     android:button="@drawable/selector_radio_small"/>
 
             </RadioGroup>
@@ -234,7 +249,8 @@
                 android:button="@drawable/selector_radio_xl"
                 android:layoutDirection="rtl"
                 android:text="Gain weight"
-                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/aeonik_medium"
+                android:textSize="@dimen/_15ssp"
                 android:textColor="#8CFFFFFF"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_15sdp"
@@ -259,6 +275,7 @@
                     android:text="1/4 KG"
                     android:textColor="@color/white"
                     android:layoutDirection="rtl"
+                    android:fontFamily="@font/aeonik_regular"
                     android:button="@drawable/selector_radio_small"/>
 
                 <androidx.appcompat.widget.AppCompatRadioButton
@@ -270,6 +287,7 @@
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:textColor="@color/white"
                     android:layoutDirection="rtl"
+                    android:fontFamily="@font/aeonik_regular"
                     android:button="@drawable/selector_radio_small"/>
 
                 <androidx.appcompat.widget.AppCompatRadioButton
@@ -279,6 +297,7 @@
                     android:text="1 KG"
                     android:textColor="@color/white"
                     android:layoutDirection="rtl"
+                    android:fontFamily="@font/aeonik_regular"
                     android:button="@drawable/selector_radio_small"/>
 
             </RadioGroup>
@@ -290,7 +309,8 @@
                 android:button="@drawable/selector_radio_xl"
                 android:layoutDirection="rtl"
                 android:text="Stability on weight"
-                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/aeonik_medium"
+                android:textSize="@dimen/_15ssp"
                 android:textColor="#8CFFFFFF"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_15sdp"

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/yoga_ladies"
+    tools:context=".ui.PhotoOrInBodyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#B00B183C">
+
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:src="@drawable/logo_image" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingBottom="@dimen/_30sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/aeonik_medium"
+                    android:text="WE NEED YOUR PHOTO OR INBODY"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15ssp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_220sdp"
+                    app:cardCornerRadius="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_40sdp"
+                    android:backgroundTint="#6640D876">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/activity_photo_or_body_body_rb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Insert my body photos"
+                            android:textColor="#8CFFFFFF"
+                            android:textSize="@dimen/_15ssp"
+                            android:fontFamily="@font/aeonik_medium"
+                            android:button="@drawable/selector_radio_xl"
+                            android:layoutDirection="rtl"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginStart="@dimen/_11sdp"
+                            android:layout_marginEnd="@dimen/_11sdp"/>
+
+                        <ImageView
+                            android:id="@+id/activity_photo_or_body_body_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/yoga_ladies"
+                            android:scaleType="fitXY"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:alpha="0.5"/>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_220sdp"
+                    app:cardCornerRadius="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_40sdp"
+                    android:backgroundTint="#6640D876">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/activity_photo_or_body_in_body_rb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Insert my Inbody"
+                            android:textColor="#8CFFFFFF"
+                            android:textSize="@dimen/_15ssp"
+                            android:fontFamily="@font/aeonik_medium"
+                            android:button="@drawable/selector_radio_xl"
+                            android:layoutDirection="rtl"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginStart="@dimen/_11sdp"
+                            android:layout_marginEnd="@dimen/_11sdp"/>
+
+                        <ImageView
+                            android:id="@+id/activity_photo_or_body_in_body_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/yoga_ladies"
+                            android:scaleType="fitXY"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:alpha="0.5"/>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_25sdp">
+
+                    <ImageView
+                        android:id="@+id/activity_photo_or_body_back_image"
+                        android:onClick="back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrow_back"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/poweredby_image"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

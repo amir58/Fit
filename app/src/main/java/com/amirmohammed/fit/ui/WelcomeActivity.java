@@ -20,9 +20,12 @@ public class WelcomeActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
+
+
     }
 
     public void startNow(View view) {
         startActivity(new Intent(this, LoginActivity.class));
+        overridePendingTransition(R.anim.anim_slide_left, R.anim.anim_slide_right);
     }
 }

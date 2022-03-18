@@ -29,9 +29,10 @@
             android:layout_marginBottom="@dimen/_2sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:gravity="start|left"
+            android:fontFamily="@font/aeonik_medium"
             android:text="SPORT YOU PLAY ?"
             android:textColor="@color/white"
-            android:textSize="@dimen/_13ssp" />
+            android:textSize="@dimen/_16ssp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/activity_first_info_sport_layout"
@@ -53,7 +54,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#6640D876"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_17ssp"
+                android:fontFamily="@font/aeonik_medium"
                 android:hint="Select"
                 android:inputType="none"
                 android:textColor="#8CFFFFFF" />
@@ -66,6 +68,7 @@
             android:layout_marginBottom="@dimen/_2sdp"
             android:layout_marginTop="@dimen/_100sdp"
             android:gravity="center"
+            android:fontFamily="@font/aeonik_medium"
             android:text="HOW MANY TIMES A WEEK DO YOU EXERCISE ?"
             android:textColor="@color/white"
             android:textSize="@dimen/_11ssp" />
@@ -92,6 +95,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="#6640D876"
+                android:fontFamily="@font/aeonik_medium"
+                android:textSize="@dimen/_11ssp"
                 android:inputType="text"
                 android:textColor="#8CFFFFFF"
                 app:boxStrokeWidth="0dp" />
@@ -104,10 +109,11 @@
             android:layout_marginBottom="@dimen/_2sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_25sdp"
+            android:fontFamily="@font/aeonik_medium"
             android:gravity="start"
             android:text="YOUR WEIGHT ?"
             android:textColor="@color/white"
-            android:textSize="@dimen/_13ssp" />
+            android:textSize="@dimen/_15ssp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/activity_first_info_weight_layout"
@@ -144,9 +150,10 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_25sdp"
             android:gravity="start"
+            android:fontFamily="@font/aeonik_medium"
             android:text="YOUR HEIGHT ?"
             android:textColor="@color/white"
-            android:textSize="@dimen/_13ssp" />
+            android:textSize="@dimen/_15ssp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/activity_first_info_height_layout"

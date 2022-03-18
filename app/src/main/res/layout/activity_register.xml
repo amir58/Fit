@@ -27,20 +27,22 @@
             android:layout_height="wrap_content"
             android:text="R E G I S T E R"
             android:textColor="@color/white"
-            android:textSize="@dimen/_30ssp" />
+            android:fontFamily="@font/euclid_circular_a_bold"
+            android:textSize="@dimen/_35ssp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="IT'S COMPLETELY FREE"
             android:textColor="@color/white"
-            android:textSize="@dimen/_13ssp" />
+            android:fontFamily="@font/euclid_circular_a_regular"
+            android:textSize="@dimen/_14ssp" />
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginBottom="@dimen/_10sdp">
+            android:layout_marginBottom="@dimen/_20sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -55,8 +57,9 @@
                     android:layout_marginBottom="@dimen/_2sdp"
                     android:gravity="start|left"
                     android:text="NAME"
+                    android:fontFamily="@font/aeonik_medium"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_13ssp" />
+                    android:textSize="@dimen/_15ssp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/activity_register_name_layout"
@@ -82,6 +85,8 @@
                         android:backgroundTint="#6640D876"
                         android:inputType="text"
                         android:textColor="#8CFFFFFF"
+                        android:textSize="@dimen/_13ssp"
+                        android:fontFamily="@font/aeonik_medium"
                         app:boxStrokeWidth="0dp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -94,8 +99,9 @@
                     android:layout_marginBottom="@dimen/_2sdp"
                     android:gravity="start|left"
                     android:text="USERNAME"
+                    android:fontFamily="@font/aeonik_medium"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_13ssp" />
+                    android:textSize="@dimen/_15ssp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/activity_register_username_layout"
@@ -120,6 +126,8 @@
                         android:layout_height="match_parent"
                         android:backgroundTint="#6640D876"
                         android:inputType="text"
+                        android:textSize="@dimen/_13ssp"
+                        android:fontFamily="@font/aeonik_medium"
                         android:textColor="#8CFFFFFF" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -132,8 +140,9 @@
                     android:layout_marginBottom="@dimen/_2sdp"
                     android:gravity="start|left"
                     android:text="E-MAIL"
+                    android:fontFamily="@font/aeonik_medium"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_13ssp" />
+                    android:textSize="@dimen/_15ssp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/activity_register_email_layout"
@@ -158,6 +167,8 @@
                         android:layout_height="match_parent"
                         android:backgroundTint="#6640D876"
                         android:inputType="textEmailAddress"
+                        android:textSize="@dimen/_13ssp"
+                        android:fontFamily="@font/aeonik_medium"
                         android:textColor="#8CFFFFFF" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -170,8 +181,9 @@
                     android:layout_marginBottom="@dimen/_2sdp"
                     android:gravity="start|left"
                     android:text="PASSWORD"
+                    android:fontFamily="@font/aeonik_medium"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_13ssp" />
+                    android:textSize="@dimen/_15ssp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/activity_register_password_layout"
@@ -196,6 +208,8 @@
                         android:layout_height="match_parent"
                         android:backgroundTint="#6640D876"
                         android:inputType="textPassword"
+                        android:textSize="@dimen/_13ssp"
+                        android:fontFamily="@font/aeonik_medium"
                         android:textColor="#8CFFFFFF" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -209,8 +223,9 @@
                     android:layout_marginBottom="@dimen/_2sdp"
                     android:gravity="start|left"
                     android:text="BIRTHDAY"
+                    android:fontFamily="@font/aeonik_medium"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_13ssp" />
+                    android:textSize="@dimen/_15ssp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -246,6 +261,8 @@
                             android:gravity="center"
                             android:hint="dd"
                             android:inputType="none"
+                            android:textSize="@dimen/_13ssp"
+                            android:fontFamily="@font/aeonik_medium"
                             android:textColor="#8CFFFFFF" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -275,6 +292,8 @@
                             android:gravity="center"
                             android:hint="mm"
                             android:inputType="none"
+                            android:textSize="@dimen/_13ssp"
+                            android:fontFamily="@font/aeonik_medium"
                             android:textColor="#8CFFFFFF" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -305,6 +324,8 @@
                             android:hint="yy"
                             android:maxLines="1"
                             android:inputType="none"
+                            android:textSize="@dimen/_13ssp"
+                            android:fontFamily="@font/aeonik_medium"
                             android:textColor="#8CFFFFFF" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -320,8 +341,9 @@
                     android:layout_marginBottom="@dimen/_2sdp"
                     android:gravity="start|left"
                     android:text="YOUR GENDER"
+                    android:fontFamily="@font/aeonik_medium"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_13ssp" />
+                    android:textSize="@dimen/_15ssp" />
 
                 <RadioGroup
                     android:layout_width="match_parent"
@@ -331,7 +353,7 @@
                     android:layout_marginStart="@dimen/_30sdp"
                     android:layout_marginEnd="@dimen/_30sdp">
 
-                    <RadioButton
+                    <androidx.appcompat.widget.AppCompatRadioButton
                         android:id="@+id/activity_register_male_radio_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -339,22 +361,25 @@
                         android:layout_gravity="start"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:checked="false"
-                        android:gravity="center"
+                        android:button="@drawable/selector_radio_xl"
+                        android:gravity="start|center"
                         android:text="Male"
+                        android:fontFamily="@font/aeonik_medium"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_15ssp" />
 
-                    <RadioButton
+                    <androidx.appcompat.widget.AppCompatRadioButton
                         android:id="@+id/activity_register_female_radio_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_gravity="top"
-
-                        android:gravity="center"
+                        android:button="@drawable/selector_radio_xl"
+                        android:gravity="start|center"
                         android:text="Female"
+                        android:fontFamily="@font/aeonik_medium"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_12ssp" />
+                        android:textSize="@dimen/_15ssp" />
 
                 </RadioGroup>
 
