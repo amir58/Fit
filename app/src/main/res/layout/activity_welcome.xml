@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/workout_image"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ui.WelcomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#B00B183C">
+
+        <ImageView
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:src="@drawable/logo_image"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="wrap_content"
+            android:text="We Build a healthy way support life style for all kinds of people who are working just as hard to meet their goals"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/activity_welcome_start_now_btn"
+            android:onClick="startNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/fit_green"
+            android:text="start now"
+            android:textSize="@dimen/_12ssp"
+            android:paddingBottom="@dimen/_7sdp"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingStart="@dimen/_50sdp"
+            android:paddingEnd="@dimen/_50sdp"
+            app:cornerRadius="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_40sdp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/poweredby_image"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/training1"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".ui.RegisterActivity">
+
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:src="@drawable/logo_image" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R E G I S T E R"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_30ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IT'S COMPLETELY FREE"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:gravity="start|left"
+                    android:text="NAME"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13ssp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/activity_register_name_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:hint="Your Full Name"
+                    app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                    app:boxStrokeWidth="0dp"
+                    app:hintTextColor="#8CFFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/activity_register_name_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="#6640D876"
+                        android:inputType="text"
+                        android:textColor="#8CFFFFFF"
+                        app:boxStrokeWidth="0dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:gravity="start|left"
+                    android:text="USERNAME"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13ssp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/activity_register_username_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:hint="Username"
+                    app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                    app:boxStrokeWidth="0dp"
+                    app:hintTextColor="#8CFFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/activity_register_username_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="#6640D876"
+                        android:inputType="text"
+                        android:textColor="#8CFFFFFF" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:gravity="start|left"
+                    android:text="E-MAIL"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13ssp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/activity_register_email_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:hint="Email"
+                    app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                    app:boxStrokeWidth="0dp"
+                    app:hintTextColor="#8CFFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/activity_register_email_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="#6640D876"
+                        android:inputType="textEmailAddress"
+                        android:textColor="#8CFFFFFF" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:gravity="start|left"
+                    android:text="PASSWORD"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13ssp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/activity_register_password_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:hint="Password"
+                    app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                    app:boxStrokeWidth="0dp"
+                    app:hintTextColor="#8CFFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/activity_register_password_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="#6640D876"
+                        android:inputType="textPassword"
+                        android:textColor="#8CFFFFFF" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:gravity="start|left"
+                    android:text="BIRTHDAY"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:gravity="center"
+                    android:weightSum="3"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/activity_register_day_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false"
+                        app:hintTextColor="#8CFFFFFF"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/activity_register_day_menu"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#6640D876"
+                            android:gravity="center"
+                            android:hint="dd"
+                            android:inputType="none"
+                            android:textColor="#8CFFFFFF" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/activity_register_month_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false"
+                        app:hintTextColor="#8CFFFFFF"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/activity_register_month_menu"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#6640D876"
+                            android:gravity="center"
+                            android:hint="mm"
+                            android:inputType="none"
+                            android:textColor="#8CFFFFFF" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/activity_register_year_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false"
+                        app:hintTextColor="#8CFFFFFF"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/activity_register_year_menu"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#6640D876"
+                            android:gravity="center"
+                            android:hint="yy"
+                            android:maxLines="1"
+                            android:inputType="none"
+                            android:textColor="#8CFFFFFF" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:gravity="start|left"
+                    android:text="YOUR GENDER"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13ssp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp">
+
+                    <RadioButton
+                        android:id="@+id/activity_register_male_radio_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="Male"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <RadioButton
+                        android:id="@+id/activity_register_female_radio_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="top"
+
+                        android:gravity="center"
+                        android:text="Female"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp" />
+
+                </RadioGroup>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20sdp">
+
+                    <ImageView
+                        android:id="@+id/activity_register_back_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:onClick="back"
+                        android:src="@drawable/arrow_back"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/poweredby_image"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/activity_register_next_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_30sdp"
+                        android:onClick="next"
+                        android:src="@drawable/arrow_next"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

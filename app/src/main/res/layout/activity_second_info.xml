@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/training3"
+    tools:context=".ui.SecondInfoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#B00B183C"
+        android:paddingBottom="@dimen/_30sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:src="@drawable/logo_image" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:text="YOUR WORKING HOURS ?"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/activity_second_info_working_hours_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:hint="Number of Hours"
+            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+            app:boxCornerRadiusTopStart="@dimen/_15sdp"
+            app:boxStrokeWidth="0dp"
+            app:hintTextColor="#8CFFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/activity_second_info_working_hours_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#6640D876"
+                android:inputType="text"
+                android:textColor="#8CFFFFFF"
+                app:boxStrokeWidth="0dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:text="YOUR EFFORT AT WORK ?"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/activity_second_info_lightly_active_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_radio_xl"
+                android:layoutDirection="rtl"
+                android:text="Lightly Active"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="#8CFFFFFF"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_35sdp"
+                android:layout_marginEnd="@dimen/_35sdp"
+                android:gravity="center"
+                android:text="Works a desk job, takes pet for a walk most days in addition to lifting"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/activity_second_moderately_active_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_radio_xl"
+                android:layoutDirection="rtl"
+                android:text="Moderately Active"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="#8CFFFFFF"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_35sdp"
+                android:layout_marginEnd="@dimen/_35sdp"
+                android:gravity="center"
+                android:text="Works as a full-time waitress, Occasionally plays tennis in addition to lifting"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/activity_second_info_work_highly_active_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_radio_xl"
+                android:layoutDirection="rtl"
+                android:text="Highly Active"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="#8CFFFFFF"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_35sdp"
+                android:layout_marginEnd="@dimen/_35sdp"
+                android:gravity="center"
+                android:text="Works as a construction worker, Regular hiking in addition to lifting"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:text="THE GOAL YOU WANT TO ACHIEVE"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/activity_second_info_lose_fat_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_radio_xl"
+                android:layoutDirection="rtl"
+                android:text="Lose fat"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="#8CFFFFFF"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                >
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/activity_second_info_0.25kg_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1/4 KG"
+                    android:textColor="@color/white"
+                    android:layoutDirection="rtl"
+                    android:button="@drawable/selector_radio_small"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/activity_second_info_0.5kg_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1/2 KG"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:layoutDirection="rtl"
+                    android:button="@drawable/selector_radio_small"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/activity_second_info_1kg_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 KG"
+                    android:textColor="@color/white"
+                    android:layoutDirection="rtl"
+                    android:button="@drawable/selector_radio_small"/>
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/activity_second_gain_weight_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_radio_xl"
+                android:layoutDirection="rtl"
+                android:text="Gain weight"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="#8CFFFFFF"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                >
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/activity_second_info_second_0.25kg_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1/4 KG"
+                    android:textColor="@color/white"
+                    android:layoutDirection="rtl"
+                    android:button="@drawable/selector_radio_small"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/activity_second_info_second_0.5kg_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1/2 KG"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:layoutDirection="rtl"
+                    android:button="@drawable/selector_radio_small"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/activity_second_info_second_1kg_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 KG"
+                    android:textColor="@color/white"
+                    android:layoutDirection="rtl"
+                    android:button="@drawable/selector_radio_small"/>
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/activity_second_info_work_stable_weight_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_radio_xl"
+                android:layoutDirection="rtl"
+                android:text="Stability on weight"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="#8CFFFFFF"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/_20sdp">
+
+            <ImageView
+                android:id="@+id/activity_first_info_back_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="back"
+                android:src="@drawable/arrow_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/activity_first_info_next_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="next"
+                android:src="@drawable/arrow_next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
