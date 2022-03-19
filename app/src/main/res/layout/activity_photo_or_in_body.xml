@@ -46,6 +46,7 @@
                     android:textSize="@dimen/_15ssp" />
 
                 <com.google.android.material.card.MaterialCardView
+                    android:onClick="navigateToBodyPhoto"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_220sdp"
                     app:cardCornerRadius="@dimen/_30sdp"
@@ -90,6 +91,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:onClick="navigateToInBodyPhoto"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_220sdp"
                     app:cardCornerRadius="@dimen/_30sdp"

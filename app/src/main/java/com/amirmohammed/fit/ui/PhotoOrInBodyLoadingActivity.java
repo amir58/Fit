@@ -2,29 +2,19 @@ package com.amirmohammed.fit.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.WindowManager;
 
 import com.amirmohammed.fit.R;
 
-public class BodyPhotoActivityOne extends AppCompatActivity {
+public class PhotoOrInBodyLoadingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_body_photo_one);
+        setContentView(R.layout.activity_photo_or_in_body_loading);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-    }
-
-    public void back(View view) {
-        startActivity(new Intent(this, PhotoOrInBodyActivity.class));
-    }
-
-    public void insertBody(View view) {
-        startActivity(new Intent(this, FrontBodyPhotoActivityOne.class));
     }
 }

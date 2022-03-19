@@ -9,22 +9,21 @@ import android.view.WindowManager;
 
 import com.amirmohammed.fit.R;
 
-public class BodyPhotoActivityOne extends AppCompatActivity {
+public class BackBodyPhotoActivityOne extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_body_photo_one);
+        setContentView(R.layout.activity_back_body_photo_one);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
     }
 
     public void back(View view) {
-        startActivity(new Intent(this, PhotoOrInBodyActivity.class));
+        startActivity(new Intent(this, FrontBodyPhotoActivityOne.class));
     }
 
-    public void insertBody(View view) {
-        startActivity(new Intent(this, FrontBodyPhotoActivityOne.class));
+    public void finish(View view) {
     }
 }
