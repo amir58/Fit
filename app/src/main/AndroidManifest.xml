@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fit">
         <activity
+            android:name=".ui.BodyPhotoActivityOne"
+            android:exported="false" />
+        <activity
             android:name=".ui.PhotoOrInBodyActivity"
             android:exported="false" />
         <activity
