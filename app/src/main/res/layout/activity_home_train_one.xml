@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.HomeTrainActivityOne">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_330sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/home_training_background"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_train_background_gradient">
+
+        <TextView
+            android:id="@+id/activity_home_train_one_hey_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hey, Create"
+            android:textSize="@dimen/_20ssp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/aeonik_regular"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/activity_home_train_one_profile_image"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/circle"/>
+
+        <TextView
+            android:id="@+id/activity_home_train_one_calories_intake_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YOUR CALORIES INTAKE"
+            android:fontFamily="@font/aeonik_bold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_home_train_one_profile_image" />
+
+        <TextView
+            android:id="@+id/activity_home_train_one_calories_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2000cal"
+            android:textSize="@dimen/_20ssp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/aeonik_bold"
+            android:background="@drawable/corners"
+            android:backgroundTint="#232441"
+            android:paddingStart="@dimen/_30sdp"
+            android:paddingEnd="@dimen/_30sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_home_train_one_calories_intake_tv"/>
+
+        <LinearLayout
+            android:id="@+id/activity_home_train_one_fat_layout"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_home_train_one_calories_tv">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="110"
+                android:text="FAT"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/fit_green"
+                android:fontFamily="@font/aeonik_bold"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_30sdp"/>
+
+            <TextView
+                android:id="@+id/fat_tv"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_weight="1"
+                android:text="22g"
+                android:textColor="@color/fit_green"
+                android:gravity="center"
+                android:background="@drawable/corners"
+                android:backgroundTint="@color/white"
+                app:cornerRadius="@dimen/_15sdp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/activity_home_train_one_protein_layout"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_home_train_one_fat_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="110"
+                android:text="PROTEIN"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/fit_green"
+                android:fontFamily="@font/aeonik_bold"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_30sdp"/>
+
+            <TextView
+                android:id="@+id/protein_tv"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_weight="1"
+                android:text="22g"
+                android:textColor="@color/fit_green"
+                android:gravity="center"
+                android:background="@drawable/corners"
+                android:backgroundTint="@color/white"
+                app:cornerRadius="@dimen/_15sdp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/activity_home_train_one_carbohtdrates_layout"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_home_train_one_protein_layout">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="110"
+                android:text="CARBOHYDRATES"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/fit_green"
+                android:fontFamily="@font/aeonik_bold"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/carbohydrates_tv"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_weight="1"
+                android:text="22g"
+                android:textColor="@color/fit_green"
+                android:gravity="center"
+                android:background="@drawable/corners"
+                android:backgroundTint="@color/white"
+                app:cornerRadius="@dimen/_15sdp"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/fit_green"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:layout_constraintTop_toBottomOf="@id/activity_home_train_one_carbohtdrates_layout"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:cornerRadius="@dimen/_15sdp"
+            app:strokeWidth="@dimen/_2sdp"
+            app:strokeColor="@color/fit_green"
+            android:text="SUBSCRIPTION"
+            android:fontFamily="@font/aeonik_regular"
+            android:backgroundTint="@color/black"
+            android:padding="@dimen/_10sdp"
+            android:clickable="false"
+            app:layout_constraintTop_toTopOf="@+id/line_view"
+            app:layout_constraintBottom_toBottomOf="@+id/line_view"
+            app:layout_constraintStart_toStartOf="@+id/line_view"
+            app:layout_constraintEnd_toEndOf="@+id/line_view"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            app:layout_constraintTop_toBottomOf="@+id/line_view"
+            app:layout_constraintBottom_toTopOf="@+id/poweredby_image">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/get_month_free_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_radio_xl"
+                android:layoutDirection="rtl"
+                android:text="GET 1 MONTH FREE"
+                android:fontFamily="@font/aeonik_medium"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="#8CFFFFFF"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"/>
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/get_three_months_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_radio_xl"
+                android:layoutDirection="rtl"
+                android:text="GET 3 MONTHS"
+                android:fontFamily="@font/aeonik_medium"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="#8CFFFFFF"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"/>
+
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/get_year_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_radio_xl"
+                android:layoutDirection="rtl"
+                android:text="GET 1 YEAR"
+                android:fontFamily="@font/aeonik_medium"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="#8CFFFFFF"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"/>
+
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/poweredby_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/poweredby_image"
+            android:layout_marginBottom="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
