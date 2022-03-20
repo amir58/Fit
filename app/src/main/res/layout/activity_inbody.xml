@@ -14,7 +14,7 @@
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:src="@drawable/logo_image"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,7 @@
     <ImageView
         android:id="@+id/activity_inbody_result_sheet_image"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_450sdp"
+        android:layout_height="@dimen/_350sdp"
         android:orientation="vertical"
         android:gravity="center|bottom"
         android:background="@drawable/result_sheet"
@@ -54,7 +54,7 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="3"
-        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         android:padding="@dimen/_15sdp"
         app:layout_constraintTop_toBottomOf="@+id/activity_inbody_result_sheet_image">
 

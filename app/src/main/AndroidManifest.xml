@@ -13,7 +13,7 @@
             android:name=".ui.FollowUpActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.HomeTrainFourActivity"
+            android:name=".ui.HomeTrainFourteenActivity"
             android:exported="false" />
         <activity
             android:name=".ui.HomeTrainActivityTwo"
@@ -24,11 +24,6 @@
         <activity
             android:name=".ui.PhotoOrInBodyLoadingActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.InBodyActivity"
@@ -59,7 +54,15 @@
             android:exported="false" />
         <activity
             android:name=".ui.WelcomeActivity"
-            android:exported="true" />
+            android:exported="true" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

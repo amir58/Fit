@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#131429"
-    tools:context=".ui.HomeTrainFourActivity">
+    tools:context=".ui.HomeTrainFourteenActivity">
 
     <View
         android:layout_width="match_parent"
@@ -44,6 +44,7 @@
             android:id="@+id/logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="navigateToHomeTrainFollowUp"
             android:layout_marginBottom="@dimen/_20sdp"
             android:src="@drawable/logo_image"
             app:layout_constraintBottom_toTopOf="@+id/bottom_layout"
@@ -54,16 +55,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PLEASE CONFIRM YOUR MAIL"
-            android:minLines="2"
-            android:maxWidth="@dimen/_200sdp"
-            android:textSize="@dimen/_20ssp"
-            android:textColor="@color/fit_green"
             android:fontFamily="@font/aeonik_medium"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@+id/logo"
+            android:maxWidth="@dimen/_200sdp"
+            android:minLines="2"
+            android:text="PLEASE CONFIRM YOUR MAIL"
+            android:textColor="@color/fit_green"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintBottom_toTopOf="@+id/poweredby_image"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/logo" />
 
         <ImageView
             android:id="@+id/poweredby_image"
@@ -82,7 +84,7 @@
             android:layout_height="wrap_content"
             android:background="#242538"
             android:gravity="center"
-            android:padding="@dimen/_35sdp"
+            android:padding="@dimen/_30sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

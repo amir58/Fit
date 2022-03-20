@@ -187,6 +187,7 @@
             app:layout_constraintTop_toBottomOf="@id/activity_home_train_one_carbohtdrates_layout" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/subscription_btn"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -209,15 +210,16 @@
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_30sdp"
-            android:gravity="center"
+            android:gravity="center|top"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/poweredby_image_layout"
-            app:layout_constraintTop_toBottomOf="@+id/line_view">
+            app:layout_constraintTop_toBottomOf="@+id/subscription_btn">
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/get_month_free_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="navigateToHomeTrainTwo"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/corners"
                 android:backgroundTint="#6640D876"
@@ -234,6 +236,7 @@
                 android:id="@+id/get_three_months_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="navigateToHomeTrainFour"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_5sdp"
                 android:background="@drawable/corners"
@@ -321,6 +324,7 @@
                 android:id="@+id/get_year_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="navigateToHomeTrainFour"
                 android:background="@drawable/corners"
                 android:backgroundTint="#6640D876"
                 android:button="@drawable/selector_radio_xl"

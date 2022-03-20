@@ -3,8 +3,11 @@ package com.amirmohammed.fit.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 
@@ -27,6 +30,18 @@ public class PhotoOrInBodyLoadingActivity extends AppCompatActivity {
 // set the drawable as progress drawable
         progressBar.setProgressDrawable(draw);
 
-        progressBar.setProgress(50);
+
+        CountDownTimer timer = new CountDownTimer(1000, 10) {
+            @Override
+            public void onTick(long l) {
+                progressBar.setProgress((int) l);
+            }
+
+            @Override
+            public void onFinish() {
+                startActivity(new Intent(PhotoOrInBodyLoadingActivity.this, HomeTrainActivityOne.class));
+            }
+        };
+        timer.start();
     }
 }
