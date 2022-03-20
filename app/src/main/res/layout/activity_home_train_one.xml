@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#131429"
     tools:context=".ui.HomeTrainActivityOne">
 
     <View
@@ -194,6 +195,7 @@
             android:fontFamily="@font/aeonik_regular"
             android:padding="@dimen/_10sdp"
             android:text="SUBSCRIPTION"
+            android:textSize="@dimen/_17ssp"
             app:cornerRadius="@dimen/_15sdp"
             app:layout_constraintBottom_toBottomOf="@+id/line_view"
             app:layout_constraintEnd_toEndOf="@+id/line_view"
@@ -209,7 +211,7 @@
             android:layout_marginEnd="@dimen/_30sdp"
             android:gravity="center"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/poweredby_image"
+            app:layout_constraintBottom_toTopOf="@+id/poweredby_image_layout"
             app:layout_constraintTop_toBottomOf="@+id/line_view">
 
             <androidx.appcompat.widget.AppCompatRadioButton
@@ -405,15 +407,29 @@
 
         </RadioGroup>
 
-        <ImageView
-            android:id="@+id/poweredby_image"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/poweredby_image_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:src="@drawable/poweredby_image"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:background="#242538"
+            android:padding="@dimen/_10sdp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/poweredby_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:src="@drawable/powerde_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

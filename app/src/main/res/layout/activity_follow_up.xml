@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#131429"
+    tools:context=".ui.FollowUpActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_330sdp"
+        android:background="@drawable/six_packs_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_train_background_gradient">
+
+        <ImageView
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:src="@drawable/logo_image"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_45sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/activity_home_train_two_profile_image"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_45sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:src="@drawable/circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/activity_home_train_two_payment_method_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/play_image"
+            android:layout_marginTop="@dimen/_70sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_home_train_two_profile_image" />
+
+        <View
+            android:id="@+id/line_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:background="@color/fit_green"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/fit_green"
+            android:clickable="false"
+            android:fontFamily="@font/aeonik_regular"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:text="UPDATE YOUR INFORMATION"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/line_view"
+            app:layout_constraintEnd_toEndOf="@+id/line_view"
+            app:layout_constraintStart_toStartOf="@+id/line_view"
+            app:layout_constraintTop_toTopOf="@+id/line_view" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/new_weight_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:hint="NEW WEIGHT"
+            app:boxCornerRadiusBottomEnd="@dimen/_30sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_30sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_30sdp"
+            app:boxCornerRadiusTopStart="@dimen/_30sdp"
+            app:boxStrokeWidth="0dp"
+            app:hintTextColor="#8CFFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_view">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/new_weight_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#232441"
+                android:inputType="text"
+                android:textColor="#B5FFFFFF"
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/aeonik_regular"
+                app:boxStrokeWidth="0dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/weight_percentage_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:hint="percentage of Your commitment to the training days"
+            app:boxCornerRadiusBottomEnd="@dimen/_30sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_30sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_30sdp"
+            app:boxCornerRadiusTopStart="@dimen/_30sdp"
+            app:boxStrokeWidth="0dp"
+            app:hintTextColor="#8CFFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_weight_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/weight_percentage_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#232441"
+                android:inputType="text"
+                android:textColor="#B5FFFFFF"
+                android:textSize="@dimen/_10ssp"
+                android:fontFamily="@font/aeonik_regular"
+                app:boxStrokeWidth="0dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/photo_for_body_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/fit_green"
+            android:clickable="false"
+            android:fontFamily="@font/aeonik_regular"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="NEW PHOTO FOR YOUR BODY"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            app:cornerRadius="@dimen/_30sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weight_percentage_layout" />
+
+        <ImageView
+            android:id="@+id/poweredby_image"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:src="@drawable/poweredby_home_train"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/photo_for_body_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#242538"
+            android:padding="@dimen/_10sdp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/back_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="back"
+                android:src="@drawable/arrow_back"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:tabMode="auto"
+                android:background="@drawable/corners"
+                android:backgroundTint="#8040D876"
+                app:tabTextColor="#80FFFFFF"
+                app:tabSelectedTextColor="@color/white"
+                app:tabIndicatorColor="#232441"
+                app:layout_constraintStart_toEndOf="@+id/back_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Follow up"/>
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="work out"/>
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Diet plan"/>
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"/>
+
+            </com.google.android.material.tabs.TabLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

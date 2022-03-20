@@ -15,24 +15,53 @@
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/logo"
             android:layout_width="@dimen/_150sdp"
             android:layout_height="@dimen/_150sdp"
             android:layout_gravity="top|center"
-            android:src="@drawable/logo_image"
             android:layout_marginTop="@dimen/_100sdp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/logo_image"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
-
-        <ImageView
+        <TextView
+            android:id="@+id/loading_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/loading"
+            android:fontFamily="@font/aeonik_bold"
+            android:text="LOADING"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_40ssp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:layout_constraintBottom_toTopOf="@+id/loading_cv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/loading_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_70sdp"
+            android:layout_marginEnd="@dimen/_70sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/_30sdp"
             app:layout_constraintBottom_toTopOf="@+id/poweredby_image"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_7sdp">
+
+            <ProgressBar
+                android:id="@+id/mprogress_horizontal"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_margin="@dimen/_15sdp"
+                android:progressDrawable="@drawable/custom_progress_bar"
+                android:progressTint="@color/fit_green"
+                android:progress="15"/>
+
+        </com.google.android.material.card.MaterialCardView>
 
         <ImageView
             android:id="@+id/poweredby_image"
@@ -43,8 +72,8 @@
             android:layout_marginBottom="@dimen/_30sdp"
             android:src="@drawable/poweredby_image"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

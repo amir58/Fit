@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#131429"
     tools:context=".ui.HomeTrainActivityTwo">
 
     <View
@@ -20,7 +21,7 @@
         android:background="@drawable/home_train_background_gradient">
 
         <ImageView
-            android:id="@+id/activity_home_train_one_hey_tv"
+            android:onClick="back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/arrow_back"
@@ -30,7 +31,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/activity_home_train_one_profile_image"
+            android:id="@+id/activity_home_train_two_profile_image"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_40sdp"
@@ -40,7 +41,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/activity_home_train_one_calories_intake_tv"
+            android:id="@+id/activity_home_train_two_payment_method_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_50sdp"
@@ -50,7 +51,7 @@
             android:textSize="@dimen/_20ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_home_train_one_profile_image" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_home_train_two_profile_image" />
 
         <RadioGroup
             android:id="@+id/payment_rg"
@@ -59,7 +60,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/activity_home_train_one_calories_intake_tv">
+            app:layout_constraintTop_toBottomOf="@id/activity_home_train_two_payment_method_tv">
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/vodafone_cash_rb"
@@ -126,8 +127,7 @@
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:background="@drawable/upload"
-            android:backgroundTint="@color/black"
-
+            android:translationZ="@dimen/_90sdp"
             app:layout_constraintTop_toBottomOf="@+id/upload_btn"
             app:layout_constraintBottom_toTopOf="@+id/jpgorpng_btn"
             app:layout_constraintEnd_toEndOf="parent"
@@ -154,7 +154,7 @@
             android:id="@+id/jpgorpng_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="UPLOAD PAYMENT BILL"
+            android:text="JPG OR PDF"
             android:textSize="@dimen/_15ssp"
             android:scaleY="1.2"
             android:fontFamily="@font/aeonik_medium"
@@ -166,15 +166,91 @@
             android:layout_marginEnd="@dimen/_25sdp"
             app:layout_constraintTop_toBottomOf="@+id/upload_btn" />
 
+        <TextView
+            android:id="@+id/loading_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aeonik_bold"
+            android:text="LOADING"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_40ssp"
+            android:visibility="invisible"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintTop_toBottomOf="@+id/jpgorpng_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/loading_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_70sdp"
+            android:layout_marginEnd="@dimen/_70sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:visibility="invisible"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/_30sdp"
+            app:layout_constraintTop_toBottomOf="@+id/loading_tv"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_7sdp">
+
+            <ProgressBar
+                android:id="@+id/mprogress_horizontal"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_margin="@dimen/_15sdp"
+                android:progressDrawable="@drawable/custom_progress_bar"
+                android:progressTint="@color/fit_green"
+                android:progress="15"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
         <ImageView
             android:id="@+id/poweredby_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_20sdp"
             android:src="@drawable/poweredby_home_train"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintTop_toBottomOf="@+id/jpgorpng_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#242538"
+            android:padding="@dimen/_10sdp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/back_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="back"
+                android:src="@drawable/arrow_back"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/small_poeredby_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="back"
+                android:src="@drawable/powerde_image"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

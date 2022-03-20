@@ -7,12 +7,12 @@ import android.view.View;
 
 import com.amirmohammed.fit.R;
 
-public class HomeTrainActivityTwo extends AppCompatActivity {
+public class HomeTrainFourActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_train_two);
+        setContentView(R.layout.activity_home_trainfour);
     }
 
     public void back(View view) {
