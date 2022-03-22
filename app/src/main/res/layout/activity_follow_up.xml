@@ -103,6 +103,7 @@
                     app:boxCornerRadiusTopEnd="@dimen/_30sdp"
                     app:boxCornerRadiusTopStart="@dimen/_30sdp"
                     app:boxStrokeWidth="0dp"
+                    android:theme="@style/MyTextInputLayout_overlay"
                     app:hintTextColor="#8CFFFFFF"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/line_view">
@@ -112,7 +113,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:backgroundTint="#232441"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:textColor="#B5FFFFFF"
                         android:textSize="@dimen/_13ssp"
                         android:fontFamily="@font/aeonik_regular"
@@ -134,6 +135,7 @@
                     app:boxCornerRadiusTopEnd="@dimen/_30sdp"
                     app:boxCornerRadiusTopStart="@dimen/_30sdp"
                     app:boxStrokeWidth="0dp"
+                    android:theme="@style/MyTextInputLayout_overlay"
                     app:hintTextColor="#8CFFFFFF"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/new_weight_layout">
@@ -205,42 +207,53 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_layout"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:tabMode="auto"
-                android:background="@drawable/corners"
-                android:backgroundTint="#8040D876"
-                app:tabTextColor="#80FFFFFF"
-                app:tabSelectedTextColor="@color/white"
-                app:tabIndicatorColor="#232441"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="@dimen/_30sdp"
                 app:layout_constraintStart_toEndOf="@+id/back_image"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Follow up"/>
+                    app:tabMode="auto"
+                    app:tabBackground="@drawable/selected_tab_bg"
+                    app:tabTextColor="#80FFFFFF"
+                    app:tabSelectedTextColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/back_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="work out"/>
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Follow up"/>
 
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Diet plan"/>
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="work out"/>
 
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Profile"/>
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Diet plan"/>
 
-            </com.google.android.material.tabs.TabLayout>
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"/>
+
+                </com.google.android.material.tabs.TabLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

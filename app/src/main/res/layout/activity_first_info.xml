@@ -46,6 +46,8 @@
             app:boxCornerRadiusTopEnd="@dimen/_15sdp"
             app:boxCornerRadiusTopStart="@dimen/_15sdp"
             app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            android:theme="@style/MyTextInputLayout_overlay"
             app:hintEnabled="false"
             app:hintTextColor="#8CFFFFFF">
 
@@ -86,6 +88,8 @@
             app:boxCornerRadiusTopEnd="@dimen/_15sdp"
             app:boxCornerRadiusTopStart="@dimen/_15sdp"
             app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            android:theme="@style/MyTextInputLayout_overlay"
             app:hintTextColor="#8CFFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -97,7 +101,7 @@
                 android:backgroundTint="#6640D876"
                 android:fontFamily="@font/aeonik_medium"
                 android:textSize="@dimen/_11ssp"
-                android:inputType="text"
+                android:inputType="number"
                 android:textColor="#8CFFFFFF"
                 app:boxStrokeWidth="0dp" />
 
@@ -128,6 +132,8 @@
             app:boxCornerRadiusTopEnd="@dimen/_15sdp"
             app:boxCornerRadiusTopStart="@dimen/_15sdp"
             app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            android:theme="@style/MyTextInputLayout_overlay"
             app:hintTextColor="#8CFFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -137,7 +143,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="#6640D876"
-                android:inputType="text"
+                android:inputType="number"
                 android:textColor="#8CFFFFFF"
                 app:boxStrokeWidth="0dp" />
 
@@ -168,6 +174,8 @@
             app:boxCornerRadiusTopEnd="@dimen/_15sdp"
             app:boxCornerRadiusTopStart="@dimen/_15sdp"
             app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            android:theme="@style/MyTextInputLayout_overlay"
             app:hintTextColor="#8CFFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -177,7 +185,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="#6640D876"
-                android:inputType="text"
+                android:inputType="number"
                 android:textColor="#8CFFFFFF"
                 app:boxStrokeWidth="0dp" />
 

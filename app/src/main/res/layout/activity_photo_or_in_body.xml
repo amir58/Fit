@@ -48,11 +48,11 @@
                 <com.google.android.material.card.MaterialCardView
                     android:onClick="navigateToBodyPhoto"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_220sdp"
+                    android:layout_height="@dimen/_200sdp"
                     app:cardCornerRadius="@dimen/_30sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_40sdp"
-                    android:layout_marginEnd="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_50sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
                     android:backgroundTint="#6640D876">
 
                     <LinearLayout
@@ -67,6 +67,8 @@
                             android:text="Insert my body photos"
                             android:textColor="#8CFFFFFF"
                             android:textSize="@dimen/_15ssp"
+                            android:checked="true"
+                            android:clickable="false"
                             android:fontFamily="@font/aeonik_medium"
                             android:button="@drawable/selector_radio_xl"
                             android:layoutDirection="rtl"
@@ -77,13 +79,13 @@
                         <ImageView
                             android:id="@+id/activity_photo_or_body_body_image"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/yoga_ladies"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/body"
                             android:scaleType="fitXY"
                             android:layout_marginStart="@dimen/_15sdp"
                             android:layout_marginEnd="@dimen/_15sdp"
                             android:layout_marginTop="@dimen/_5sdp"
-                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
                             android:alpha="0.5"/>
 
                     </LinearLayout>
@@ -93,11 +95,11 @@
                 <com.google.android.material.card.MaterialCardView
                     android:onClick="navigateToInBodyPhoto"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_220sdp"
+                    android:layout_height="@dimen/_200sdp"
                     app:cardCornerRadius="@dimen/_30sdp"
                     android:layout_marginTop="@dimen/_30sdp"
-                    android:layout_marginStart="@dimen/_40sdp"
-                    android:layout_marginEnd="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_50sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
                     android:backgroundTint="#6640D876">
 
                     <LinearLayout
@@ -112,6 +114,8 @@
                             android:text="Insert my Inbody"
                             android:textColor="#8CFFFFFF"
                             android:textSize="@dimen/_15ssp"
+                            android:checked="true"
+                            android:clickable="false"
                             android:fontFamily="@font/aeonik_medium"
                             android:button="@drawable/selector_radio_xl"
                             android:layoutDirection="rtl"
@@ -123,12 +127,12 @@
                             android:id="@+id/activity_photo_or_body_in_body_image"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/yoga_ladies"
+                            android:src="@drawable/inbody"
                             android:scaleType="fitXY"
                             android:layout_marginStart="@dimen/_15sdp"
                             android:layout_marginEnd="@dimen/_15sdp"
                             android:layout_marginTop="@dimen/_5sdp"
-                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
                             android:alpha="0.5"/>
 
                     </LinearLayout>
@@ -149,6 +153,7 @@
                         android:src="@drawable/arrow_back"
                         android:layout_marginStart="@dimen/_30sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"/>
 

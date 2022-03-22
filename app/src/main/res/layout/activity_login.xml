@@ -83,13 +83,13 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/activity_login_login_btn"
             android:onClick="loginBtn"
-            android:layout_width="@dimen/_190sdp"
+            android:layout_width="@dimen/_240sdp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/fit_green"
             android:text="Login"
             android:fontFamily="@font/sf_pro_display_regular"
             android:textAllCaps="false"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_15ssp"
             android:paddingBottom="@dimen/_10sdp"
             android:paddingTop="@dimen/_10sdp"
             app:cornerRadius="@dimen/_30sdp" />
@@ -97,13 +97,13 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/activity_login_signup_btn"
             android:onClick="signupBtn"
-            android:layout_width="@dimen/_190sdp"
+            android:layout_width="@dimen/_240sdp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/fit_green"
             android:text="Sign up"
             android:fontFamily="@font/sf_pro_display_regular"
             android:textAllCaps="false"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_15ssp"
             android:paddingBottom="@dimen/_10sdp"
             android:paddingTop="@dimen/_10sdp"
             app:cornerRadius="@dimen/_30sdp" />
@@ -120,7 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/arrow_back"
-                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_40sdp"
                 android:layout_marginBottom="@dimen/_5sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
