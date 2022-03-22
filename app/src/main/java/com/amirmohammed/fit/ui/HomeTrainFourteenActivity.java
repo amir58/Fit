@@ -21,6 +21,6 @@ public class HomeTrainFourteenActivity extends AppCompatActivity {
     }
 
     public void navigateToHomeTrainFollowUp(View view) {
-        startActivity(new Intent(this, FollowUpActivity.class));
+        startActivity(new Intent(this, HomeTrainBottomNavigationActivity.class));
     }
 }

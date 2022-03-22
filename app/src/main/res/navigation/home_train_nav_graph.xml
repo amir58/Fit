@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_train_nav_graph"
+    app:startDestination="@id/followUpFragment">
+
+    <activity
+        android:id="@+id/homeTrainBottomNavigationActivity"
+        android:name="com.amirmohammed.fit.ui.HomeTrainBottomNavigationActivity"
+        android:label="activity_home_train_bottom_navigation"
+        tools:layout="@layout/activity_home_train_bottom_navigation" />
+    <fragment
+        android:id="@+id/followUpFragment"
+        android:name="com.amirmohammed.fit.ui.FollowUpFragment"
+        android:label="fragment_follow_up"
+        tools:layout="@layout/fragment_follow_up" >
+        <action
+            android:id="@+id/action_followUpFragment_to_bodyPhotoActivityOne"
+            app:destination="@id/bodyPhotoActivityOne" />
+    </fragment>
+    <activity
+        android:id="@+id/bodyPhotoActivityOne"
+        android:name="com.amirmohammed.fit.ui.BodyPhotoActivityOne"
+        android:label="activity_body_photo_one"
+        tools:layout="@layout/activity_body_photo_one" />
+
+</navigation>

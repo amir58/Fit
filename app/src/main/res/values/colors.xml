@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="fit_green">#40D876</color>
+    <color name="fit_green_opacity50">#8040D876</color>
 
 
 

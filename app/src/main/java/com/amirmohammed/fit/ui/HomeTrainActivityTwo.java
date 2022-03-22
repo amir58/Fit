@@ -37,5 +37,6 @@ public class HomeTrainActivityTwo extends AppCompatActivity {
         binding.loadingCv.setVisibility(View.VISIBLE);
         binding.smallPoeredbyImage.setVisibility(View.VISIBLE);
 
+        startActivity(new Intent(this, HomeTrainFourteenActivity.class));
     }
 }
