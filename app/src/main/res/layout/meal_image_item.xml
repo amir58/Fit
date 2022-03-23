@@ -22,24 +22,26 @@
             app:cardElevation="@dimen/_2sdp">
 
             <ImageView
-            android:id="@+id/workout_image"
-            android:layout_width="@dimen/_110sdp"
-            android:layout_height="@dimen/_140sdp"
-            android:src="@drawable/six_packs_image"
-            android:scaleType="fitXY"
-            android:background="@drawable/corners"/>
+                android:id="@+id/meal_image"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="@dimen/_140sdp"
+                android:src="@drawable/six_packs_image"
+                android:scaleType="fitXY" />
 
         </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:id="@+id/workout_tv"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/meal_rb"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            android:button="@drawable/selector_radio_small"
             android:textSize="@dimen/_10ssp"
             android:textColor="@color/white"
             android:text="streches"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_3sdp"/>
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_5sdp"/>
 
 
     </LinearLayout>

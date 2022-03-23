@@ -69,10 +69,16 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
 
                 break;
             default:
+//                getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .replace(binding.fragmentContainerView.getId(), new FollowUpFragment())
+//                        .commit();
+
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(binding.fragmentContainerView.getId(), new FollowUpFragment())
+                        .replace(binding.fragmentContainerView.getId(), new HomeTrainSixFragment())
                         .commit();
+
                 Toast.makeText(HomeTrainBottomNavigationActivity.this, "followUpTab", Toast.LENGTH_SHORT).show();
                 break;
         }

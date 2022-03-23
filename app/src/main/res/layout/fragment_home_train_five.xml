@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.HomeTrainFiveFragment">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_310sdp"
+        android:background="@drawable/rope_image"
+        android:scaleY="1.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_train_background_gradient">
+
+
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_45sdp"
+            android:src="@drawable/logo_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/play_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:src="@drawable/play_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo_image" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            app:boxCornerRadiusBottomEnd="@dimen/_30sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_30sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_30sdp"
+            app:boxCornerRadiusTopStart="@dimen/_30sdp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:endIconDrawable="@drawable/ic_search"
+            app:layout_constraintVertical_bias="0.45"
+            android:theme="@style/MyTextInputLayout_overlay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/activity_register_name_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:backgroundTint="#232441"
+                android:background="@null"
+                android:hint="search"
+                app:hintTextColor="#8CFFFFFF"
+                android:inputType="text"
+                android:textColor="#8CFFFFFF"
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/aeonik_medium"
+                app:boxStrokeWidth="0dp"
+                app:endIconDrawable="@drawable/ic_search"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/btns_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_layout">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/workout_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="workout"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/aeonik_regular"
+                app:strokeWidth="0dp"
+                app:strokeColor="@color/fit_green"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:cornerRadius="@dimen/_20sdp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/push_day_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="push day"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/aeonik_regular"
+                app:strokeColor="@color/fit_green"
+                app:strokeWidth="0dp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:cornerRadius="@dimen/_20sdp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/pull_dy_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pull day"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/aeonik_regular"
+                app:strokeColor="@color/fit_green"
+                app:strokeWidth="0dp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:cornerRadius="@dimen/_20sdp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/leg_day_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="leg day"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/aeonik_regular"
+                app:strokeColor="@color/fit_green"
+                app:strokeWidth="0dp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:cornerRadius="@dimen/_20sdp"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/workout_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/workouts_item"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            app:spanCount="4"
+            app:layout_constraintTop_toBottomOf="@id/btns_linear_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

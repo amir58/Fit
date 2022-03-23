@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.amirmohammed.fit.R;
+import com.amirmohammed.fit.adapters.PopularWorkoutsAdapter;
 import com.amirmohammed.fit.databinding.FragmentPopularWorkoutBinding;
 
 public class PopularWorkoutFragment extends Fragment {
@@ -28,5 +29,6 @@ public class PopularWorkoutFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.popularWorkoutRv.setAdapter(new PopularWorkoutsAdapter());
     }
 }

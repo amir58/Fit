@@ -90,7 +90,6 @@
             android:layout_marginTop="@dimen/_20sdp"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
-            app:endIconDrawable="@drawable/ic_search"
             android:theme="@style/MyTextInputLayout_overlay"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/create_tv">
@@ -107,7 +106,9 @@
                 android:textColor="#8CFFFFFF"
                 android:textSize="@dimen/_13ssp"
                 android:fontFamily="@font/aeonik_medium"
-                app:boxStrokeWidth="0dp" />
+                app:boxStrokeWidth="0dp"
+                app:endIconDrawable="@drawable/ic_search"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -139,31 +140,75 @@
             app:strokeColor="@color/fit_green"
             app:strokeWidth="@dimen/_2sdp" />
 
-        <TextView
-            android:id="@+id/popular_head_tv"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Popular Workout"
-            android:textSize="@dimen/_25ssp"
-            android:textColor="@color/white"
-            android:fontFamily="@font/aeonik_bold"
-            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_height="0dp"
             android:layout_marginTop="@dimen/_10sdp"
-            app:layout_constraintTop_toBottomOf="@+id/popular_btn"/>
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/popular_btn"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/popular_workout_rv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/popular_workout_item"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"
-            app:spanCount="6"
-            app:layout_constraintTop_toBottomOf="@+id/popular_head_tv"
-            android:layout_marginTop="@dimen/_10sdp"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/popular_head_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Popular Workout"
+                    android:textSize="@dimen/_25ssp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/aeonik_bold"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/popular_workout_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/popular_workout_item"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    app:spanCount="6"
+                    app:layout_constraintTop_toBottomOf="@+id/popular_head_tv"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_20sdp"/>
+
+                <ImageView
+                    android:id="@+id/swipe_left_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/swipe_left_arrow"
+                    app:layout_constraintTop_toBottomOf="@id/popular_workout_rv"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/swipe_left_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Swipe left"
+                    android:textColor="#69FFFFFF"
+                    android:textSize="@dimen/_8ssp"
+                    android:fontFamily="@font/aeonik_regular"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="@+id/swipe_left_image"
+                    app:layout_constraintEnd_toStartOf="@+id/swipe_left_image"
+                    app:layout_constraintBottom_toBottomOf="@id/swipe_left_image"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </FrameLayout>
