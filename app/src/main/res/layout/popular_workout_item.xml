@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_15sdp"
+    android:backgroundTint="#131429"
+    android:layout_marginStart="@dimen/_30sdp"
+    android:layout_marginTop="@dimen/_3sdp"
+    android:paddingStart="@dimen/_30sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardElevation="@dimen/_2sdp">
+
+            <ImageView
+            android:id="@+id/workout_image"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:src="@drawable/six_packs_image"
+            android:scaleType="fitXY"
+            android:background="@drawable/corners"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/workout_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/white"
+            android:text="streches"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_3sdp"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+</com.google.android.material.card.MaterialCardView>

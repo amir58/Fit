@@ -10,11 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fit">
         <activity
+            android:name=".ui.DetailsTrainTwoActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.DetailsTrainOneActivity"
             android:exported="false" />
         <activity
             android:name=".ui.HomeTrainBottomNavigationActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.HomeTrainFourteenActivity"
             android:exported="true">
@@ -32,7 +35,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.PhotoOrInBodyLoadingActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.InBodyActivity"
             android:exported="false" />
@@ -62,7 +65,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.WelcomeActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

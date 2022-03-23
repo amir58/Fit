@@ -1,6 +1,7 @@
 package com.amirmohammed.fit.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.Navigation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,26 +36,7 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
         binding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                int tabId = tab.getPosition();
-
-                switch (tabId) {
-                    case 1:
-                        Toast.makeText(HomeTrainBottomNavigationActivity.this, "workOutTab", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 2:
-                        Toast.makeText(HomeTrainBottomNavigationActivity.this, "dietPlanTab", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 3:
-                        Toast.makeText(HomeTrainBottomNavigationActivity.this, "profileTab", Toast.LENGTH_SHORT).show();
-                        break;
-                    default:
-                        getSupportFragmentManager()
-                                .beginTransaction()
-                                .replace(binding.fragmentContainerView.getId(), new FollowUpFragment())
-                                .commit();
-                        Toast.makeText(HomeTrainBottomNavigationActivity.this, "followUpTab", Toast.LENGTH_SHORT).show();
-                        break;
-                }
+                openFragment(tab);
             }
 
             @Override
@@ -64,9 +46,36 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
+                openFragment(tab);
             }
         });
+    }
+
+    private void openFragment(TabLayout.Tab tab) {
+        int tabId = tab.getPosition();
+
+        switch (tabId) {
+            case 1:
+                Toast.makeText(HomeTrainBottomNavigationActivity.this, "workOutTab", Toast.LENGTH_SHORT).show();
+                break;
+            case 2:
+                Toast.makeText(HomeTrainBottomNavigationActivity.this, "dietPlanTab", Toast.LENGTH_SHORT).show();
+                break;
+            case 3:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .add(new ProfileDialogFragment(), "profile")
+                        .commit();
+
+                break;
+            default:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(binding.fragmentContainerView.getId(), new FollowUpFragment())
+                        .commit();
+                Toast.makeText(HomeTrainBottomNavigationActivity.this, "followUpTab", Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 
     public void back(View view) {

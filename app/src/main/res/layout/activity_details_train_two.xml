@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#131429"
-    tools:context=".ui.DetailsTrainOneActivity">
+    tools:context=".ui.DetailsTrainTwoActivity">
 
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_310sdp"
-        android:background="@drawable/weights_image"
+        android:layout_height="@dimen/_500sdp"
+        android:background="@drawable/pulls_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,32 +22,61 @@
         android:background="@drawable/home_train_background_gradient">
 
 
-        <ImageView
-            android:layout_width="@dimen/_35sdp"
-            android:layout_height="@dimen/_35sdp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_time"
             android:layout_marginStart="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_45sdp"
-            android:src="@drawable/logo_image"
+            android:text="3 hours"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:fontFamily="@font/aeonik_regular"
+            android:background="@drawable/corners"
+            android:backgroundTint="@color/fit_green"
+            android:drawablePadding="@dimen/_7sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_3sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/next_image"
+        <TextView
+            android:id="@+id/cancel_image"
             android:layout_width="@dimen/_25sdp"
             android:layout_height="@dimen/_25sdp"
-            android:onClick="next"
+            android:onClick="cancel"
+            android:text="X"
+            android:textColor="@color/black"
+            android:background="@drawable/corners"
+            android:backgroundTint="@color/white"
+            android:gravity="center"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
             android:layout_marginTop="@dimen/_45sdp"
             android:layout_marginEnd="@dimen/_30sdp"
             android:src="@drawable/white_bg_next_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:src="@drawable/play_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cancel_image" />
+
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/workout_cv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
-            app:layout_constraintTop_toBottomOf="@+id/next_image"
+            app:layout_constraintTop_toBottomOf="@+id/cancel_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="@dimen/_200sdp"
@@ -211,6 +240,7 @@
             android:id="@+id/your_weight_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="navigateToDetailsOneActivity"
             android:text="Your Weight"
             android:textColor="@color/fit_green"
             android:textSize="@dimen/_15ssp"
@@ -221,16 +251,18 @@
             android:layout_marginTop="@dimen/_20sdp"/>
 
         <TextView
-            android:id="@+id/save_weight_tv"
-            android:layout_width="wrap_content"
+            android:id="@+id/much_words_tv"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SAVE YOUR WEIGHT"
-            android:textColor="#78FFFFFF"
-            android:textSize="@dimen/_20ssp"
-            android:fontFamily="@font/aeonik_medium"
+            android:text="Grasp the bar with a wide grip, looking forward with your torso upright. Retract your shoulder blades and pull the bar down in front of you to your upper chest. Squeeze your lats at the bottom of the move. Resist the temptation to lean back to aid the movement"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            android:fontFamily="@font/aeonik_thin"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/description_tv"
             android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
             android:layout_marginTop="@dimen/_20sdp"/>
 
         <ImageView
@@ -239,8 +271,8 @@
             android:layout_height="wrap_content"
             android:onClick="oneTimeClick"
             android:src="@drawable/train_details_workout_image"
-            app:layout_constraintBottom_toTopOf="@+id/poweredby_image"
-            android:layout_marginBottom="@dimen/_30sdp"/>
+            app:layout_constraintTop_toBottomOf="@+id/much_words_tv"
+            android:layout_marginTop="@dimen/_35sdp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/one_click_btn"
@@ -260,16 +292,6 @@
             app:layout_constraintStart_toStartOf="@+id/one_click_image"
             app:layout_constraintEnd_toEndOf="@+id/one_click_image" />
 
-        <ImageView
-            android:id="@+id/poweredby_image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/poweredby_image"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="@dimen/_30sdp"/>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

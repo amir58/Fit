@@ -24,5 +24,10 @@
         android:name="com.amirmohammed.fit.ui.BodyPhotoActivityOne"
         android:label="activity_body_photo_one"
         tools:layout="@layout/activity_body_photo_one" />
+    <dialog
+        android:id="@+id/profileDialogFragment"
+        android:name="com.amirmohammed.fit.ui.ProfileDialogFragment"
+        android:label="fragment_profile_dialog"
+        tools:layout="@layout/fragment_profile_dialog" />
 
 </navigation>

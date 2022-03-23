@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#131429"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.PopularWorkoutFragment">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_310sdp"
+        android:background="@drawable/six_packs_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_train_background_gradient">
+
+
+        <ImageView
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_45sdp"
+            android:src="@drawable/logo_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:onClick="next"
+            android:layout_marginTop="@dimen/_45sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:src="@drawable/circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/play_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:src="@drawable/play_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+        <TextView
+            android:id="@+id/hey_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/aeonik_regular"
+            android:text="Hey,"
+            android:textColor="@color/fit_green"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/play_image"/>
+
+        <TextView
+            android:id="@+id/create_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aeonik_regular"
+            android:text=" Create"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintStart_toEndOf="@+id/hey_tv"
+            app:layout_constraintTop_toTopOf="@+id/hey_tv" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            app:boxCornerRadiusBottomEnd="@dimen/_30sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_30sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_30sdp"
+            app:boxCornerRadiusTopStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:endIconDrawable="@drawable/ic_search"
+            android:theme="@style/MyTextInputLayout_overlay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_tv">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/activity_register_name_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:backgroundTint="#232441"
+                android:background="@null"
+                android:hint="search"
+                app:hintTextColor="#8CFFFFFF"
+                android:inputType="text"
+                android:textColor="#8CFFFFFF"
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/aeonik_medium"
+                app:boxStrokeWidth="0dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:id="@+id/line_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:background="@color/fit_green"
+            app:layout_constraintTop_toBottomOf="@id/search_layout" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/popular_btn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:clickable="false"
+            android:fontFamily="@font/aeonik_regular"
+            android:padding="@dimen/_10sdp"
+            android:text="Popular OR Ads"
+            android:textSize="@dimen/_9ssp"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/line_view"
+            app:layout_constraintEnd_toEndOf="@+id/line_view"
+            app:layout_constraintStart_toStartOf="@+id/line_view"
+            app:layout_constraintTop_toTopOf="@+id/line_view"
+            app:strokeColor="@color/fit_green"
+            app:strokeWidth="@dimen/_2sdp" />
+
+        <TextView
+            android:id="@+id/popular_head_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Popular Workout"
+            android:textSize="@dimen/_25ssp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/aeonik_bold"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/popular_btn"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/popular_workout_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/popular_workout_item"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            app:spanCount="6"
+            app:layout_constraintTop_toBottomOf="@+id/popular_head_tv"
+            android:layout_marginTop="@dimen/_10sdp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</FrameLayout>
