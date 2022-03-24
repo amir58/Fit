@@ -231,7 +231,7 @@
                 android:layout_width="@dimen/_140sdp"
                 android:layout_height="@dimen/_125sdp"
                 app:cardCornerRadius="@dimen/_30sdp"
-                android:visibility="invisible"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/ads_tv"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -304,7 +304,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/fit_green"
-                        android:text="Save"
+                        android:text="Publish"
                         android:textSize="@dimen/_10ssp"
                         android:fontFamily="@font/aeonik_regular"
                         app:cornerRadius="@dimen/_15sdp"

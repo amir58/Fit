@@ -18,6 +18,15 @@
         <action
             android:id="@+id/action_followUpFragment_to_bodyPhotoActivityOne"
             app:destination="@id/bodyPhotoActivityOne" />
+        <action
+            android:id="@+id/action_followUpFragment_to_popularWorkoutFragment"
+            app:destination="@id/popularWorkoutFragment" />
+        <action
+            android:id="@+id/action_followUpFragment_to_homeTrainBottomNavigationActivity"
+            app:destination="@id/homeTrainBottomNavigationActivity" />
+        <action
+            android:id="@+id/action_followUpFragment_to_homeTrainSixFragment"
+            app:destination="@id/homeTrainSixFragment" />
     </fragment>
     <activity
         android:id="@+id/bodyPhotoActivityOne"
@@ -28,6 +37,38 @@
         android:id="@+id/profileDialogFragment"
         android:name="com.amirmohammed.fit.ui.ProfileDialogFragment"
         android:label="fragment_profile_dialog"
-        tools:layout="@layout/fragment_profile_dialog" />
+        tools:layout="@layout/fragment_profile_dialog" >
+        <action
+            android:id="@+id/action_profileDialogFragment_to_homeTrainBottomNavigationActivity"
+            app:destination="@id/homeTrainBottomNavigationActivity" />
+        <action
+            android:id="@+id/action_profileDialogFragment_to_homeTrainSixFragment"
+            app:destination="@id/homeTrainSixFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/homeTrainFiveFragment"
+        android:name="com.amirmohammed.fit.ui.HomeTrainFiveFragment"
+        android:label="fragment_home_train_five"
+        tools:layout="@layout/fragment_home_train_five" />
+    <fragment
+        android:id="@+id/homeTrainSixFragment"
+        android:name="com.amirmohammed.fit.ui.HomeTrainSixFragment"
+        android:label="fragment_home_train_six"
+        tools:layout="@layout/fragment_home_train_six" />
+    <fragment
+        android:id="@+id/popularWorkoutFragment"
+        android:name="com.amirmohammed.fit.ui.PopularWorkoutFragment"
+        android:label="fragment_popular_workout"
+        tools:layout="@layout/fragment_popular_workout" >
+        <action
+            android:id="@+id/action_popularWorkoutFragment_to_homeTrainBottomNavigationActivity"
+            app:destination="@id/homeTrainBottomNavigationActivity" />
+        <action
+            android:id="@+id/action_popularWorkoutFragment_to_homeTrainFiveFragment"
+            app:destination="@id/homeTrainFiveFragment" />
+        <action
+            android:id="@+id/action_popularWorkoutFragment_to_homeTrainSixFragment"
+            app:destination="@id/homeTrainSixFragment" />
+    </fragment>
 
 </navigation>

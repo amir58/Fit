@@ -20,7 +20,7 @@ public class HomeTrainFourteenActivity extends AppCompatActivity {
         startActivity(new Intent(this, HomeTrainActivityOne.class));
     }
 
-    public void navigateToHomeTrainFollowUp(View view) {
+    public void navigateToHomeTrainBottomNavigationActivity(View view) {
         startActivity(new Intent(this, HomeTrainBottomNavigationActivity.class));
     }
 }

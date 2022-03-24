@@ -22,7 +22,7 @@ import com.amirmohammed.fit.databinding.FragmentFollowUpBinding;
 public class FollowUpFragment extends Fragment {
 
     private FragmentFollowUpBinding binding;
-    private NavController navController;
+    NavController navController;
     private boolean isFragmentVisible;
 
     @Override
@@ -38,10 +38,12 @@ public class FollowUpFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+//        navController = Navigation.findNavController(view);
+
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        if (isFragmentVisible) {
+        if (!isFragmentVisible) {
             navController = Navigation.findNavController(view);
         }
 
@@ -62,6 +64,12 @@ public class FollowUpFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+        isFragmentVisible = false;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
         isFragmentVisible = false;
     }
 }

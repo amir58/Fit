@@ -41,7 +41,6 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
             }
 
             @Override
@@ -55,28 +54,39 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
         int tabId = tab.getPosition();
 
         switch (tabId) {
+            case 0:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(binding.fragmentContainerView.getId(), new FollowUpFragment())
+                        .commit();
+                break;
             case 1:
-                Toast.makeText(HomeTrainBottomNavigationActivity.this, "workOutTab", Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(binding.fragmentContainerView.getId(), new HomeTrainFiveFragment())
+                        .commit();
                 break;
             case 2:
-                Toast.makeText(HomeTrainBottomNavigationActivity.this, "dietPlanTab", Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(binding.fragmentContainerView.getId(), new HomeTrainSixFragment())
+                        .commit();
                 break;
             case 3:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .add(new ProfileDialogFragment(), "profile")
+                        .replace(binding.fragmentContainerView.getId(), new PopularWorkoutFragment())
                         .commit();
-
-                break;
-            default:
-//                getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(binding.fragmentContainerView.getId(), new FollowUpFragment())
-//                        .commit();
 
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(binding.fragmentContainerView.getId(), new HomeTrainSixFragment())
+                        .add(new ProfileDialogFragment(), "profile")
+                        .commit();
+                break;
+            default:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(binding.fragmentContainerView.getId(), new PopularWorkoutFragment())
                         .commit();
 
                 Toast.makeText(HomeTrainBottomNavigationActivity.this, "followUpTab", Toast.LENGTH_SHORT).show();
@@ -85,6 +95,6 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
-       this.onBackPressed();
+       startActivity(new Intent(this, LoginActivity.class));
     }
 }

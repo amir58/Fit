@@ -35,6 +35,8 @@ public class HomeTrainSixFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        binding.nutritionPlanBtn.setStrokeWidth(1);
+
         setClicks(binding.nutritionPlanBtn, binding.meal1Btn, binding.meal2Btn, binding.meal3Btn);
 
         setClicks(binding.meal1Btn, binding.nutritionPlanBtn, binding.meal2Btn, binding.meal3Btn);
@@ -51,6 +53,14 @@ public class HomeTrainSixFragment extends Fragment {
                  * to show it in the ui;
                  */
                 binding.mealDetailsLayout.setVisibility(View.VISIBLE);
+                binding.logo2Image.setVisibility(View.VISIBLE);
+                binding.searchLayout.setVisibility(View.VISIBLE);
+
+                binding.logoImage.setVisibility(View.INVISIBLE);
+                binding.caloriesCalculatorTv.setVisibility(View.INVISIBLE);
+                binding.caloriesLayout.setVisibility(View.INVISIBLE);
+                binding.radioBtnsLayout.setVisibility(View.INVISIBLE);
+
                 Toast.makeText(requireContext(), txt, Toast.LENGTH_SHORT).show();
             }
         }));
@@ -60,10 +70,13 @@ public class HomeTrainSixFragment extends Fragment {
             public void onClick(View view) {
                 binding.playImage.setVisibility(View.INVISIBLE);
                 binding.searchLayout.setVisibility(View.INVISIBLE);
+                binding.logo2Image.setVisibility(View.INVISIBLE);
+                binding.mealDetailsLayout.setVisibility(View.INVISIBLE);
 
                 binding.radioBtnsLayout.setVisibility(View.VISIBLE);
                 binding.caloriesCalculatorTv.setVisibility(View.VISIBLE);
                 binding.caloriesLayout.setVisibility(View.VISIBLE);
+                binding.logoImage.setVisibility(View.VISIBLE);
             }
         });
     }
