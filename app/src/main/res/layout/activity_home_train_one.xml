@@ -232,7 +232,7 @@
                 android:id="@+id/get_month_free_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="navigateToHomeTrainTwo"
+                android:onClick="navigateToHomeTrainBottomNavigationActivity"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/corners"
                 android:backgroundTint="#6640D876"

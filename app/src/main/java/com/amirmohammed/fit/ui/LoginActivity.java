@@ -22,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void loginBtn(View view) {
+        startActivity(new Intent(this, HomeTrainBottomNavigationActivity.class));
     }
 
     public void signupBtn(View view) {

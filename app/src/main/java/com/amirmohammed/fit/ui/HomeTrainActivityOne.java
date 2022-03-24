@@ -24,11 +24,11 @@ public class HomeTrainActivityOne extends AppCompatActivity {
 
     }
 
-    public void navigateToHomeTrainTwo(View view) {
-        startActivity(new Intent(this, HomeTrainActivityTwo.class));
+    public void navigateToHomeTrainBottomNavigationActivity(View view) {
+        startActivity(new Intent(this, HomeTrainBottomNavigationActivity.class));
     }
 
     public void navigateToHomeTrainFour(View view) {
-        startActivity(new Intent(this, HomeTrainFourteenActivity.class));
+        startActivity(new Intent(this, HomeTrainActivityTwo.class));
     }
 }

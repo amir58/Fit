@@ -53,13 +53,15 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
     private void openFragment(TabLayout.Tab tab) {
         int tabId = tab.getPosition();
 
+        FollowUpFragment followUpFragment = new FollowUpFragment();
+
         switch (tabId) {
-            case 0:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(binding.fragmentContainerView.getId(), new FollowUpFragment())
-                        .commit();
-                break;
+//            case 0:
+//                getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .replace(binding.fragmentContainerView.getId(), followUpFragment)
+//                        .commit();
+//                break;
             case 1:
                 getSupportFragmentManager()
                         .beginTransaction()

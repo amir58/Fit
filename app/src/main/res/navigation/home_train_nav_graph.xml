@@ -44,17 +44,28 @@
         <action
             android:id="@+id/action_profileDialogFragment_to_homeTrainSixFragment"
             app:destination="@id/homeTrainSixFragment" />
+        <action
+            android:id="@+id/action_profileDialogFragment_to_followUpFragment"
+            app:destination="@id/followUpFragment" />
     </dialog>
     <fragment
         android:id="@+id/homeTrainFiveFragment"
         android:name="com.amirmohammed.fit.ui.HomeTrainFiveFragment"
         android:label="fragment_home_train_five"
-        tools:layout="@layout/fragment_home_train_five" />
+        tools:layout="@layout/fragment_home_train_five" >
+        <action
+            android:id="@+id/action_homeTrainFiveFragment_to_followUpFragment"
+            app:destination="@id/followUpFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeTrainSixFragment"
         android:name="com.amirmohammed.fit.ui.HomeTrainSixFragment"
         android:label="fragment_home_train_six"
-        tools:layout="@layout/fragment_home_train_six" />
+        tools:layout="@layout/fragment_home_train_six" >
+        <action
+            android:id="@+id/action_homeTrainSixFragment_to_followUpFragment"
+            app:destination="@id/followUpFragment" />
+    </fragment>
     <fragment
         android:id="@+id/popularWorkoutFragment"
         android:name="com.amirmohammed.fit.ui.PopularWorkoutFragment"
@@ -69,6 +80,12 @@
         <action
             android:id="@+id/action_popularWorkoutFragment_to_homeTrainSixFragment"
             app:destination="@id/homeTrainSixFragment" />
+        <action
+            android:id="@+id/action_popularWorkoutFragment_to_followUpFragment"
+            app:destination="@id/followUpFragment" />
+        <action
+            android:id="@+id/action_popularWorkoutFragment_to_followUpFragment2"
+            app:destination="@id/followUpFragment" />
     </fragment>
 
 </navigation>

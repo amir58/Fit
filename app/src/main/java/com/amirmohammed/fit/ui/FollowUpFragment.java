@@ -23,6 +23,7 @@ public class FollowUpFragment extends Fragment {
 
     private FragmentFollowUpBinding binding;
     NavController navController;
+    View view;
     private boolean isFragmentVisible;
 
     @Override
@@ -38,13 +39,14 @@ public class FollowUpFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        navController = Navigation.findNavController(view);
+//        this.view = view;
+        navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerView);
 
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         if (!isFragmentVisible) {
-            navController = Navigation.findNavController(view);
+            navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerView);
         }
 
         binding.photoForBodyBtn.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +55,12 @@ public class FollowUpFragment extends Fragment {
                 navController.navigate(R.id.action_followUpFragment_to_bodyPhotoActivityOne);
             }
         });
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+//        navController = Navigation.findNavController(view);
     }
 
     @Override
