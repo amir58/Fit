@@ -20,7 +20,6 @@
         android:layout_height="match_parent"
         android:background="@drawable/home_train_background_gradient">
 
-
         <ImageView
             android:id="@+id/logo_image"
             android:layout_width="@dimen/_45sdp"
@@ -32,14 +31,681 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <ImageView
+            android:id="@+id/logo2_image"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_45sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:src="@drawable/logo_image"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/radio_btns_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@+id/logo_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/logo_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    app:layout_constraintTop_toBottomOf="@+id/logo_image"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/oats_rb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_radio_small"
+                        android:text="OATS"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8ssp"
+                        android:fontFamily="@font/aeonik_regular"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/oats_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_weight="1"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false"
+                        android:layout_gravity="center"
+                        app:boxStrokeWidthFocused="0dp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:theme="@style/MyTextInputLayout_overlay"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/oats_dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#6E000000"
+                            android:gravity="end"
+                            android:hint="dd"
+                            android:inputType="none"
+                            android:textSize="@dimen/_3ssp"
+                            android:fontFamily="@font/aeonik_medium"
+                            android:textColor="#8CFFFFFF" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/logo_image"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/milk_rb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_radio_small"
+                        android:text="MILK"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8ssp"
+                        android:fontFamily="@font/aeonik_regular"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/milk_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_weight="1"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false"
+                        android:layout_gravity="center"
+                        app:boxStrokeWidthFocused="0dp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:theme="@style/MyTextInputLayout_overlay"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/milk_dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#6E000000"
+                            android:gravity="end"
+                            android:hint="dd"
+                            android:inputType="none"
+                            android:textSize="@dimen/_3ssp"
+                            android:fontFamily="@font/aeonik_medium"
+                            android:textColor="#8CFFFFFF" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    app:layout_constraintTop_toBottomOf="@+id/logo_image"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/banana_rb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_radio_small"
+                        android:text="BANANA"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8ssp"
+                        android:fontFamily="@font/aeonik_regular"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/banana_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_weight="1"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false"
+                        android:layout_gravity="center"
+                        app:boxStrokeWidthFocused="0dp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:theme="@style/MyTextInputLayout_overlay"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/banana_dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#6E000000"
+                            android:gravity="end"
+                            android:hint="dd"
+                            android:inputType="none"
+                            android:textSize="@dimen/_3ssp"
+                            android:fontFamily="@font/aeonik_medium"
+                            android:textColor="#8CFFFFFF" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/logo_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    app:layout_constraintTop_toBottomOf="@+id/logo_image"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/bean_rb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_radio_small"
+                        android:text="BEAN"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8ssp"
+                        android:fontFamily="@font/aeonik_regular"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/bean_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_weight="1"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false"
+                        android:layout_gravity="center"
+                        app:boxStrokeWidthFocused="0dp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:theme="@style/MyTextInputLayout_overlay"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/beam_dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#6E000000"
+                            android:gravity="end"
+                            android:hint="dd"
+                            android:inputType="none"
+                            android:textSize="@dimen/_3ssp"
+                            android:fontFamily="@font/aeonik_medium"
+                            android:textColor="#8CFFFFFF" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/logo_image"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/toaste_rb"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_radio_small"
+                        android:text="TOASTE"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8ssp"
+                        android:fontFamily="@font/aeonik_regular"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/toaste_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_weight="1"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false"
+                        android:layout_gravity="center"
+                        app:boxStrokeWidthFocused="0dp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:theme="@style/MyTextInputLayout_overlay"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/toaste_dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#6E000000"
+                            android:gravity="end"
+                            android:hint="dd"
+                            android:inputType="none"
+                            android:textSize="@dimen/_3ssp"
+                            android:fontFamily="@font/aeonik_medium"
+                            android:textColor="#8CFFFFFF" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    app:layout_constraintTop_toBottomOf="@+id/logo_image"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/quraish_rb"
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_radio_small"
+                        android:text="QURAISH CHEESE"
+                        android:minLines="2"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8ssp"
+                        android:fontFamily="@font/aeonik_regular"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/quraish_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_weight="1"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false"
+                        android:layout_gravity="center"
+                        app:boxStrokeWidthFocused="0dp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:theme="@style/MyTextInputLayout_overlay"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/quraish_dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#6E000000"
+                            android:gravity="end"
+                            android:hint="dd"
+                            android:inputType="none"
+                            android:textSize="@dimen/_3ssp"
+                            android:fontFamily="@font/aeonik_medium"
+                            android:textColor="#8CFFFFFF" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/logo_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    app:layout_constraintTop_toBottomOf="@+id/logo_image"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/honey_rb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_radio_small"
+                        android:text="HONEY"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8ssp"
+                        android:fontFamily="@font/aeonik_regular"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/honey_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_weight="1"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false"
+                        android:layout_gravity="center"
+                        app:boxStrokeWidthFocused="0dp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:theme="@style/MyTextInputLayout_overlay"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/honey_dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#6E000000"
+                            android:gravity="end"
+                            android:hint="dd"
+                            android:inputType="none"
+                            android:textSize="@dimen/_3ssp"
+                            android:fontFamily="@font/aeonik_medium"
+                            android:textColor="#8CFFFFFF" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    app:layout_constraintTop_toBottomOf="@+id/logo_image"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/nuts_rb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_radio_small"
+                        android:text="NUTS"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8ssp"
+                        android:fontFamily="@font/aeonik_regular"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/nuts_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_weight="1"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false"
+                        android:layout_gravity="center"
+                        app:boxStrokeWidthFocused="0dp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:theme="@style/MyTextInputLayout_overlay"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/nuts_dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#6E000000"
+                            android:gravity="end"
+                            android:hint="dd"
+                            android:inputType="none"
+                            android:textSize="@dimen/_3ssp"
+                            android:fontFamily="@font/aeonik_medium"
+                            android:textColor="#8CFFFFFF" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    app:layout_constraintTop_toBottomOf="@+id/logo_image"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/peanuts_rb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_radio_small"
+                        android:text="PEANUTS"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8ssp"
+                        android:fontFamily="@font/aeonik_regular"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/peanuts_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_weight="1"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false"
+                        android:layout_gravity="center"
+                        app:boxStrokeWidthFocused="0dp"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:theme="@style/MyTextInputLayout_overlay"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/peanuts_dropdown"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:backgroundTint="#6E000000"
+                            android:gravity="end"
+                            android:hint="dd"
+                            android:inputType="none"
+                            android:textSize="@dimen/_3ssp"
+                            android:fontFamily="@font/aeonik_medium"
+                            android:textColor="#8CFFFFFF" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <ImageView
             android:id="@+id/play_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_60sdp"
+            android:layout_marginTop="@dimen/_40sdp"
             android:src="@drawable/play_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/logo_image" />
+
+        <LinearLayout
+            android:id="@+id/meal_details_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/play_image"
+            app:layout_constraintStart_toStartOf="@+id/play_image"
+            app:layout_constraintEnd_toEndOf="@+id/play_image">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_2sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/correct_image"/>
+
+                <TextView
+                    android:id="@+id/first_meal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100G BREAD"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/aeonik_regular"
+                    android:layout_marginStart="@dimen/_5sdp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_2sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/correct_image"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100G BREAD"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/aeonik_regular"
+                    android:layout_marginStart="@dimen/_5sdp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_2sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/correct_image"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100G BREAD"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/aeonik_regular"
+                    android:layout_marginStart="@dimen/_5sdp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/calories_calculator_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_17ssp"
+            android:text="CALORIES CALCULATOR"
+            android:textColor="@color/fit_green"
+            android:gravity="center"
+            android:fontFamily="@font/aeonik_regular"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/corners"
+            android:backgroundTint="#232441"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radio_btns_layout"
+            app:layout_constraintBottom_toTopOf="@+id/search_layout"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/search_layout"
@@ -48,6 +714,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             app:boxCornerRadiusBottomEnd="@dimen/_30sdp"
             app:boxCornerRadiusBottomStart="@dimen/_30sdp"
             app:boxCornerRadiusTopEnd="@dimen/_30sdp"
@@ -55,11 +722,9 @@
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
             app:endIconDrawable="@drawable/ic_search"
-            app:layout_constraintVertical_bias="0.45"
             android:theme="@style/MyTextInputLayout_overlay"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/calories_calculator_tv">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/activity_register_name_et"
@@ -78,6 +743,27 @@
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/calories_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10ssp"
+            android:text="180 cal+"
+            android:textColor="@color/white"
+            android:fontFamily="@font/aeonik_regular"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_15sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@drawable/corners"
+            android:backgroundTint="#232441"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/search_layout"
+            app:layout_constraintBottom_toBottomOf="@+id/search_layout"/>
 
         <LinearLayout
             android:id="@+id/btns_linear_layout"

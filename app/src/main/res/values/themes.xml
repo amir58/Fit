@@ -25,4 +25,5 @@
         <item name="colorControlActivated">#F7BE1E</item>
         <item name="android:ratingBarStyleSmall">@dimen/_20sdp</item>
     </style>
+
 </resources>

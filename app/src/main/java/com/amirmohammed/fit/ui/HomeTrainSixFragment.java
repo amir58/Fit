@@ -9,10 +9,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.amirmohammed.fit.R;
 import com.amirmohammed.fit.adapters.MealAdapter;
 import com.amirmohammed.fit.adapters.WorkoutsAdapter;
+import com.amirmohammed.fit.callbacks.ShowItemDataI;
 import com.amirmohammed.fit.databinding.FragmentHomeTrainSixBinding;
 import com.google.android.material.button.MaterialButton;
 
@@ -40,7 +43,29 @@ public class HomeTrainSixFragment extends Fragment {
 
         setClicks(binding.meal3Btn, binding.nutritionPlanBtn, binding.meal1Btn, binding.meal2Btn);
 
-        binding.mealRv.setAdapter(new MealAdapter());
+        binding.mealRv.setAdapter(new MealAdapter(new ShowItemDataI() {
+            @Override
+            public void showItemData(String txt) {
+                /**
+                 * Here where we receive the item data from the adapter through {ShowItemDataI}
+                 * to show it in the ui;
+                 */
+                binding.mealDetailsLayout.setVisibility(View.VISIBLE);
+                Toast.makeText(requireContext(), txt, Toast.LENGTH_SHORT).show();
+            }
+        }));
+
+        binding.createMealBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.playImage.setVisibility(View.INVISIBLE);
+                binding.searchLayout.setVisibility(View.INVISIBLE);
+
+                binding.radioBtnsLayout.setVisibility(View.VISIBLE);
+                binding.caloriesCalculatorTv.setVisibility(View.VISIBLE);
+                binding.caloriesLayout.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     private void setClicks(MaterialButton pressedBtn, MaterialButton unpressedBtn1,

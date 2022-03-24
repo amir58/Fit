@@ -7,9 +7,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.amirmohammed.fit.callbacks.ShowItemDataI;
 import com.amirmohammed.fit.databinding.MealImageItemBinding;
 
 public class MealItemsAdapter extends RecyclerView.Adapter<MealItemsAdapter.Holder> {
+
+    ShowItemDataI showItemDataI;
+
+    public MealItemsAdapter(ShowItemDataI showItemDataI) {
+        this.showItemDataI = showItemDataI;
+    }
 
     @NonNull
     @Override
@@ -20,6 +27,16 @@ public class MealItemsAdapter extends RecyclerView.Adapter<MealItemsAdapter.Hold
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /**
+                 * Here where we should send the item selected details through the {ShowItemDataI}
+                 * callback interface to the parent to show it in the ui;
+                 */
+                showItemDataI.showItemData("details");
+            }
+        });
     }
 
     @Override
