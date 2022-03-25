@@ -7,9 +7,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.amirmohammed.fit.callbacks.OpenTrainDetailsI;
 import com.amirmohammed.fit.databinding.PopularWorkoutItemBinding;
 
 public class PopularWorkoutsAdapter extends RecyclerView.Adapter<PopularWorkoutsAdapter.Holder>{
+
+    OpenTrainDetailsI openTrainDetailsI;
+
+    public PopularWorkoutsAdapter(OpenTrainDetailsI openTrainDetailsI) {
+        this.openTrainDetailsI = openTrainDetailsI;
+    }
 
     @NonNull
     @Override
@@ -19,7 +26,9 @@ public class PopularWorkoutsAdapter extends RecyclerView.Adapter<PopularWorkouts
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-
+        holder.itemView.setOnClickListener(v-> {
+            openTrainDetailsI.openTrainDetails("TrainDetails");
+        });
     }
 
     @Override

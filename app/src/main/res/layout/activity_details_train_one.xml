@@ -224,14 +224,16 @@
             android:id="@+id/save_weight_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_40sdp"
+            android:fontFamily="@font/aeonik_medium"
             android:text="SAVE YOUR WEIGHT"
             android:textColor="#78FFFFFF"
             android:textSize="@dimen/_20ssp"
-            android:fontFamily="@font/aeonik_medium"
+            app:layout_constraintBottom_toTopOf="@+id/one_click_image"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/description_tv"
-            android:layout_marginStart="@dimen/_25sdp"
-            android:layout_marginTop="@dimen/_20sdp"/>
+            app:layout_constraintTop_toBottomOf="@id/description_tv" />
 
         <ImageView
             android:id="@+id/one_click_image"

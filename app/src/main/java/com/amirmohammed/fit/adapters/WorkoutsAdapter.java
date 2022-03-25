@@ -1,5 +1,6 @@
 package com.amirmohammed.fit.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,7 +8,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.amirmohammed.fit.callbacks.OpenTrainDetailsI;
 import com.amirmohammed.fit.databinding.WorkoutsItemBinding;
+import com.amirmohammed.fit.ui.DetailsTrainOneActivity;
 
 public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.Holder>{
 
@@ -19,7 +22,13 @@ public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.Holder
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        holder.binding.workoutRv.setAdapter(new PopularWorkoutsAdapter());
+        holder.binding.workoutRv.setAdapter(new PopularWorkoutsAdapter(new OpenTrainDetailsI() {
+            @Override
+            public void openTrainDetails(String data) {
+                holder.itemView.getContext().startActivity(
+                        new Intent(holder.itemView.getContext(), DetailsTrainOneActivity.class));
+            }
+        }));
     }
 
     @Override

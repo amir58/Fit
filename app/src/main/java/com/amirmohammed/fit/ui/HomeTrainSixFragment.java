@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -29,11 +30,16 @@ public class HomeTrainSixFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentHomeTrainSixBinding.inflate(inflater, container, false);
         return binding.getRoot();
+
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        requireActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         binding.nutritionPlanBtn.setStrokeWidth(1);
 

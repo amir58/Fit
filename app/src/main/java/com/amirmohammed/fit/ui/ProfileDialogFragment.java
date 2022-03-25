@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import com.amirmohammed.fit.R;
 import com.amirmohammed.fit.databinding.FragmentProfileDialogBinding;
@@ -34,6 +35,10 @@ public class ProfileDialogFragment extends DialogFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        requireActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         binding.backImage.setOnClickListener(new View.OnClickListener() {

@@ -20,8 +20,6 @@ public class WelcomeActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-
-
     }
 
     public void startNow(View view) {

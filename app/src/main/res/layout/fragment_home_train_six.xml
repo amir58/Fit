@@ -745,6 +745,23 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
+            android:id="@+id/error_message_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="THIS MEAL DOES NOT ALLOW TO ADD MORE FOOD"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="#F44336"
+            android:fontFamily="@font/aeonik_regular"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:drawableStart="@drawable/wrong_image"
+            android:drawablePadding="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@+id/search_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
             android:id="@+id/calories_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -771,7 +788,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_layout">

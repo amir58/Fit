@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.amirmohammed.fit.R;
 import com.amirmohammed.fit.databinding.ActivityDetailsTrainTwoBinding;
@@ -18,6 +19,9 @@ public class DetailsTrainTwoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityDetailsTrainTwoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
     }
 
     public void navigateToDetailsOneActivity(View view) {
@@ -30,5 +34,6 @@ public class DetailsTrainTwoActivity extends AppCompatActivity {
     }
 
     public void cancel(View view) {
+        startActivity(new Intent(this, HomeTrainBottomNavigationActivity.class));
     }
 }
