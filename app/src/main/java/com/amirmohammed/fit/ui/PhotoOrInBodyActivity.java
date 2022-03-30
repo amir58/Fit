@@ -22,6 +22,7 @@ public class PhotoOrInBodyActivity extends AppCompatActivity {
 
     public void back(View view) {
         startActivity(new Intent(this, SecondInfoActivity.class));
+        finish();
     }
 
     public void navigateToBodyPhoto(View view) {

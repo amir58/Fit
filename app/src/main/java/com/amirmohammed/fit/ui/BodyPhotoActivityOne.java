@@ -21,7 +21,9 @@ public class BodyPhotoActivityOne extends AppCompatActivity {
     }
 
     public void back(View view) {
-        startActivity(new Intent(this, PhotoOrInBodyActivity.class));
+        finish();
+//        startActivity(new Intent(this, PhotoOrInBodyActivity.class));
+//        finish();
     }
 
     public void insertBody(View view) {

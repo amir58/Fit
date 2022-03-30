@@ -22,6 +22,7 @@ public class SecondInfoActivity extends AppCompatActivity {
 
     public void back(View view) {
         startActivity(new Intent(this, FirstInfoActivity.class));
+        finish();
     }
 
     public void next(View view) {

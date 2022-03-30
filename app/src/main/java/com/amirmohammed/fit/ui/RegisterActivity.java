@@ -46,9 +46,11 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void back(View view) {
         startActivity(new Intent(this, LoginActivity.class));
+        finish();
     }
 
     public void next(View view) {
         startActivity(new Intent(this, FirstInfoActivity.class));
+        finish();
     }
 }

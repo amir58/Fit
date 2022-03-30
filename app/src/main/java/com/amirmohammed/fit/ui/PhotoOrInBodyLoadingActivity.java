@@ -27,7 +27,8 @@ public class PhotoOrInBodyLoadingActivity extends AppCompatActivity {
 
         // Get the Drawable custom_progressbar
         @SuppressLint("UseCompatLoadingForDrawables") Drawable draw = getResources().getDrawable(R.drawable.custom_progress_bar);
-// set the drawable as progress drawable
+
+        // set the drawable as progress drawable
         progressBar.setProgressDrawable(draw);
 
 
@@ -40,6 +41,7 @@ public class PhotoOrInBodyLoadingActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 startActivity(new Intent(PhotoOrInBodyLoadingActivity.this, HomeTrainActivityOne.class));
+                finish();
             }
         };
         timer.start();

@@ -35,5 +35,6 @@ public class DetailsTrainTwoActivity extends AppCompatActivity {
 
     public void cancel(View view) {
         startActivity(new Intent(this, HomeTrainBottomNavigationActivity.class));
+        finish();
     }
 }

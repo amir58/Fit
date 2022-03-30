@@ -27,6 +27,7 @@ public class HomeTrainActivityTwo extends AppCompatActivity {
 
     public void back(View view) {
         startActivity(new Intent(this, HomeTrainActivityOne.class));
+        finish();
     }
 
     public void navigateToLoading(View view) {
@@ -38,5 +39,6 @@ public class HomeTrainActivityTwo extends AppCompatActivity {
         binding.smallPoeredbyImage.setVisibility(View.VISIBLE);
 
         startActivity(new Intent(this, HomeTrainFourteenActivity.class));
+        finish();
     }
 }

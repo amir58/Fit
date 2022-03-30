@@ -53,8 +53,6 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
     private void openFragment(TabLayout.Tab tab) {
         int tabId = tab.getPosition();
 
-        FollowUpFragment followUpFragment = new FollowUpFragment();
-
         switch (tabId) {
 //            case 0:
 //                getSupportFragmentManager()
@@ -98,5 +96,6 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
 
     public void back(View view) {
        startActivity(new Intent(this, LoginActivity.class));
+       finish();
     }
 }

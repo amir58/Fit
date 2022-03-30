@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void loginBtn(View view) {
         startActivity(new Intent(this, HomeTrainBottomNavigationActivity.class));
+        finish();
     }
 
     public void signupBtn(View view) {
@@ -31,5 +32,13 @@ public class LoginActivity extends AppCompatActivity {
 
     public void back(View view) {
         startActivity(new Intent(this, WelcomeActivity.class));
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this, WelcomeActivity.class));
+        finish();
     }
 }

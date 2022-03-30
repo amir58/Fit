@@ -22,9 +22,11 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
 
     public void back(View view) {
         startActivity(new Intent(this, FrontBodyPhotoActivityOne.class));
+        finish();
     }
 
     public void finish(View view) {
         startActivity(new Intent(this, PhotoOrInBodyLoadingActivity.class));
+        finish();
     }
 }
