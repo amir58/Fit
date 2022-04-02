@@ -34,22 +34,27 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
     }
 
     public void finish(View view) {
+        Log.i("abdo", "finish: before");
         RetrofitSingleton.getClient().register(new RegisterRequest("abdo", "abdo",
                 22, "ball", "abdo@abdo.com", "m", 20, 60,
                 160, 3, "bla bla", "nothing", "50",
-                "asdasd", "null"))
+                "asdasd", "null"), "json")
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                         if (response.isSuccessful()){
-                            Log.i("abdo", "onResponse: "+ response.body().toString());
+                            Log.i("abdo", "abdo onResponse: "+ response.body().toString());
+                            startActivity(new Intent(BackBodyPhotoActivityOne.this, PhotoOrInBodyLoadingActivity.class));
+                            finish();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<RegisterResponse> call, Throwable t) {
-
+                        Log.i("abdo", "abdo onFailure: "+ t.getLocalizedMessage());
                     }
                 });
+
+        Log.i("abdo", "finish: after");
     }
 }

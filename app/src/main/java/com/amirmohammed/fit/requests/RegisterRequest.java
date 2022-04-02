@@ -34,7 +34,7 @@ public class RegisterRequest {
     @SerializedName("Hours")
     private int hours;
 
-    @SerializedName("Efforts")
+    @SerializedName("Effort")
     private String efforts;
 
     @SerializedName("Goal_Type")

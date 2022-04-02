@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitSingleton {
 
-    static Retrofit retrofit;
+    public static Retrofit retrofit;
 
     public static NetworkI getClient(){
         if (retrofit == null){

@@ -1,10 +1,12 @@
 package com.amirmohammed.fit.responses;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class RegisterResponse{
 
 	@SerializedName("Goal_Type")
+	@Expose
 	private String goalType;
 
 	@SerializedName("Email")
