@@ -3,16 +3,24 @@ package com.amirmohammed.fit.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.Formatter;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 
 import com.amirmohammed.fit.R;
 import com.amirmohammed.fit.databinding.ActivityRegisterBinding;
+import com.amirmohammed.fit.network.RegisterSingleton;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -50,6 +58,14 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void next(View view) {
+        Log.i("abdo", "next: "+ binding.activityRegisterNameEt.getText());
+        Log.i("abdo", "next: "+ binding.activityRegisterPasswordEt.getText());
+        RegisterSingleton.setData().setName(String.valueOf(binding.activityRegisterNameEt.getText()));
+        RegisterSingleton.setData().setUsername(String.valueOf(binding.activityRegisterUsernameEt.getText()));
+        RegisterSingleton.setData().setEmail(String.valueOf(binding.activityRegisterEmailEt.getText()));
+        RegisterSingleton.setData().setPassword(String.valueOf(binding.activityRegisterPasswordEt.getText()));
+        RegisterSingleton.setData().setAge(String.valueOf(2022 - Integer.parseInt(binding.activityRegisterYearMenu.getText().toString())));
+
         startActivity(new Intent(this, FirstInfoActivity.class));
         finish();
     }
