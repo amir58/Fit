@@ -59,12 +59,13 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void next(View view) {
         Log.i("abdo", "next: "+ binding.activityRegisterNameEt.getText());
-        Log.i("abdo", "next: "+ binding.activityRegisterPasswordEt.getText());
         RegisterSingleton.setData().setName(String.valueOf(binding.activityRegisterNameEt.getText()));
         RegisterSingleton.setData().setUsername(String.valueOf(binding.activityRegisterUsernameEt.getText()));
         RegisterSingleton.setData().setEmail(String.valueOf(binding.activityRegisterEmailEt.getText()));
         RegisterSingleton.setData().setPassword(String.valueOf(binding.activityRegisterPasswordEt.getText()));
         RegisterSingleton.setData().setAge(String.valueOf(2022 - Integer.parseInt(binding.activityRegisterYearMenu.getText().toString())));
+
+        Log.i("abdo", "next: "+ String.valueOf(2022 - Integer.parseInt(binding.activityRegisterYearMenu.getText().toString())));
 
         startActivity(new Intent(this, FirstInfoActivity.class));
         finish();

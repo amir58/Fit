@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.amirmohammed.fit.R;
+import com.amirmohammed.fit.network.RegisterSingleton;
 import com.amirmohammed.fit.network.RetrofitSingleton;
 import com.amirmohammed.fit.requests.RegisterRequest;
 import com.amirmohammed.fit.requests.RegisterRequestErrorBody;
@@ -43,18 +45,10 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
 
     public void finish(View view) {
         Log.i("abdo", "finish: before");
-        RetrofitSingleton.getClient().register(new RegisterRequest())
+        RetrofitSingleton.getClient().register(RegisterSingleton.setData())
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
-
-                        Gson gson = new Gson();
-                        RegisterRequestErrorBody requestErrorBody = new RegisterRequestErrorBody();
-                        try {
-                            requestErrorBody = gson.fromJson(response.errorBody().string(), RegisterRequestErrorBody.class);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
 
                         if (response.isSuccessful()){
                             Log.i("abdo", "abdo onResponse: "+ response.body().toString());
@@ -62,6 +56,14 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
                             finish();
                         }
                         else{
+                            Gson gson = new Gson();
+                            RegisterRequestErrorBody requestErrorBody = new RegisterRequestErrorBody();
+                            try {
+                                requestErrorBody = gson.fromJson(response.errorBody().string(), RegisterRequestErrorBody.class);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            Toast.makeText(BackBodyPhotoActivityOne.this, requestErrorBody.toString(), Toast.LENGTH_SHORT).show();
                             Log.i("abdo", "onResponse: not "+ requestErrorBody.toString());
                         }
                     }
