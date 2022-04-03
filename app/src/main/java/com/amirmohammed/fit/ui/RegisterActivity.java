@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.amirmohammed.fit.R;
 import com.amirmohammed.fit.databinding.ActivityRegisterBinding;
@@ -64,6 +65,16 @@ public class RegisterActivity extends AppCompatActivity {
         RegisterSingleton.setData().setEmail(String.valueOf(binding.activityRegisterEmailEt.getText()));
         RegisterSingleton.setData().setPassword(String.valueOf(binding.activityRegisterPasswordEt.getText()));
         RegisterSingleton.setData().setAge(String.valueOf(2022 - Integer.parseInt(binding.activityRegisterYearMenu.getText().toString())));
+        if (binding.activityRegisterFemaleRadioBtn.isChecked()){
+            RegisterSingleton.setData().setGender("Female");
+        }
+        else if (binding.activityRegisterMaleRadioBtn.isChecked()){
+            RegisterSingleton.setData().setGender("Male");
+        }
+        else{
+            Toast.makeText(this, "Please select your gender", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         Log.i("abdo", "next: "+ String.valueOf(2022 - Integer.parseInt(binding.activityRegisterYearMenu.getText().toString())));
 

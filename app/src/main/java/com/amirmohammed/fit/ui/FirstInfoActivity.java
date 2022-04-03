@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 
 import com.amirmohammed.fit.R;
 import com.amirmohammed.fit.databinding.ActivityFirstInfoBinding;
@@ -23,6 +24,10 @@ public class FirstInfoActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
+        String[] sports = {"GYM EXERCISE", "CROSSFIT", "SWIMMING", "FOOTBALL", "HANDBALL"};
+        binding.activityFirstInfoSportMenu.setAdapter(new ArrayAdapter<String>(this, R.layout.month_item, sports));
+
     }
 
     public void back(View view) {
@@ -33,6 +38,8 @@ public class FirstInfoActivity extends AppCompatActivity {
     public void next(View view) {
         RegisterSingleton.setData().setWeight(String.valueOf(binding.activityFirstInfoWeightEt.getText()));
         RegisterSingleton.setData().setHeight(String.valueOf(binding.activityFirstInfoHeightEt.getText()));
+        RegisterSingleton.setData().setSport(binding.activityFirstInfoSportMenu.getText().toString());
+        RegisterSingleton.setData().setTrain(binding.activityFirstInfoExerciseEt.getText().toString());
         startActivity(new Intent(this, SecondInfoActivity.class));
     }
 }

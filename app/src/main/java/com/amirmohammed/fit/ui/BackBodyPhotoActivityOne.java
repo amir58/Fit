@@ -45,7 +45,7 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
 
     public void finish(View view) {
         Log.i("abdo", "finish: before");
-        RetrofitSingleton.getClient().register(RegisterSingleton.setData())
+        RetrofitSingleton.getClient().register(RegisterSingleton.registerRequest)
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
