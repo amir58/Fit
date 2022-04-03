@@ -1,6 +1,5 @@
 package com.amirmohammed.fit.network;
 
-import retrofit2.Converter;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 

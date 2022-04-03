@@ -11,7 +11,15 @@ import android.view.WindowManager;
 import com.amirmohammed.fit.R;
 import com.amirmohammed.fit.network.RetrofitSingleton;
 import com.amirmohammed.fit.requests.RegisterRequest;
+import com.amirmohammed.fit.requests.RegisterRequestErrorBody;
 import com.amirmohammed.fit.responses.RegisterResponse;
+import com.google.gson.Gson;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,17 +43,26 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
 
     public void finish(View view) {
         Log.i("abdo", "finish: before");
-        RetrofitSingleton.getClient().register(new RegisterRequest("abdo", "abdo",
-                22, "ball", "abdo@abdo.com", "m", 20, 60,
-                160, 3, "bla bla", "nothing", "50",
-                "asdasd", "null"), "json")
+        RetrofitSingleton.getClient().register(new RegisterRequest())
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+
+                        Gson gson = new Gson();
+                        RegisterRequestErrorBody requestErrorBody = new RegisterRequestErrorBody();
+                        try {
+                            requestErrorBody = gson.fromJson(response.errorBody().string(), RegisterRequestErrorBody.class);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
                         if (response.isSuccessful()){
                             Log.i("abdo", "abdo onResponse: "+ response.body().toString());
                             startActivity(new Intent(BackBodyPhotoActivityOne.this, PhotoOrInBodyLoadingActivity.class));
                             finish();
+                        }
+                        else{
+                            Log.i("abdo", "onResponse: not "+ requestErrorBody.toString());
                         }
                     }
 

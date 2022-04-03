@@ -4,209 +4,227 @@ import com.google.gson.annotations.SerializedName;
 
 public class RegisterRequest {
 
-    @SerializedName("Name")
-    private String name;
+	@SerializedName("Goal_Type")
+	private Object goalType;
 
-    @SerializedName("Username")
-    private String username;
+	@SerializedName("Email")
+	private String email;
 
-    @SerializedName("Age")
-    private int age;
+	@SerializedName("Hours")
+	private Object hours;
 
-    @SerializedName("Sport")
-    private String sport;
+	@SerializedName("Effort")
+	private Object effort;
 
-    @SerializedName("Email")
-    private String email;
+	@SerializedName("Gender")
+	private Object gender;
 
-    @SerializedName("Gender")
-    private String gender;
+	@SerializedName("Image")
+	private Object image;
 
-    @SerializedName("Train")
-    private int train;
+	@SerializedName("Weight")
+	private Object weight;
 
-    @SerializedName("Weight")
-    private int weight;
+	@SerializedName("Name")
+	private String name;
 
-    @SerializedName("Height")
-    private int height;
+	@SerializedName("Sport")
+	private Object sport;
 
-    @SerializedName("Hours")
-    private int hours;
+	@SerializedName("Username")
+	private String username;
 
-    @SerializedName("Effort")
-    private String efforts;
+	@SerializedName("Height")
+	private Object height;
 
-    @SerializedName("Goal_Type")
-    private String goalType;
+	@SerializedName("Goal_Weight")
+	private Object goalWeight;
 
-    @SerializedName("Goal_Weight")
-    private String goalWeight;
+	@SerializedName("Train")
+	private Object train;
 
-    @SerializedName("Password")
-    private String password;
+	@SerializedName("Age")
+	private String age;
 
-    @SerializedName("Image")
-    private String image;
+	@SerializedName("Password")
+	private String password;
 
-    public RegisterRequest(String name, String username, int age, String sport, String email,
-                           String gender, int train, int weight, int height, int hours,
-                           String efforts, String goalType, String goalWeight, String password, String image) {
-        this.name = name;
-        this.username = username;
-        this.age = age;
-        this.sport = sport;
-        this.email = email;
-        this.gender = gender;
-        this.train = train;
-        this.weight = weight;
-        this.height = height;
-        this.hours = hours;
-        this.efforts = efforts;
-        this.goalType = goalType;
-        this.goalWeight = goalWeight;
-        this.password = password;
-        this.image = image;
-    }
+	public RegisterRequest(String name, String username, String age, String email,
+						   int weight, int height, int hours, String password) {
+		this.name = name;
+		this.username = username;
+		this.age = age;
+		this.email = email;
+		this.weight = weight;
+		this.height = height;
+		this.hours = hours;
+		this.password = password;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public RegisterRequest(Object goalType, String email, Object hours, Object effort,
+						   Object gender, Object image, Object weight, String name,
+						   Object sport, String username, Object height, Object goalWeight,
+						   Object train, String age, String password) {
 
-    public void setName(String name) {
-        this.name = name;
-    }
+		this.goalType = goalType;
+		this.email = email;
+		this.hours = hours;
+		this.effort = effort;
+		this.gender = gender;
+		this.image = image;
+		this.weight = weight;
+		this.name = name;
+		this.sport = sport;
+		this.username = username;
+		this.height = height;
+		this.goalWeight = goalWeight;
+		this.train = train;
+		this.age = age;
+		this.password = password;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public RegisterRequest() {
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public void setGoalType(Object goalType){
+		this.goalType = goalType;
+	}
 
-    public int getAge() {
-        return age;
-    }
+	public Object getGoalType(){
+		return goalType;
+	}
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+	public void setEmail(String email){
+		this.email = email;
+	}
 
-    public String getSport() {
-        return sport;
-    }
+	public String getEmail(){
+		return email;
+	}
 
-    public void setSport(String sport) {
-        this.sport = sport;
-    }
+	public void setHours(Object hours){
+		this.hours = hours;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public Object getHours(){
+		return hours;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setEffort(Object effort){
+		this.effort = effort;
+	}
 
-    public String getGender() {
-        return gender;
-    }
+	public Object getEffort(){
+		return effort;
+	}
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
+	public void setGender(Object gender){
+		this.gender = gender;
+	}
 
-    public int getTrain() {
-        return train;
-    }
+	public Object getGender(){
+		return gender;
+	}
 
-    public void setTrain(int train) {
-        this.train = train;
-    }
+	public void setImage(Object image){
+		this.image = image;
+	}
 
-    public int getWeight() {
-        return weight;
-    }
+	public Object getImage(){
+		return image;
+	}
 
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
+	public void setWeight(Object weight){
+		this.weight = weight;
+	}
 
-    public int getHeight() {
-        return height;
-    }
+	public Object getWeight(){
+		return weight;
+	}
 
-    public void setHeight(int height) {
-        this.height = height;
-    }
+	public void setName(String name){
+		this.name = name;
+	}
 
-    public int getHours() {
-        return hours;
-    }
+	public String getName(){
+		return name;
+	}
 
-    public void setHours(int hours) {
-        this.hours = hours;
-    }
+	public void setSport(Object sport){
+		this.sport = sport;
+	}
 
-    public String getEfforts() {
-        return efforts;
-    }
+	public Object getSport(){
+		return sport;
+	}
 
-    public void setEfforts(String efforts) {
-        this.efforts = efforts;
-    }
+	public void setUsername(String username){
+		this.username = username;
+	}
 
-    public String getGoalType() {
-        return goalType;
-    }
+	public String getUsername(){
+		return username;
+	}
 
-    public void setGoalType(String goalType) {
-        this.goalType = goalType;
-    }
+	public void setHeight(Object height){
+		this.height = height;
+	}
 
-    public String getGoalWeight() {
-        return goalWeight;
-    }
+	public Object getHeight(){
+		return height;
+	}
 
-    public void setGoalWeight(String goalWeight) {
-        this.goalWeight = goalWeight;
-    }
+	public void setGoalWeight(Object goalWeight){
+		this.goalWeight = goalWeight;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public Object getGoalWeight(){
+		return goalWeight;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setTrain(Object train){
+		this.train = train;
+	}
 
-    public String getImage() {
-        return image;
-    }
+	public Object getTrain(){
+		return train;
+	}
 
-    public void setImage(String image) {
-        this.image = image;
-    }
+	public void setAge(String age){
+		this.age = age;
+	}
 
-    @Override
-    public String toString() {
-        return "RegisterRequest{" +
-                "name='" + name + '\'' +
-                ", username='" + username + '\'' +
-                ", age=" + age +
-                ", sport='" + sport + '\'' +
-                ", email='" + email + '\'' +
-                ", gender='" + gender + '\'' +
-                ", train=" + train +
-                ", weight=" + weight +
-                ", height=" + height +
-                ", hours=" + hours +
-                ", efforts='" + efforts + '\'' +
-                ", goalType='" + goalType + '\'' +
-                ", goalWeight='" + goalWeight + '\'' +
-                ", password='" + password + '\'' +
-                ", image='" + image + '\'' +
-                '}';
-    }
+	public String getAge(){
+		return age;
+	}
+
+	public void setPassword(String password){
+		this.password = password;
+	}
+
+	public String getPassword(){
+		return password;
+	}
+
+	@Override
+ 	public String toString(){
+		return 
+			"RegisterRequest{" +
+			"goal_Type = '" + goalType + '\'' + 
+			",email = '" + email + '\'' + 
+			",hours = '" + hours + '\'' + 
+			",effort = '" + effort + '\'' + 
+			",gender = '" + gender + '\'' + 
+			",image = '" + image + '\'' + 
+			",weight = '" + weight + '\'' + 
+			",name = '" + name + '\'' + 
+			",sport = '" + sport + '\'' + 
+			",username = '" + username + '\'' + 
+			",height = '" + height + '\'' + 
+			",goal_Weight = '" + goalWeight + '\'' + 
+			",train = '" + train + '\'' + 
+			",age = '" + age + '\'' + 
+			",password = '" + password + '\'' + 
+			"}";
+		}
 }
