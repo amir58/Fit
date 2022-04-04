@@ -33,62 +33,56 @@ public class SecondInfoActivity extends AppCompatActivity {
     }
 
     public void next(View view) {
-        RegisterSingleton.setData().setHours(String.valueOf(binding.activitySecondInfoWorkingHoursEt.getText()));
+        RegisterSingleton.setData().setHours(Double.parseDouble(binding.activitySecondInfoWorkingHoursEt.getText().toString()));
 
         if (binding.activitySecondInfoLightlyActiveRb.isChecked()){
-            RegisterSingleton.setData().setEffort("Lightly Active");
+            RegisterSingleton.setData().setEffort("LA ");
         }
         else if (binding.activitySecondModeratelyActiveRb.isChecked()){
-            RegisterSingleton.setData().setEffort("Moderately Active");
+            RegisterSingleton.setData().setEffort("MA ");
         }
         else if (binding.activitySecondInfoWorkHighlyActiveRb.isChecked()){
-            RegisterSingleton.setData().setEffort("Highly Active");
+            RegisterSingleton.setData().setEffort("HA ");
         }
         else{
             Toast.makeText(this, "Please select your effort", Toast.LENGTH_SHORT).show();
+            return;
         }
+
+        //////////
 
         if (binding.activitySecondInfoLoseFatRb.isChecked()){
-            RegisterSingleton.setData().setGoalType("Lose Fat");
-
-            if (binding.activitySecondInfo025kgRb.isChecked()){
-                RegisterSingleton.setData().setGoalType("1/4 Kgs");
-            }
-            else if (binding.activitySecondInfo05kgRb.isChecked()){
-                RegisterSingleton.setData().setGoalType("1/2 Kgs");
-            }
-            else if (binding.activitySecondInfo1kgRb.isChecked()){
-                RegisterSingleton.setData().setGoalType("1 Kgs");
-            }
-            else{
-                Toast.makeText(this, "Please select your goal type", Toast.LENGTH_SHORT).show();
-            }
+            RegisterSingleton.setData().setGoalType("L ");
         }
         else if (binding.activitySecondGainWeightRb.isChecked()){
-            RegisterSingleton.setData().setGoalType("Gain Weight");
-
-            if (binding.activitySecondInfo025kgRb.isChecked()){
-                RegisterSingleton.setData().setGoalType("1/4 Kgs");
-            }
-            else if (binding.activitySecondInfo05kgRb.isChecked()){
-                RegisterSingleton.setData().setGoalType("1/2 Kgs");
-            }
-            else if (binding.activitySecondInfo1kgRb.isChecked()){
-                RegisterSingleton.setData().setGoalType("1 Kgs");
-            }
-            else{
-                Toast.makeText(this, "Please select your goal type", Toast.LENGTH_SHORT).show();
-            }
+            RegisterSingleton.setData().setGoalType("G ");
         }
         else if (binding.activitySecondInfoWorkStableWeightRb.isChecked()){
-            RegisterSingleton.setData().setGoalType("Stable Weight");
+            RegisterSingleton.setData().setGoalType("S ");
         }
         else{
             Toast.makeText(this, "Please select your goal type", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        //////////
 
+        if (binding.activitySecondInfo025kgRb.isChecked() ||
+                binding.activitySecondInfoSecond025kgRb.isChecked()){
+            RegisterSingleton.setData().setGoalWeight("1/4 ");
+        }
+        else if (binding.activitySecondInfo05kgRb.isChecked()||
+                binding.activitySecondInfoSecond05kgRb.isChecked()){
+            RegisterSingleton.setData().setGoalWeight("1/2 ");
+        }
+        else if (binding.activitySecondInfo1kgRb.isChecked() ||
+                binding.activitySecondInfoSecond1kgRb.isChecked()){
+            RegisterSingleton.setData().setGoalWeight("1 ");
+        }
+        else{
+            Toast.makeText(this, "Please select your goal type", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         Log.i("abdo", "next: "+ RegisterSingleton.registerRequest.toString());
 

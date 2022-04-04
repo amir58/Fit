@@ -32,4 +32,11 @@ public class HomeTrainActivityOne extends AppCompatActivity {
     public void navigateToHomeTrainFour(View view) {
         startActivity(new Intent(this, HomeTrainActivityTwo.class));
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
+    }
 }

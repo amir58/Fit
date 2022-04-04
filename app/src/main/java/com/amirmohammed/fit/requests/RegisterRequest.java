@@ -1,47 +1,49 @@
 package com.amirmohammed.fit.requests;
 
+import android.net.Uri;
+
 import com.google.gson.annotations.SerializedName;
 
 public class RegisterRequest {
 
 	@SerializedName("Goal_Type")
-	private Object goalType;
+	private String goalType;
 
 	@SerializedName("Email")
 	private String email;
 
 	@SerializedName("Hours")
-	private Object hours;
+	private double hours;
 
 	@SerializedName("Effort")
-	private Object effort;
+	private String effort;
 
 	@SerializedName("Gender")
-	private Object gender;
+	private String gender;
 
-	@SerializedName("Image")
-	private Object image;
+//	@SerializedName("Image")
+//	private Uri image;
 
 	@SerializedName("Weight")
-	private Object weight;
+	private double weight;
 
 	@SerializedName("Name")
 	private String name;
 
 	@SerializedName("Sport")
-	private Object sport;
+	private String sport;
 
 	@SerializedName("Username")
 	private String username;
 
 	@SerializedName("Height")
-	private Object height;
+	private double height;
 
 	@SerializedName("Goal_Weight")
-	private Object goalWeight;
+	private String goalWeight;
 
 	@SerializedName("Train")
-	private Object train;
+	private double train;
 
 	@SerializedName("Age")
 	private String age;
@@ -61,17 +63,17 @@ public class RegisterRequest {
 		this.password = password;
 	}
 
-	public RegisterRequest(Object goalType, String email, Object hours, Object effort,
-						   Object gender, Object image, Object weight, String name,
-						   Object sport, String username, Object height, Object goalWeight,
-						   Object train, String age, String password) {
+	public RegisterRequest(String goalType, String email, double hours, String effort,
+						   String gender, Uri image, double weight, String name,
+						   String sport, String username, double height, String goalWeight,
+						   double train, String age, String password) {
 
 		this.goalType = goalType;
 		this.email = email;
 		this.hours = hours;
 		this.effort = effort;
 		this.gender = gender;
-		this.image = image;
+//		this.image = image;
 		this.weight = weight;
 		this.name = name;
 		this.sport = sport;
@@ -86,7 +88,7 @@ public class RegisterRequest {
 	public RegisterRequest() {
 	}
 
-	public void setGoalType(Object goalType){
+	public void setGoalType(String goalType){
 		this.goalType = goalType;
 	}
 
@@ -102,7 +104,7 @@ public class RegisterRequest {
 		return email;
 	}
 
-	public void setHours(Object hours){
+	public void setHours(double hours){
 		this.hours = hours;
 	}
 
@@ -110,7 +112,7 @@ public class RegisterRequest {
 		return hours;
 	}
 
-	public void setEffort(Object effort){
+	public void setEffort(String effort){
 		this.effort = effort;
 	}
 
@@ -118,7 +120,7 @@ public class RegisterRequest {
 		return effort;
 	}
 
-	public void setGender(Object gender){
+	public void setGender(String gender){
 		this.gender = gender;
 	}
 
@@ -126,15 +128,15 @@ public class RegisterRequest {
 		return gender;
 	}
 
-	public void setImage(Object image){
-		this.image = image;
-	}
+//	public void setImage(Uri image){
+//		this.image = image;
+//	}
+//
+//	public Object getImage(){
+//		return image;
+//	}
 
-	public Object getImage(){
-		return image;
-	}
-
-	public void setWeight(Object weight){
+	public void setWeight(double weight){
 		this.weight = weight;
 	}
 
@@ -150,7 +152,7 @@ public class RegisterRequest {
 		return name;
 	}
 
-	public void setSport(Object sport){
+	public void setSport(String  sport){
 		this.sport = sport;
 	}
 
@@ -166,7 +168,7 @@ public class RegisterRequest {
 		return username;
 	}
 
-	public void setHeight(Object height){
+	public void setHeight(double height){
 		this.height = height;
 	}
 
@@ -174,7 +176,7 @@ public class RegisterRequest {
 		return height;
 	}
 
-	public void setGoalWeight(Object goalWeight){
+	public void setGoalWeight(String goalWeight){
 		this.goalWeight = goalWeight;
 	}
 
@@ -182,7 +184,7 @@ public class RegisterRequest {
 		return goalWeight;
 	}
 
-	public void setTrain(Object train){
+	public void setTrain(double train){
 		this.train = train;
 	}
 
@@ -215,7 +217,7 @@ public class RegisterRequest {
 			",hours = '" + hours + '\'' + 
 			",effort = '" + effort + '\'' + 
 			",gender = '" + gender + '\'' + 
-			",image = '" + image + '\'' + 
+//			",image = '" + image + '\'' +
 			",weight = '" + weight + '\'' + 
 			",name = '" + name + '\'' + 
 			",sport = '" + sport + '\'' + 

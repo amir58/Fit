@@ -3,6 +3,8 @@ package com.amirmohammed.fit.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,9 +22,12 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Type;
 
+import okhttp3.MediaType;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -44,7 +49,18 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
     }
 
     public void finish(View view) {
+
+        Uri uri = Uri.parse("android.resource://amirmohammed/drawable/logo_image");
+        InputStream stream;
+        try {
+            stream = getContentResolver().openInputStream(uri);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         Log.i("abdo", "finish: before");
+        Log.i("abdo", "finish: register request data "+ RegisterSingleton.registerRequest.toString());
+//        RegisterSingleton.setData().setImage(uri);
         RetrofitSingleton.getClient().register(RegisterSingleton.registerRequest)
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
@@ -55,7 +71,10 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
                             startActivity(new Intent(BackBodyPhotoActivityOne.this, PhotoOrInBodyLoadingActivity.class));
                             finish();
                         }
-                        else{
+                        else {
+
+                            Log.i("abdo", "onResponse: "+ response.code());
+
                             Gson gson = new Gson();
                             RegisterRequestErrorBody requestErrorBody = new RegisterRequestErrorBody();
                             try {
@@ -64,7 +83,7 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                             Toast.makeText(BackBodyPhotoActivityOne.this, requestErrorBody.toString(), Toast.LENGTH_SHORT).show();
-                            Log.i("abdo", "onResponse: not "+ requestErrorBody.toString());
+                            Log.i("abdo", "onResponse: not "+ requestErrorBody);
                         }
                     }
 
