@@ -4,6 +4,8 @@ import android.net.Uri;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.File;
+
 public class RegisterRequest {
 
 	@SerializedName("Goal_Type")
@@ -21,8 +23,8 @@ public class RegisterRequest {
 	@SerializedName("Gender")
 	private String gender;
 
-//	@SerializedName("Image")
-//	private Uri image;
+	@SerializedName("Image")
+	private File image;
 
 	@SerializedName("Weight")
 	private double weight;
@@ -64,7 +66,7 @@ public class RegisterRequest {
 	}
 
 	public RegisterRequest(String goalType, String email, double hours, String effort,
-						   String gender, Uri image, double weight, String name,
+						   String gender, File image, double weight, String name,
 						   String sport, String username, double height, String goalWeight,
 						   double train, String age, String password) {
 
@@ -73,7 +75,7 @@ public class RegisterRequest {
 		this.hours = hours;
 		this.effort = effort;
 		this.gender = gender;
-//		this.image = image;
+		this.image = image;
 		this.weight = weight;
 		this.name = name;
 		this.sport = sport;
@@ -128,13 +130,13 @@ public class RegisterRequest {
 		return gender;
 	}
 
-//	public void setImage(Uri image){
-//		this.image = image;
-//	}
-//
-//	public Object getImage(){
-//		return image;
-//	}
+	public void setImage(File image){
+		this.image = image;
+	}
+
+	public Object getImage(){
+		return image;
+	}
 
 	public void setWeight(double weight){
 		this.weight = weight;
@@ -217,7 +219,7 @@ public class RegisterRequest {
 			",hours = '" + hours + '\'' + 
 			",effort = '" + effort + '\'' + 
 			",gender = '" + gender + '\'' + 
-//			",image = '" + image + '\'' +
+			",image = '" + image + '\'' +
 			",weight = '" + weight + '\'' + 
 			",name = '" + name + '\'' + 
 			",sport = '" + sport + '\'' + 
