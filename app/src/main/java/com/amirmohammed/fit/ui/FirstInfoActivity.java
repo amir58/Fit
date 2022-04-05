@@ -13,6 +13,9 @@ import com.amirmohammed.fit.R;
 import com.amirmohammed.fit.databinding.ActivityFirstInfoBinding;
 import com.amirmohammed.fit.network.RegisterSingleton;
 
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
+
 public class FirstInfoActivity extends AppCompatActivity {
 
     private ActivityFirstInfoBinding binding;
@@ -38,9 +41,18 @@ public class FirstInfoActivity extends AppCompatActivity {
     }
 
     public void next(View view) {
-        RegisterSingleton.setData().setWeight(Double.parseDouble(String.valueOf(binding.activityFirstInfoWeightEt.getText())));
-        RegisterSingleton.setData().setHeight(Double.parseDouble(String.valueOf(binding.activityFirstInfoHeightEt.getText())));
-        RegisterSingleton.setData().setTrain(Double.parseDouble(binding.activityFirstInfoExerciseEt.getText().toString()));
+        RegisterSingleton.setData().setWeight(RequestBody.create(
+                MediaType.parse("multipart/form-data"),
+                String.valueOf(binding.activityFirstInfoWeightEt.getText()))
+        );
+        RegisterSingleton.setData().setHeight(RequestBody.create(
+                MediaType.parse("multipart/form-data"),
+                String.valueOf(binding.activityFirstInfoHeightEt.getText()))
+        );
+        RegisterSingleton.setData().setTrain(RequestBody.create(
+                MediaType.parse("multipart/form-data"),
+                String.valueOf(binding.activityFirstInfoExerciseEt.getText()))
+        );
 
         String sport;
 
@@ -62,7 +74,9 @@ public class FirstInfoActivity extends AppCompatActivity {
                 break;
         }
 
-        RegisterSingleton.setData().setSport(sport);
+        RegisterSingleton.setData().setSport(
+                RequestBody.create(MediaType.parse("multipart/form-data"), sport)
+        );
 
         startActivity(new Intent(this, SecondInfoActivity.class));
     }

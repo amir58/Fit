@@ -1,15 +1,17 @@
 package com.amirmohammed.fit.network;
 
-import com.amirmohammed.fit.requests.RegisterRequest;
+import com.amirmohammed.fit.requests.RegisterRequestBody;
 
 public class RegisterSingleton {
 
-    public static RegisterRequest registerRequest;
+//    public static RegisterRequest registerRequest;
 
-    public static RegisterRequest setData(){
-        if (registerRequest == null){
-            registerRequest = new RegisterRequest();
+    public static RegisterRequestBody registerRequestBody;
+
+    public static RegisterRequestBody setData(){
+        if (registerRequestBody == null){
+            registerRequestBody = new RegisterRequestBody();
         }
-        return registerRequest;
+        return registerRequestBody;
     }
 }

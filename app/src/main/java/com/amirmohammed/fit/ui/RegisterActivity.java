@@ -24,6 +24,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
+
 public class RegisterActivity extends AppCompatActivity {
 
     ActivityRegisterBinding binding;
@@ -60,16 +63,36 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void next(View view) {
         Log.i("abdo", "next: "+ binding.activityRegisterNameEt.getText());
-        RegisterSingleton.setData().setName(String.valueOf(binding.activityRegisterNameEt.getText()));
-        RegisterSingleton.setData().setUsername(String.valueOf(binding.activityRegisterUsernameEt.getText()));
-        RegisterSingleton.setData().setEmail(String.valueOf(binding.activityRegisterEmailEt.getText()));
-        RegisterSingleton.setData().setPassword(String.valueOf(binding.activityRegisterPasswordEt.getText()));
-        RegisterSingleton.setData().setAge(String.valueOf(2022 - Integer.parseInt(binding.activityRegisterYearMenu.getText().toString())));
+        RegisterSingleton.setData().setName(RequestBody.create(
+                MediaType.parse("multipart/form-data"),
+                String.valueOf(binding.activityRegisterNameEt.getText()))
+        );
+        RegisterSingleton.setData().setUsername(RequestBody.create(
+                MediaType.parse("multipart/form-data"),
+                String.valueOf(binding.activityRegisterUsernameEt.getText()))
+        );
+        RegisterSingleton.setData().setEmail(RequestBody.create(
+                MediaType.parse("multipart/form-data"),
+                String.valueOf(binding.activityRegisterEmailEt.getText()))
+        );
+        RegisterSingleton.setData().setPassword(RequestBody.create(
+                MediaType.parse("multipart/form-data"),
+                String.valueOf(binding.activityRegisterPasswordEt.getText()))
+        );
+        RegisterSingleton.setData().setAge(RequestBody.create(
+                MediaType.parse("multipart/form-data"),
+                String.valueOf(2022 - Integer.parseInt(binding.activityRegisterYearMenu.getText().toString())))
+        );
+
         if (binding.activityRegisterFemaleRadioBtn.isChecked()){
-            RegisterSingleton.setData().setGender("F");
+            RegisterSingleton.setData().setGender(RequestBody.create(
+                    MediaType.parse("multipart/form-data"), "F")
+            );
         }
         else if (binding.activityRegisterMaleRadioBtn.isChecked()){
-            RegisterSingleton.setData().setGender("M");
+            RegisterSingleton.setData().setGender(RequestBody.create(
+                    MediaType.parse("multipart/form-data"), "M")
+            );
         }
         else{
             Toast.makeText(this, "Please select your gender", Toast.LENGTH_SHORT).show();
