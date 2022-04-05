@@ -8,25 +8,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.FileUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 
 import com.amirmohammed.fit.R;
 import com.amirmohammed.fit.databinding.ActivityFrontBodyPhotoOneBinding;
+import com.amirmohammed.fit.models.RealPathUtil;
+import com.amirmohammed.fit.network.RegisterSingleton;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.io.File;
 
 import gun0912.tedimagepicker.builder.TedImagePicker;
 import gun0912.tedimagepicker.builder.listener.OnSelectedListener;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 
 
 public class FrontBodyPhotoActivityOne extends AppCompatActivity {
 
     ActivityFrontBodyPhotoOneBinding binding;
+    String path;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +81,12 @@ public class FrontBodyPhotoActivityOne extends AppCompatActivity {
                 .start(new OnSelectedListener() {
                     @Override
                     public void onSelected(@NotNull Uri uri) {
+
                         Log.i("abdo", "onSelected: "+ uri);
+
+                        path = RealPathUtil.getRealPath(FrontBodyPhotoActivityOne.this, uri);
+
+                        RegisterSingleton.setData().setImageUri(path);
                     }
                 });
         TedImagePicker.with(this)

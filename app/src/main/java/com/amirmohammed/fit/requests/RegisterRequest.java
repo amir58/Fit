@@ -6,6 +6,9 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.File;
 
+import okhttp3.MultipartBody;
+import retrofit2.http.Multipart;
+
 public class RegisterRequest {
 
 	@SerializedName("Goal_Type")
@@ -24,7 +27,7 @@ public class RegisterRequest {
 	private String gender;
 
 	@SerializedName("Image")
-	private File image;
+	private String imageUri;
 
 	@SerializedName("Weight")
 	private double weight;
@@ -75,7 +78,6 @@ public class RegisterRequest {
 		this.hours = hours;
 		this.effort = effort;
 		this.gender = gender;
-		this.image = image;
 		this.weight = weight;
 		this.name = name;
 		this.sport = sport;
@@ -130,12 +132,12 @@ public class RegisterRequest {
 		return gender;
 	}
 
-	public void setImage(File image){
-		this.image = image;
+	public String getImageUri() {
+		return imageUri;
 	}
 
-	public Object getImage(){
-		return image;
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
 	}
 
 	public void setWeight(double weight){
@@ -219,7 +221,7 @@ public class RegisterRequest {
 			",hours = '" + hours + '\'' + 
 			",effort = '" + effort + '\'' + 
 			",gender = '" + gender + '\'' + 
-			",image = '" + image + '\'' +
+			",image = '" + imageUri + '\'' +
 			",weight = '" + weight + '\'' + 
 			",name = '" + name + '\'' + 
 			",sport = '" + sport + '\'' + 

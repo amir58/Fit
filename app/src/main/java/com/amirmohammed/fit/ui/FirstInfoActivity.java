@@ -26,6 +26,7 @@ public class FirstInfoActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
+        binding.activityFirstInfoSportMenu.setText("GYM EXERCISE");
         String[] sports = {"GYM EXERCISE", "CROSSFIT", "SWIMMING", "FOOTBALL", "HANDBALL"};
         binding.activityFirstInfoSportMenu.setAdapter(new ArrayAdapter<String>(this, R.layout.month_item, sports));
 
@@ -41,25 +42,27 @@ public class FirstInfoActivity extends AppCompatActivity {
         RegisterSingleton.setData().setHeight(Double.parseDouble(String.valueOf(binding.activityFirstInfoHeightEt.getText())));
         RegisterSingleton.setData().setTrain(Double.parseDouble(binding.activityFirstInfoExerciseEt.getText().toString()));
 
-        if (binding.activityFirstInfoSportMenu.getText().equals("GYM EXERCISE")){
-            RegisterSingleton.setData().setSport("GE");
+        String sport;
+
+        switch (binding.activityFirstInfoSportMenu.getText().toString()){
+            case "CROSSFIT":
+                sport = "CR";
+                break;
+            case "SWIMMING":
+                sport = "SW";
+                break;
+            case "FOOTBALL":
+                sport = "FB";
+                break;
+            case "HANDBALL":
+                sport = "HB";
+                break;
+            default:
+                sport = "GE";
+                break;
         }
-        else if (binding.activityFirstInfoSportMenu.getText().equals("CROSSFIT")){
-            RegisterSingleton.setData().setSport("CR");
-        }
-        else if (binding.activityFirstInfoSportMenu.getText().equals("FOOTBALL")){
-            RegisterSingleton.setData().setSport("FB");
-        }
-        else if (binding.activityFirstInfoSportMenu.getText().equals("SWIMMING")){
-            RegisterSingleton.setData().setSport("SW");
-        }
-        else if (binding.activityFirstInfoSportMenu.getText().equals("HANDBALL")){
-            RegisterSingleton.setData().setSport("HB");
-        }
-//        else {
-//            Toast.makeText(this, "Please select sport", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
+
+        RegisterSingleton.setData().setSport(sport);
 
         startActivity(new Intent(this, SecondInfoActivity.class));
     }

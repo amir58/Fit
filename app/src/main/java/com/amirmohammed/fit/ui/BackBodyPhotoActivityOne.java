@@ -22,12 +22,15 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
 
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -50,18 +53,38 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
 
     public void finish(View view) {
 
-        Uri uri = Uri.parse("android.resource://amirmohammed/drawable/logo_image");
-        InputStream stream;
-        try {
-            stream = getContentResolver().openInputStream(uri);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
         Log.i("abdo", "finish: before");
         Log.i("abdo", "finish: register request data "+ RegisterSingleton.registerRequest.toString());
 //        RegisterSingleton.setData().setImage(uri);
-        RetrofitSingleton.getClient().register(RegisterSingleton.registerRequest)
+
+        //pass it like this
+        File file = new File(RegisterSingleton.registerRequest.getImageUri());
+
+        RequestBody requestFile =
+                RequestBody.create(MediaType.parse("multipart/form-data"), file);
+
+        // MultipartBody.Part is used to send also the actual file name
+        MultipartBody.Part body =
+                MultipartBody.Part.createFormData("image", file.getName(), requestFile);
+
+        // add another part within the multipart request
+
+        RetrofitSingleton.getClient().register(
+                setRequestBody("name", RegisterSingleton.registerRequest.getName()),
+                setRequestBody("username", RegisterSingleton.registerRequest.getUsername()),
+                setRequestBody("age", RegisterSingleton.registerRequest.getAge()),
+                setRequestBody("sport", RegisterSingleton.registerRequest.getSport()),
+                setRequestBody("email", RegisterSingleton.registerRequest.getEmail()),
+                setRequestBody("gender", RegisterSingleton.registerRequest.getGender()),
+                setRequestBody("train", RegisterSingleton.registerRequest.getTrain()),
+                setRequestBody("weight", RegisterSingleton.registerRequest.getWeight()),
+                setRequestBody("height", RegisterSingleton.registerRequest.getHeight()),
+                setRequestBody("hours", RegisterSingleton.registerRequest.getHours()),
+                setRequestBody("effort", RegisterSingleton.registerRequest.getEffort()),
+                setRequestBody("goalType", RegisterSingleton.registerRequest.getGoalType()),
+                setRequestBody("goalWeight", RegisterSingleton.registerRequest.getGoalWeight()),
+                setRequestBody("password", RegisterSingleton.registerRequest.getPassword()),
+                body)
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
@@ -94,5 +117,11 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
                 });
 
         Log.i("abdo", "finish: after");
+    }
+
+    public RequestBody setRequestBody(String bodyName, Object content){
+        return RequestBody.create(MediaType.parse("multipart/form-data"),
+                String.valueOf(content));
+
     }
 }
