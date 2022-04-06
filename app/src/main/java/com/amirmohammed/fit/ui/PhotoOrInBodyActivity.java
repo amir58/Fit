@@ -25,6 +25,13 @@ public class PhotoOrInBodyActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this, SecondInfoActivity.class));
+        finish();
+    }
+
     public void navigateToBodyPhoto(View view) {
         startActivity(new Intent(this, BodyPhotoActivityOne.class));
     }

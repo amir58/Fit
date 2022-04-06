@@ -42,6 +42,13 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this, FrontBodyPhotoActivityOne.class));
+        finish();
+    }
+
     public void finish(View view) {
 
         Log.i("abdo", "finish: before");

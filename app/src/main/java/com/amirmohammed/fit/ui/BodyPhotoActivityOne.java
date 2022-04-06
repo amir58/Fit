@@ -21,12 +21,18 @@ public class BodyPhotoActivityOne extends AppCompatActivity {
     }
 
     public void back(View view) {
+        startActivity(new Intent(this, PhotoOrInBodyActivity.class));
         finish();
-//        startActivity(new Intent(this, PhotoOrInBodyActivity.class));
-//        finish();
     }
 
     public void insertBody(View view) {
         startActivity(new Intent(this, FrontBodyPhotoActivityOne.class));
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this, PhotoOrInBodyActivity.class));
+        finish();
     }
 }

@@ -30,12 +30,21 @@ public class FirstInfoActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         binding.activityFirstInfoSportMenu.setText("GYM EXERCISE");
+        binding.activityFirstInfoSportMenu.setDropDownHeight(700);
+        binding.activityFirstInfoSportMenu.setDropDownBackgroundResource(R.color.dropdown_background);
         String[] sports = {"GYM EXERCISE", "CROSSFIT", "SWIMMING", "FOOTBALL", "HANDBALL"};
-        binding.activityFirstInfoSportMenu.setAdapter(new ArrayAdapter<String>(this, R.layout.month_item, sports));
+        binding.activityFirstInfoSportMenu.setAdapter(new ArrayAdapter<String>(this, R.layout.sport_item, sports));
 
     }
 
     public void back(View view) {
+        startActivity(new Intent(this, RegisterActivity.class));
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
         startActivity(new Intent(this, RegisterActivity.class));
         finish();
     }

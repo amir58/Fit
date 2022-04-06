@@ -35,6 +35,13 @@ public class SecondInfoActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this, FirstInfoActivity.class));
+        finish();
+    }
+
     public void next(View view) {
         RegisterSingleton.setData().setHours(RequestBody.create(
                 MediaType.parse("multipart/form-data"),
@@ -47,12 +54,12 @@ public class SecondInfoActivity extends AppCompatActivity {
         }
         else if (binding.activitySecondModeratelyActiveRb.isChecked()){
             RegisterSingleton.setData().setEffort(RequestBody.create(
-                    MediaType.parse("multipart/form-data"), "MA ")
+                    MediaType.parse("multipart/form-data"), "MA")
             );
         }
         else if (binding.activitySecondInfoWorkHighlyActiveRb.isChecked()){
             RegisterSingleton.setData().setEffort(RequestBody.create(
-                    MediaType.parse("multipart/form-data"), "HA ")
+                    MediaType.parse("multipart/form-data"), "HA")
             );
         }
         else{

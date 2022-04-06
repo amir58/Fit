@@ -5,6 +5,7 @@ import androidx.databinding.DataBindingUtil;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.format.Formatter;
 import android.util.Log;
@@ -43,9 +44,13 @@ public class RegisterActivity extends AppCompatActivity {
         for (int i = 1; i < 32; i++) {
             days.add(String.valueOf(i));
         }
+        binding.activityRegisterDayMenu.setDropDownHeight(400);
+        binding.activityRegisterDayMenu.setDropDownBackgroundResource(R.color.dropdown_background);
         binding.activityRegisterDayMenu.setAdapter(new ArrayAdapter<String>(this, R.layout.day_item, days));
 
         String[] months = {"JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
+        binding.activityRegisterMonthMenu.setDropDownHeight(400);
+        binding.activityRegisterMonthMenu.setDropDownBackgroundResource(R.color.dropdown_background);
         binding.activityRegisterMonthMenu.setAdapter(new ArrayAdapter<String>(this, R.layout.month_item, months));
 
         List<String> years = new ArrayList<>();
@@ -53,10 +58,19 @@ public class RegisterActivity extends AppCompatActivity {
             years.add(String.valueOf(i + 1900));
         }
         binding.activityRegisterYearMenu.setText("2022");
+        binding.activityRegisterYearMenu.setDropDownHeight(400);
+        binding.activityRegisterYearMenu.setDropDownBackgroundResource(R.color.dropdown_background);
         binding.activityRegisterYearMenu.setAdapter(new ArrayAdapter<>(this, R.layout.year_item, years));
     }
 
     public void back(View view) {
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
         startActivity(new Intent(this, LoginActivity.class));
         finish();
     }
