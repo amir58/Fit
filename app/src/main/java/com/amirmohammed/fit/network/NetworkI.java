@@ -1,5 +1,7 @@
 package com.amirmohammed.fit.network;
 
+import com.amirmohammed.fit.requests.LoginRequest;
+import com.amirmohammed.fit.responses.LoginResponse;
 import com.amirmohammed.fit.responses.RegisterResponse;
 
 import okhttp3.MultipartBody;
@@ -28,4 +30,7 @@ public interface NetworkI {
                                     @Part("Goal_wight") RequestBody goalWeight,
                                     @Part("Password") RequestBody password,
                                     @Part MultipartBody.Part body);
+
+    @POST("/api/token/")
+    Call<LoginResponse> login(LoginRequest loginRequest);
 }
