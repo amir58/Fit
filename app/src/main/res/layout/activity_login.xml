@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:boxStrokeColor="@color/white"
-            android:hint="E-mail"
+            android:hint="Username"
             android:textColorHint="@color/white"
             app:hintTextColor="@color/white"
             android:layout_marginStart="@dimen/_15sdp"
@@ -35,7 +35,7 @@
             android:layout_marginTop="@dimen/_50sdp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/activity_login_email_et"
+                android:id="@+id/activity_login_username_et"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textColor="@color/white"

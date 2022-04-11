@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.amirmohammed.fit.R;
 import com.amirmohammed.fit.network.RegisterSingleton;
 import com.amirmohammed.fit.network.RetrofitSingleton;
-import com.amirmohammed.fit.requests.RegisterRequestErrorBody;
+import com.amirmohammed.fit.responses.RegisterResponseErrorBody;
 import com.amirmohammed.fit.responses.RegisterResponse;
 import com.google.gson.Gson;
 
@@ -82,6 +82,7 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
                 RegisterSingleton.registerRequestBody.getGoalType(),
                 RegisterSingleton.registerRequestBody.getGoalWeight(),
                 RegisterSingleton.registerRequestBody.getPassword(),
+                RegisterSingleton.registerRequestBody.getConfirmPassword(),
                 body)
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
@@ -97,9 +98,9 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
                             Log.i("abdo", "onResponse: "+ response.code());
 
                             Gson gson = new Gson();
-                            RegisterRequestErrorBody requestErrorBody = new RegisterRequestErrorBody();
+                            RegisterResponseErrorBody requestErrorBody = new RegisterResponseErrorBody();
                             try {
-                                requestErrorBody = gson.fromJson(response.errorBody().string(), RegisterRequestErrorBody.class);
+                                requestErrorBody = gson.fromJson(response.errorBody().string(), RegisterResponseErrorBody.class);
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }

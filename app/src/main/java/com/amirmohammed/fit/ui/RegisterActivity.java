@@ -93,6 +93,10 @@ public class RegisterActivity extends AppCompatActivity {
                 MediaType.parse("multipart/form-data"),
                 String.valueOf(binding.activityRegisterPasswordEt.getText()))
         );
+        RegisterSingleton.setData().setConfirmPassword(RequestBody.create(
+                MediaType.parse("multipart/form-data"),
+                String.valueOf(binding.activityRegisterPasswordEt.getText()))
+        );
         RegisterSingleton.setData().setAge(RequestBody.create(
                 MediaType.parse("multipart/form-data"),
                 String.valueOf(2022 - Integer.parseInt(binding.activityRegisterYearMenu.getText().toString())))

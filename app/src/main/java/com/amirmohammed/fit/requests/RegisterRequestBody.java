@@ -53,6 +53,10 @@ public class RegisterRequestBody {
     @SerializedName("Password")
     private RequestBody password;
 
+    @SerializedName("password2")
+    private RequestBody confirmPassword;
+
+
     public RequestBody getGoalType() {
         return goalType;
     }
@@ -171,6 +175,14 @@ public class RegisterRequestBody {
 
     public void setPassword(RequestBody password) {
         this.password = password;
+    }
+
+    public RequestBody getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(RequestBody confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 
     @Override
