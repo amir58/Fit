@@ -23,9 +23,6 @@ public class RegisterRequestBody {
     @SerializedName("Gender")
     private RequestBody gender;
 
-    @SerializedName("Image")
-    private String imageUri;
-
     @SerializedName("Weight")
     private RequestBody weight;
 
@@ -41,6 +38,9 @@ public class RegisterRequestBody {
     @SerializedName("Height")
     private RequestBody height;
 
+    @SerializedName("password2")
+    private RequestBody password2;
+
     @SerializedName("Goal_Weight")
     private RequestBody goalWeight;
 
@@ -53,156 +53,156 @@ public class RegisterRequestBody {
     @SerializedName("Password")
     private RequestBody password;
 
-    @SerializedName("password2")
-    private RequestBody confirmPassword;
+    @SerializedName("Image")
+    private String image;
 
-
-    public RequestBody getGoalType() {
-        return goalType;
-    }
-
-    public void setGoalType(RequestBody goalType) {
+    public void setGoalType(RequestBody goalType){
         this.goalType = goalType;
     }
 
-    public RequestBody getEmail() {
-        return email;
+    public RequestBody getGoalType(){
+        return goalType;
     }
 
-    public void setEmail(RequestBody email) {
+    public void setEmail(RequestBody email){
         this.email = email;
     }
 
-    public RequestBody getHours() {
-        return hours;
+    public RequestBody getEmail(){
+        return email;
     }
 
-    public void setHours(RequestBody hours) {
+    public void setHours(RequestBody hours){
         this.hours = hours;
     }
 
-    public RequestBody getEffort() {
-        return effort;
+    public RequestBody getHours(){
+        return hours;
     }
 
-    public void setEffort(RequestBody effort) {
+    public void setEffort(RequestBody effort){
         this.effort = effort;
     }
 
-    public RequestBody getGender() {
-        return gender;
+    public RequestBody getEffort(){
+        return effort;
     }
 
-    public void setGender(RequestBody gender) {
+    public void setGender(RequestBody gender){
         this.gender = gender;
     }
 
-    public String getImageUri() {
-        return imageUri;
+    public RequestBody getGender(){
+        return gender;
     }
 
-    public void setImageUri(String imageUri) {
-        this.imageUri = imageUri;
-    }
-
-    public RequestBody getWeight() {
-        return weight;
-    }
-
-    public void setWeight(RequestBody weight) {
+    public void setWeight(RequestBody weight){
         this.weight = weight;
     }
 
-    public RequestBody getName() {
-        return name;
+    public RequestBody getWeight(){
+        return weight;
     }
 
-    public void setName(RequestBody name) {
+    public void setName(RequestBody name){
         this.name = name;
     }
 
-    public RequestBody getSport() {
-        return sport;
+    public RequestBody getName(){
+        return name;
     }
 
-    public void setSport(RequestBody sport) {
+    public void setSport(RequestBody sport){
         this.sport = sport;
     }
 
-    public RequestBody getUsername() {
-        return username;
+    public RequestBody getSport(){
+        return sport;
     }
 
-    public void setUsername(RequestBody username) {
+    public void setUsername(RequestBody username){
         this.username = username;
     }
 
-    public RequestBody getHeight() {
-        return height;
+    public RequestBody getUsername(){
+        return username;
     }
 
-    public void setHeight(RequestBody height) {
+    public void setHeight(RequestBody height){
         this.height = height;
     }
 
-    public RequestBody getGoalWeight() {
-        return goalWeight;
+    public RequestBody getHeight(){
+        return height;
     }
 
-    public void setGoalWeight(RequestBody goalWeight) {
+    public void setPassword2(RequestBody password2){
+        this.password2 = password2;
+    }
+
+    public RequestBody getPassword2(){
+        return password2;
+    }
+
+    public void setGoalWeight(RequestBody goalWeight){
         this.goalWeight = goalWeight;
     }
 
-    public RequestBody getTrain() {
-        return train;
+    public RequestBody getGoalWeight(){
+        return goalWeight;
     }
 
-    public void setTrain(RequestBody train) {
+    public void setTrain(RequestBody train){
         this.train = train;
     }
 
-    public RequestBody getAge() {
-        return age;
+    public RequestBody getTrain(){
+        return train;
     }
 
-    public void setAge(RequestBody age) {
+    public void setAge(RequestBody age){
         this.age = age;
     }
 
-    public RequestBody getPassword() {
-        return password;
+    public RequestBody getAge(){
+        return age;
     }
 
-    public void setPassword(RequestBody password) {
+    public void setPassword(RequestBody password){
         this.password = password;
     }
 
-    public RequestBody getConfirmPassword() {
-        return confirmPassword;
+    public RequestBody getPassword(){
+        return password;
     }
 
-    public void setConfirmPassword(RequestBody confirmPassword) {
-        this.confirmPassword = confirmPassword;
+    public void setImage(String image){
+        this.image = image;
+    }
+
+    public String getImage(){
+        return image;
     }
 
     @Override
-    public String toString() {
-        return "RegisterRequestBody{" +
-                "goalType=" + goalType +
-                ", email=" + email +
-                ", hours=" + hours +
-                ", effort=" + effort +
-                ", gender=" + gender +
-                ", imageUri='" + imageUri + '\'' +
-                ", weight=" + weight +
-                ", name=" + name +
-                ", sport=" + sport +
-                ", username=" + username +
-                ", height=" + height +
-                ", goalWeight=" + goalWeight +
-                ", train=" + train +
-                ", age=" + age +
-                ", password=" + password +
-                '}';
+    public String toString(){
+        return
+                "RegisterRequestBody{" +
+                        "goal_Type = '" + goalType + '\'' +
+                        ",email = '" + email + '\'' +
+                        ",hours = '" + hours + '\'' +
+                        ",effort = '" + effort + '\'' +
+                        ",gender = '" + gender + '\'' +
+                        ",weight = '" + weight + '\'' +
+                        ",name = '" + name + '\'' +
+                        ",sport = '" + sport + '\'' +
+                        ",username = '" + username + '\'' +
+                        ",height = '" + height + '\'' +
+                        ",password2 = '" + password2 + '\'' +
+                        ",goal_Weight = '" + goalWeight + '\'' +
+                        ",train = '" + train + '\'' +
+                        ",age = '" + age + '\'' +
+                        ",password = '" + password + '\'' +
+                        "}";
     }
 }

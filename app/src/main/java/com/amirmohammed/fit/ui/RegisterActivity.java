@@ -93,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
                 MediaType.parse("multipart/form-data"),
                 String.valueOf(binding.activityRegisterPasswordEt.getText()))
         );
-        RegisterSingleton.setData().setConfirmPassword(RequestBody.create(
+        RegisterSingleton.setData().setPassword2(RequestBody.create(
                 MediaType.parse("multipart/form-data"),
                 String.valueOf(binding.activityRegisterPasswordEt.getText()))
         );

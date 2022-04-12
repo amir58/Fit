@@ -79,7 +79,7 @@ public class FirstInfoActivity extends AppCompatActivity {
                 sport = "HB";
                 break;
             default:
-                sport = "GE";
+                sport = "GE ";
                 break;
         }
 

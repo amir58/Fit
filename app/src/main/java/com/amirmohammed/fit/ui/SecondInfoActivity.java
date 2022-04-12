@@ -71,17 +71,17 @@ public class SecondInfoActivity extends AppCompatActivity {
 
         if (binding.activitySecondInfoLoseFatRb.isChecked()){
             RegisterSingleton.setData().setGoalType(RequestBody.create(
-                    MediaType.parse("multipart/form-data"), "L ")
+                    MediaType.parse("multipart/form-data"), "L")
             );
         }
         else if (binding.activitySecondGainWeightRb.isChecked()){
             RegisterSingleton.setData().setGoalType(RequestBody.create(
-                    MediaType.parse("multipart/form-data"), "G ")
+                    MediaType.parse("multipart/form-data"), "G")
             );
         }
         else if (binding.activitySecondInfoWorkStableWeightRb.isChecked()){
             RegisterSingleton.setData().setGoalType(RequestBody.create(
-                    MediaType.parse("multipart/form-data"), "S ")
+                    MediaType.parse("multipart/form-data"), "S")
             );
         }
         else{

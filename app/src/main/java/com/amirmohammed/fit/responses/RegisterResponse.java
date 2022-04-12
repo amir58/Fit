@@ -1,10 +1,11 @@
 package com.amirmohammed.fit.responses;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class RegisterResponse{
-
 
 	@SerializedName("Name")
 	@Expose
@@ -183,6 +184,7 @@ public class RegisterResponse{
 		this.image = image;
 	}
 
+	@NonNull
 	@Override
 	public String toString() {
 		return "RegisterResponse{" +

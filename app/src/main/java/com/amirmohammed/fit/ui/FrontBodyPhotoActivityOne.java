@@ -60,7 +60,7 @@ public class FrontBodyPhotoActivityOne extends AppCompatActivity {
 
                         path = RealPathUtil.getRealPath(FrontBodyPhotoActivityOne.this, uri);
 
-                        RegisterSingleton.setData().setImageUri(path);
+                        RegisterSingleton.setData().setImage(path);
                     }
                 });
     }

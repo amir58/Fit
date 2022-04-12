@@ -53,10 +53,11 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
 
         Log.i("abdo", "finish: before");
         Log.i("abdo", "finish: register request data "+ RegisterSingleton.registerRequestBody.toString());
+        Log.i("abdo", "finish: register request data "+ RegisterSingleton.registerRequestBody.getGender());
 //        RegisterSingleton.setData().setImage(uri);
 
         //pass it like this
-        File file = new File(RegisterSingleton.registerRequestBody.getImageUri());
+        File file = new File(RegisterSingleton.registerRequestBody.getImage());
 
         RequestBody requestFile =
                 RequestBody.create(MediaType.parse("multipart/form-data"), file);
@@ -82,7 +83,7 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
                 RegisterSingleton.registerRequestBody.getGoalType(),
                 RegisterSingleton.registerRequestBody.getGoalWeight(),
                 RegisterSingleton.registerRequestBody.getPassword(),
-                RegisterSingleton.registerRequestBody.getConfirmPassword(),
+                RegisterSingleton.registerRequestBody.getPassword2(),
                 body)
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
@@ -99,11 +100,7 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
 
                             Gson gson = new Gson();
                             RegisterResponseErrorBody requestErrorBody = new RegisterResponseErrorBody();
-                            try {
-                                requestErrorBody = gson.fromJson(response.errorBody().string(), RegisterResponseErrorBody.class);
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                            //                                requestErrorBody = gson.fromJson(response.errorBody().string(), RegisterResponseErrorBody.class);
                             Toast.makeText(BackBodyPhotoActivityOne.this, requestErrorBody.toString(), Toast.LENGTH_SHORT).show();
                             Log.i("abdo", "onResponse: not "+ requestErrorBody);
                         }
