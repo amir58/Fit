@@ -51,67 +51,67 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
 
     public void finish(View view) {
 
-        Log.i("abdo", "finish: before");
-        Log.i("abdo", "finish: register request data "+ RegisterSingleton.registerRequestBody.toString());
-        Log.i("abdo", "finish: register request data "+ RegisterSingleton.registerRequestBody.getGender());
-//        RegisterSingleton.setData().setImage(uri);
-
-        //pass it like this
-        File file = new File(RegisterSingleton.registerRequestBody.getImage());
-
-        RequestBody requestFile =
-                RequestBody.create(MediaType.parse("multipart/form-data"), file);
-
-        // MultipartBody.Part is used to send also the actual file name
-        MultipartBody.Part body =
-                MultipartBody.Part.createFormData("Image", file.getName(), requestFile);
-
-        // add another part within the multipart request
-
-        RetrofitSingleton.getClient().register(
-                RegisterSingleton.registerRequestBody.getName(),
-                RegisterSingleton.registerRequestBody.getUsername(),
-                RegisterSingleton.registerRequestBody.getAge(),
-                RegisterSingleton.registerRequestBody.getSport(),
-                RegisterSingleton.registerRequestBody.getEmail(),
-                RegisterSingleton.registerRequestBody.getGender(),
-                RegisterSingleton.registerRequestBody.getTrain(),
-                RegisterSingleton.registerRequestBody.getWeight(),
-                RegisterSingleton.registerRequestBody.getHeight(),
-                RegisterSingleton.registerRequestBody.getHours(),
-                RegisterSingleton.registerRequestBody.getEffort(),
-                RegisterSingleton.registerRequestBody.getGoalType(),
-                RegisterSingleton.registerRequestBody.getGoalWeight(),
-                RegisterSingleton.registerRequestBody.getPassword(),
-                RegisterSingleton.registerRequestBody.getPassword2(),
-                body)
-                .enqueue(new Callback<RegisterResponse>() {
-                    @Override
-                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
-
-                        if (response.isSuccessful()){
-                            Log.i("abdo", "abdo onResponse: "+ response.body().toString());
-                            startActivity(new Intent(BackBodyPhotoActivityOne.this, PhotoOrInBodyLoadingActivity.class));
-                            finish();
-                        }
-                        else {
-
-                            Log.i("abdo", "onResponse: "+ response.code());
-
-                            Gson gson = new Gson();
-                            RegisterResponseErrorBody requestErrorBody = new RegisterResponseErrorBody();
-                            //                                requestErrorBody = gson.fromJson(response.errorBody().string(), RegisterResponseErrorBody.class);
-                            Toast.makeText(BackBodyPhotoActivityOne.this, requestErrorBody.toString(), Toast.LENGTH_SHORT).show();
-                            Log.i("abdo", "onResponse: not "+ requestErrorBody);
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
-                        Log.i("abdo", "abdo onFailure: "+ t.getLocalizedMessage());
-                    }
-                });
-
-        Log.i("abdo", "finish: after");
+//        Log.i("abdo", "finish: before");
+//        Log.i("abdo", "finish: register request data "+ RegisterSingleton.registerRequestBody.toString());
+//        Log.i("abdo", "finish: register request data "+ RegisterSingleton.registerRequestBody.getGender());
+////        RegisterSingleton.setData().setImage(uri);
+//
+//        //pass it like this
+//        File file = new File(RegisterSingleton.registerRequestBody.getImage());
+//
+//        RequestBody requestFile =
+//                RequestBody.create(MediaType.parse("multipart/form-data"), file);
+//
+//        // MultipartBody.Part is used to send also the actual file name
+//        MultipartBody.Part body =
+//                MultipartBody.Part.createFormData("Image", file.getName(), requestFile);
+//
+//        // add another part within the multipart request
+//
+//        RetrofitSingleton.getClient().register(
+//                RegisterSingleton.registerRequestBody.getName(),
+//                RegisterSingleton.registerRequestBody.getUsername(),
+//                RegisterSingleton.registerRequestBody.getAge(),
+//                RegisterSingleton.registerRequestBody.getSport(),
+//                RegisterSingleton.registerRequestBody.getEmail(),
+//                RegisterSingleton.registerRequestBody.getGender(),
+//                RegisterSingleton.registerRequestBody.getTrain(),
+//                RegisterSingleton.registerRequestBody.getWeight(),
+//                RegisterSingleton.registerRequestBody.getHeight(),
+//                RegisterSingleton.registerRequestBody.getHours(),
+//                RegisterSingleton.registerRequestBody.getEffort(),
+//                RegisterSingleton.registerRequestBody.getGoalType(),
+//                RegisterSingleton.registerRequestBody.getGoalWeight(),
+//                RegisterSingleton.registerRequestBody.getPassword(),
+//                RegisterSingleton.registerRequestBody.getPassword2(),
+//                body)
+//                .enqueue(new Callback<RegisterResponse>() {
+//                    @Override
+//                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+//
+//                        if (response.isSuccessful()){
+//                            Log.i("abdo", "abdo onResponse: "+ response.body().toString());
+//                            startActivity(new Intent(BackBodyPhotoActivityOne.this, PhotoOrInBodyLoadingActivity.class));
+//                            finish();
+//                        }
+//                        else {
+//
+//                            Log.i("abdo", "onResponse: "+ response.code());
+//
+//                            Gson gson = new Gson();
+//                            RegisterResponseErrorBody requestErrorBody = new RegisterResponseErrorBody();
+//                            //                                requestErrorBody = gson.fromJson(response.errorBody().string(), RegisterResponseErrorBody.class);
+//                            Toast.makeText(BackBodyPhotoActivityOne.this, requestErrorBody.toString(), Toast.LENGTH_SHORT).show();
+//                            Log.i("abdo", "onResponse: not "+ requestErrorBody);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+//                        Log.i("abdo", "abdo onFailure: "+ t.getLocalizedMessage());
+//                    }
+//                });
+//
+//        Log.i("abdo", "finish: after");
     }
 }

@@ -5,6 +5,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class RegisterResponseErrorBody {
 
+	@SerializedName("detail")
+	private String detail;
+
+	public String getDetail() {
+		return detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+
 	@SerializedName("Goal_Type")
 	private List<String> goalType;
 
