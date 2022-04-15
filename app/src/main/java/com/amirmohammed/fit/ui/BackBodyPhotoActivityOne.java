@@ -64,7 +64,7 @@ public class BackBodyPhotoActivityOne extends AppCompatActivity {
 
         // MultipartBody.Part is used to send also the actual file name
         MultipartBody.Part body =
-                MultipartBody.Part.createFormData("image", file.getName(), requestFile);
+                MultipartBody.Part.createFormData("Image", file.getName(), requestFile);
 
         // add another part within the multipart request
 

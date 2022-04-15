@@ -27,4 +27,5 @@ public class WelcomeActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.anim_slide_left, R.anim.anim_slide_right);
         finish();
     }
+
 }

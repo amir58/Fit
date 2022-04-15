@@ -27,8 +27,8 @@ public interface NetworkI {
                                     @Part("Height") RequestBody height,
                                     @Part("Hours") RequestBody hours,
                                     @Part("Effort") RequestBody effort,
-                                    @Part("Goal_type") RequestBody goalType,
-                                    @Part("Goal_wight") RequestBody goalWeight,
+                                    @Part("Goal_Type") RequestBody goalType,
+                                    @Part("Goal_Weight") RequestBody goalWeight,
                                     @Part("Password") RequestBody password,
                                     @Part("password2") RequestBody confirmPassword,
                                     @Part MultipartBody.Part body);

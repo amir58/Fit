@@ -21,7 +21,8 @@ public class RetrofitSingleton {
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient mClient = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+        OkHttpClient mClient = new OkHttpClient.Builder()
+                .addInterceptor(interceptor).build();
 
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()

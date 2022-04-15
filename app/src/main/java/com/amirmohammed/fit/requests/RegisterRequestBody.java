@@ -4,7 +4,10 @@ import android.net.Uri;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.IOException;
+
 import okhttp3.RequestBody;
+import okio.Buffer;
 
 public class RegisterRequestBody {
 
@@ -184,25 +187,37 @@ public class RegisterRequestBody {
         return image;
     }
 
+    private static String bodyToString(final RequestBody request){
+        try {
+            final RequestBody copy = request;
+            final Buffer buffer = new Buffer();
+            copy.writeTo(buffer);
+            return buffer.readUtf8();
+        }
+        catch (final IOException e) {
+            return "did not work";
+        }
+    }
+
     @Override
     public String toString(){
         return
                 "RegisterRequestBody{" +
-                        "goal_Type = '" + goalType + '\'' +
-                        ",email = '" + email + '\'' +
-                        ",hours = '" + hours + '\'' +
-                        ",effort = '" + effort + '\'' +
-                        ",gender = '" + gender + '\'' +
-                        ",weight = '" + weight + '\'' +
-                        ",name = '" + name + '\'' +
-                        ",sport = '" + sport + '\'' +
-                        ",username = '" + username + '\'' +
-                        ",height = '" + height + '\'' +
-                        ",password2 = '" + password2 + '\'' +
-                        ",goal_Weight = '" + goalWeight + '\'' +
-                        ",train = '" + train + '\'' +
-                        ",age = '" + age + '\'' +
-                        ",password = '" + password + '\'' +
+                        "goal_Type = '" + bodyToString(goalType) + '\'' +
+                        ",email = '" + bodyToString(email) + '\'' +
+                        ",hours = '" + bodyToString(hours) + '\'' +
+                        ",effort = '" + bodyToString(effort) + '\'' +
+                        ",gender = '" + bodyToString(gender) + '\'' +
+                        ",weight = '" + bodyToString(weight) + '\'' +
+                        ",name = '" + bodyToString(name) + '\'' +
+                        ",sport = '" + bodyToString(sport) + '\'' +
+                        ",username = '" + bodyToString(username) + '\'' +
+                        ",height = '" + bodyToString(height) + '\'' +
+                        ",password2 = '" + bodyToString(password2) + '\'' +
+                        ",goal_Weight = '" + bodyToString(goalWeight) + '\'' +
+                        ",train = '" + bodyToString(train) + '\'' +
+                        ",age = '" + bodyToString(age) + '\'' +
+                        ",password = '" + bodyToString(password) + '\'' +
                         "}";
     }
 }
