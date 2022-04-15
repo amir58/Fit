@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.amirmohammed.fit">
+    package="com.fit.fast">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -14,59 +14,59 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fit">
         <activity
-            android:name=".ui.DetailsTrainTwoActivity"
+            android:name="com.fit.fast.ui.DetailsTrainTwoActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.DetailsTrainOneActivity"
+            android:name="com.fit.fast.ui.DetailsTrainOneActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.HomeTrainBottomNavigationActivity"
+            android:name="com.fit.fast.ui.HomeTrainBottomNavigationActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.HomeTrainFourteenActivity"
+            android:name="com.fit.fast.ui.HomeTrainFourteenActivity"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".ui.HomeTrainActivityTwo"
+            android:name="com.fit.fast.ui.HomeTrainActivityTwo"
             android:exported="false" />
         <activity
-            android:name=".ui.HomeTrainActivityOne"
+            android:name="com.fit.fast.ui.HomeTrainActivityOne"
             android:exported="false" />
         <activity
-            android:name=".ui.PhotoOrInBodyLoadingActivity"
+            android:name="com.fit.fast.ui.PhotoOrInBodyLoadingActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.InBodyActivity"
+            android:name="com.fit.fast.ui.InBodyActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.BackBodyPhotoActivityOne"
+            android:name="com.fit.fast.ui.BackBodyPhotoActivityOne"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".ui.FrontBodyPhotoActivityOne"
+            android:name="com.fit.fast.ui.FrontBodyPhotoActivityOne"
             android:exported="false" />
         <activity
-            android:name=".ui.BodyPhotoActivityOne"
+            android:name="com.fit.fast.ui.BodyPhotoActivityOne"
             android:exported="false" />
         <activity
-            android:name=".ui.PhotoOrInBodyActivity"
+            android:name="com.fit.fast.ui.PhotoOrInBodyActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SecondInfoActivity"
+            android:name="com.fit.fast.ui.SecondInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.FirstInfoActivity"
+            android:name="com.fit.fast.ui.FirstInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.RegisterActivity"
+            android:name="com.fit.fast.ui.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.LoginActivity"
+            android:name="com.fit.fast.ui.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.WelcomeActivity"
+            android:name="com.fit.fast.ui.WelcomeActivity"
             android:exported="true" >
 
             <intent-filter>

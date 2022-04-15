@@ -7,12 +7,12 @@
 
     <activity
         android:id="@+id/homeTrainBottomNavigationActivity"
-        android:name="com.amirmohammed.fit.ui.HomeTrainBottomNavigationActivity"
+        android:name="com.fit.fast.ui.HomeTrainBottomNavigationActivity"
         android:label="activity_home_train_bottom_navigation"
         tools:layout="@layout/activity_home_train_bottom_navigation" />
     <fragment
         android:id="@+id/followUpFragment"
-        android:name="com.amirmohammed.fit.ui.FollowUpFragment"
+        android:name="com.fit.fast.ui.FollowUpFragment"
         android:label="fragment_follow_up"
         tools:layout="@layout/fragment_follow_up" >
         <action
@@ -30,12 +30,12 @@
     </fragment>
     <activity
         android:id="@+id/bodyPhotoActivityOne"
-        android:name="com.amirmohammed.fit.ui.BodyPhotoActivityOne"
+        android:name="com.fit.fast.ui.BodyPhotoActivityOne"
         android:label="activity_body_photo_one"
         tools:layout="@layout/activity_body_photo_one" />
     <dialog
         android:id="@+id/profileDialogFragment"
-        android:name="com.amirmohammed.fit.ui.ProfileDialogFragment"
+        android:name="com.fit.fast.ui.ProfileDialogFragment"
         android:label="fragment_profile_dialog"
         tools:layout="@layout/fragment_profile_dialog" >
         <action
@@ -50,7 +50,7 @@
     </dialog>
     <fragment
         android:id="@+id/homeTrainFiveFragment"
-        android:name="com.amirmohammed.fit.ui.HomeTrainFiveFragment"
+        android:name="com.fit.fast.ui.HomeTrainFiveFragment"
         android:label="fragment_home_train_five"
         tools:layout="@layout/fragment_home_train_five" >
         <action
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeTrainSixFragment"
-        android:name="com.amirmohammed.fit.ui.HomeTrainSixFragment"
+        android:name="com.fit.fast.ui.HomeTrainSixFragment"
         android:label="fragment_home_train_six"
         tools:layout="@layout/fragment_home_train_six" >
         <action
@@ -68,7 +68,7 @@
     </fragment>
     <fragment
         android:id="@+id/popularWorkoutFragment"
-        android:name="com.amirmohammed.fit.ui.PopularWorkoutFragment"
+        android:name="com.fit.fast.ui.PopularWorkoutFragment"
         android:label="fragment_popular_workout"
         tools:layout="@layout/fragment_popular_workout" >
         <action
