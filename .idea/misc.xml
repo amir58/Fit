@@ -28,34 +28,34 @@
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/drawable/swipe_left_arrow.xml" value="0.1705" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/drawable/vector_arrow_back.xml" value="0.168" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/drawable/vector_arrow_next.xml" value="0.168" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_back_body_photo_one.xml" value="0.22402736212056434" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_back_body_photo_one.xml" value="0.22" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_body_photo_one.xml" value="0.22402736212056434" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_details_train_one.xml" value="0.25" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_details_train_two.xml" value="0.25" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_first_info.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_details_train_one.xml" value="0.18" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_details_train_two.xml" value="0.16" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_first_info.xml" value="0.11" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_follow_up.xml" value="0.22402736212056434" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_front_body_photo_one.xml" value="0.22402736212056434" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_home_train_bottom_navigation.xml" value="0.22" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_front_body_photo_one.xml" value="0.18" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_home_train_bottom_navigation.xml" value="0.14" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_home_train_five.xml" value="0.22402736212056434" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_home_train_fourteen.xml" value="0.22402736212056434" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_home_train_one.xml" value="0.25" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_home_train_two.xml" value="0.22402736212056434" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_home_train_fourteen.xml" value="0.14" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_home_train_one.xml" value="0.14" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_home_train_two.xml" value="0.22" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_home_trainfour.xml" value="0.22402736212056434" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_inbody.xml" value="0.22402736212056434" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_photo_or_in_body.xml" value="0.25" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_photo_or_in_body_loading.xml" value="0.22402736212056434" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_register.xml" value="0.22" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_second_info.xml" value="0.22" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_welcome.xml" value="0.25" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/day_item.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/fragment_follow_up.xml" value="0.25" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/fragment_home_train_five.xml" value="0.25" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/fragment_home_train_six.xml" value="0.25" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/fragment_popular_workout.xml" value="0.22402736212056434" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/fragment_profile_dialog.xml" value="0.25" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_inbody.xml" value="0.1" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_photo_or_in_body.xml" value="0.12" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_photo_or_in_body_loading.xml" value="0.16" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_second_info.xml" value="0.14" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_welcome.xml" value="0.1" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/day_item.xml" value="0.12" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/fragment_follow_up.xml" value="0.1" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/fragment_home_train_five.xml" value="0.1" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/fragment_home_train_six.xml" value="0.1" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/fragment_popular_workout.xml" value="0.1" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/fragment_profile_dialog.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/meal_image_item.xml" value="0.22402736212056434" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/meal_item.xml" value="0.22402736212056434" />
+        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/meal_item.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/month_item.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/popular_workout_item.xml" value="0.22402736212056434" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/sport_item.xml" value="0.16417272338606242" />
