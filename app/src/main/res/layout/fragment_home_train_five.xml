@@ -152,14 +152,15 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/workout_rv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             tools:listitem="@layout/workouts_item"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="vertical"
             app:spanCount="4"
             app:layout_constraintTop_toBottomOf="@id/btns_linear_layout"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
