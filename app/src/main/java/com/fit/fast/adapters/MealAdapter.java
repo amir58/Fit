@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.MealItemBinding;
 
+
 public class MealAdapter extends RecyclerView.Adapter<MealAdapter.Holder>{
 
     ShowItemDataI showItemDataI;

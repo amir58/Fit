@@ -59,7 +59,7 @@
             android:id="@+id/activity_home_train_one_calories_intake_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_40sdp"
             android:fontFamily="@font/aeonik_bold"
             android:text="YOUR CALORIES INTAKE"
             android:textColor="@color/white"
@@ -194,23 +194,24 @@
             android:id="@+id/line_view"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_40sdp"
             android:background="@color/fit_green"
             app:layout_constraintTop_toBottomOf="@id/activity_home_train_one_carbohtdrates_layout" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/subscription_btn"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_140sdp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black"
             android:clickable="false"
             android:fontFamily="@font/aeonik_regular"
-            android:padding="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
             android:text="SUBSCRIPTION"
-            android:textSize="@dimen/_17ssp"
+            android:textSize="@dimen/_15ssp"
             android:textColor="@color/white"
             app:cornerRadius="@dimen/_15sdp"
+            android:maxLines="1"
             app:layout_constraintBottom_toBottomOf="@+id/line_view"
             app:layout_constraintEnd_toEndOf="@+id/line_view"
             app:layout_constraintStart_toStartOf="@+id/line_view"
@@ -218,211 +219,220 @@
             app:strokeColor="@color/fit_green"
             app:strokeWidth="@dimen/_2sdp" />
 
-        <RadioGroup
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_30sdp"
-            android:gravity="center|top"
-            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/poweredby_image_layout"
             app:layout_constraintTop_toBottomOf="@+id/subscription_btn">
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/get_month_free_rb"
+            <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="navigateToHomeTrainBottomNavigationActivity"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/corners"
-                android:backgroundTint="#6640D876"
-                android:button="@drawable/selector_radio_xl"
-                android:fontFamily="@font/aeonik_medium"
-                android:layoutDirection="rtl"
-                android:paddingStart="@dimen/_15sdp"
-                android:paddingEnd="@dimen/_15sdp"
-                android:text="GET 1 MONTH FREE"
-                android:textColor="#8CFFFFFF"
-                android:textSize="@dimen/_15ssp" />
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center|top"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/poweredby_image_layout"
+                app:layout_constraintTop_toBottomOf="@+id/subscription_btn">
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/get_three_months_rb"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="navigateToHomeTrainFour"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:background="@drawable/corners"
-                android:backgroundTint="#6640D876"
-                android:button="@drawable/selector_radio_xl"
-                android:fontFamily="@font/aeonik_medium"
-                android:layoutDirection="rtl"
-                android:paddingStart="@dimen/_15sdp"
-                android:paddingEnd="@dimen/_15sdp"
-                android:text="GET 3 MONTHS"
-                android:textColor="#8CFFFFFF"
-                android:textSize="@dimen/_15ssp" />
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/get_month_free_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="navigateToHomeTrainBottomNavigationActivity"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/corners"
+                    android:backgroundTint="#6640D876"
+                    android:button="@drawable/selector_radio_xl"
+                    android:fontFamily="@font/aeonik_medium"
+                    android:layoutDirection="rtl"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:text="GET 1 MONTH FREE"
+                    android:textColor="#8CFFFFFF"
+                    android:textSize="@dimen/_15ssp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/get_three_months_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="navigateToHomeTrainFour"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/corners"
+                    android:backgroundTint="#6640D876"
+                    android:button="@drawable/selector_radio_xl"
+                    android:fontFamily="@font/aeonik_medium"
+                    android:layoutDirection="rtl"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:text="GET 3 MONTHS"
+                    android:textColor="#8CFFFFFF"
+                    android:textSize="@dimen/_15ssp" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_gravity="start"
-                    android:paddingEnd="@dimen/_30sdp">
+                    android:gravity="center">
 
-                    <TextView
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_weight="110"
-                        android:fontFamily="@font/aeonik_regular"
-                        android:text="100$"
-                        android:textColor="#FFFFFF"
-                        android:textSize="@dimen/_10ssp" />
+                        android:orientation="horizontal"
+                        android:layout_gravity="start"
+                        android:paddingEnd="@dimen/_30sdp">
 
-                    <TextView
-                        android:id="@+id/wrong_tv"
-                        android:layout_width="@dimen/_18sdp"
-                        android:layout_height="@dimen/_18sdp"
-                        android:layout_weight="1"
-                        android:background="@drawable/corners"
-                        android:backgroundTint="#D35959"
-                        android:gravity="center"
-                        android:text="X"
-                        android:textColor="#FFFFFF"
-                        app:cornerRadius="@dimen/_15sdp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="110"
+                            android:fontFamily="@font/aeonik_regular"
+                            android:text="100$"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            android:id="@+id/wrong_tv"
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/corners"
+                            android:backgroundTint="#D35959"
+                            android:gravity="center"
+                            android:text="X"
+                            android:textColor="#FFFFFF"
+                            app:cornerRadius="@dimen/_15sdp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="end"
+                        android:paddingStart="@dimen/_30sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="110"
+                            android:fontFamily="@font/aeonik_regular"
+                            android:text="100$"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/right_tv"
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:background="@drawable/corners"
+                            android:backgroundTint="@color/fit_green"
+                            android:gravity="bottom"
+                            android:src="@drawable/check"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/get_year_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="navigateToHomeTrainFour"
+                    android:background="@drawable/corners"
+                    android:backgroundTint="#6640D876"
+                    android:button="@drawable/selector_radio_xl"
+                    android:fontFamily="@font/aeonik_medium"
+                    android:layoutDirection="rtl"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:text="GET 1 YEAR"
+                    android:textColor="#8CFFFFFF"
+                    android:textSize="@dimen/_15ssp" />
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_gravity="end"
-                    android:paddingStart="@dimen/_30sdp">
+                    android:gravity="center">
 
-                    <TextView
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_weight="110"
-                        android:fontFamily="@font/aeonik_regular"
-                        android:text="100$"
-                        android:textColor="#FFFFFF"
-                        android:textSize="@dimen/_10ssp" />
+                        android:orientation="horizontal"
+                        android:layout_gravity="start"
+                        android:paddingEnd="@dimen/_30sdp">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/right_tv"
-                        android:layout_width="@dimen/_18sdp"
-                        android:layout_height="@dimen/_18sdp"
-                        android:background="@drawable/corners"
-                        android:backgroundTint="@color/fit_green"
-                        android:gravity="bottom"
-                        android:src="@drawable/check"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="110"
+                            android:fontFamily="@font/aeonik_regular"
+                            android:text="350$"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <TextView
+                            android:id="@+id/wrong2_tv"
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/corners"
+                            android:backgroundTint="#D35959"
+                            android:gravity="center"
+                            android:text="X"
+                            android:textColor="#FFFFFF"
+                            app:cornerRadius="@dimen/_15sdp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="end"
+                        android:paddingStart="@dimen/_30sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_weight="110"
+                            android:fontFamily="@font/aeonik_regular"
+                            android:text="149$"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/_10ssp" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/right2_tv"
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:background="@drawable/corners"
+                            android:backgroundTint="@color/fit_green"
+                            android:gravity="bottom"
+                            android:src="@drawable/check"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/get_year_rb"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="navigateToHomeTrainFour"
-                android:background="@drawable/corners"
-                android:backgroundTint="#6640D876"
-                android:button="@drawable/selector_radio_xl"
-                android:fontFamily="@font/aeonik_medium"
-                android:layoutDirection="rtl"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:paddingStart="@dimen/_15sdp"
-                android:paddingEnd="@dimen/_15sdp"
-                android:text="GET 1 YEAR"
-                android:textColor="#8CFFFFFF"
-                android:textSize="@dimen/_15ssp" />
+            </RadioGroup>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="start"
-                    android:paddingEnd="@dimen/_30sdp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_weight="110"
-                        android:fontFamily="@font/aeonik_regular"
-                        android:text="350$"
-                        android:textColor="#FFFFFF"
-                        android:textSize="@dimen/_10ssp" />
-
-                    <TextView
-                        android:id="@+id/wrong2_tv"
-                        android:layout_width="@dimen/_18sdp"
-                        android:layout_height="@dimen/_18sdp"
-                        android:layout_weight="1"
-                        android:background="@drawable/corners"
-                        android:backgroundTint="#D35959"
-                        android:gravity="center"
-                        android:text="X"
-                        android:textColor="#FFFFFF"
-                        app:cornerRadius="@dimen/_15sdp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="end"
-                    android:paddingStart="@dimen/_30sdp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_weight="110"
-                        android:fontFamily="@font/aeonik_regular"
-                        android:text="149$"
-                        android:textColor="#FFFFFF"
-                        android:textSize="@dimen/_10ssp" />
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/right2_tv"
-                        android:layout_width="@dimen/_18sdp"
-                        android:layout_height="@dimen/_18sdp"
-                        android:background="@drawable/corners"
-                        android:backgroundTint="@color/fit_green"
-                        android:gravity="bottom"
-                        android:src="@drawable/check"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-        </RadioGroup>
+        </ScrollView>
 
         <LinearLayout
             android:id="@+id/poweredby_image_layout"

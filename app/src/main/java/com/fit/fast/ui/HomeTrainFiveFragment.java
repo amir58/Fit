@@ -13,6 +13,7 @@ import android.view.WindowManager;
 
 import com.fit.fast.adapters.WorkoutsAdapter;
 import com.fit.fast.databinding.FragmentHomeTrainFiveBinding;
+import com.fit.fast.models.ExcelFileReader;
 import com.google.android.material.button.MaterialButton;
 
 public class HomeTrainFiveFragment extends Fragment {
@@ -47,6 +48,7 @@ public class HomeTrainFiveFragment extends Fragment {
 
         binding.workoutRv.setAdapter(new WorkoutsAdapter());
 
+        ExcelFileReader.readerClient("1_1.xls", requireActivity()).getDataFromExcel();
     }
 
     private void setClicks(MaterialButton pressedBtn, MaterialButton unpressedBtn1,

@@ -3,10 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textSize="@dimen/_13ssp"
-    android:textColor="#59FFFFFF"
+    android:textColor="@color/white"
     android:gravity="center"
     android:layout_marginTop="@dimen/_3sdp"
     android:layout_gravity="center"
     android:background="@drawable/corners"
-    android:backgroundTint="#6E000000">
+    android:backgroundTint="#000000">
 </TextView>

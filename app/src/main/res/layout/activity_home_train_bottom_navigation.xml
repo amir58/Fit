@@ -42,9 +42,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:cardCornerRadius="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:backgroundTint="@color/fit_green"
                 app:layout_constraintStart_toEndOf="@+id/back_image"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -53,7 +55,7 @@
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tab_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
                     app:tabMode="auto"
                     app:tabBackground="@drawable/selected_tab_bg"
                     app:tabTextColor="#80FFFFFF"
@@ -81,7 +83,8 @@
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Profile"/>
+                        android:text="Profile"
+                        android:layout_marginEnd="@dimen/_10sdp"/>
 
                 </com.google.android.material.tabs.TabLayout>
 

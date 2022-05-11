@@ -51,7 +51,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/activity_welcome_start_now_btn"
             android:onClick="startNow"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/fit_green"
             android:text="start now"
@@ -59,10 +59,12 @@
             android:fontFamily="@font/aeonik_medium"
             android:paddingBottom="@dimen/_10sdp"
             android:paddingTop="@dimen/_10sdp"
-            android:paddingStart="@dimen/_70sdp"
-            android:paddingEnd="@dimen/_70sdp"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
             app:cornerRadius="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_50sdp"/>
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_40sdp"/>
 
         <ImageView
             android:layout_width="@dimen/_100sdp"

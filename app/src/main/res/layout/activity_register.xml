@@ -404,8 +404,8 @@
 
                     <ImageView
                         android:id="@+id/activity_register_back_image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
                         android:layout_marginStart="@dimen/_30sdp"
                         android:onClick="back"
                         android:src="@drawable/arrow_back"
@@ -414,8 +414,8 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_50sdp"
                         android:src="@drawable/poweredby_image"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -424,8 +424,8 @@
 
                     <ImageView
                         android:id="@+id/activity_register_next_image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
                         android:layout_marginEnd="@dimen/_30sdp"
                         android:onClick="next"
                         android:src="@drawable/arrow_next"
