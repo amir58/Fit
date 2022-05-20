@@ -50,12 +50,6 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
         int tabId = tab.getPosition();
 
         switch (tabId) {
-//            case 0:
-//                getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(binding.fragmentContainerView.getId(), followUpFragment)
-//                        .commit();
-//                break;
             case 1:
                 getSupportFragmentManager()
                         .beginTransaction()

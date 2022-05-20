@@ -94,14 +94,14 @@ public class InBodyActivity extends AppCompatActivity {
                         } else {
 
 
-                            Gson gson = new Gson();
-                            RegisterResponseErrorBody requestErrorBody = new RegisterResponseErrorBody();
-                            try {
-                                requestErrorBody = gson.fromJson(response.errorBody().string(), RegisterResponseErrorBody.class);
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                            Toast.makeText(InBodyActivity.this, requestErrorBody.toString(), Toast.LENGTH_SHORT).show();
+//                            Gson gson = new Gson();
+//                            RegisterResponseErrorBody requestErrorBody = new RegisterResponseErrorBody();
+//                            try {
+//                                requestErrorBody = gson.fromJson(response.errorBody().string(), RegisterResponseErrorBody.class);
+//                            } catch (IOException e) {
+//                                e.printStackTrace();
+//                            }
+//                            Toast.makeText(InBodyActivity.this, requestErrorBody.toString(), Toast.LENGTH_SHORT).show();
                         }
                     }
 

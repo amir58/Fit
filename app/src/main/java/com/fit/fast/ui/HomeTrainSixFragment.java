@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,11 @@ import android.widget.Toast;
 import com.fit.fast.adapters.MealAdapter;
 import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.FragmentHomeTrainSixBinding;
+import com.fit.fast.models.ExcelFileReader;
 import com.google.android.material.button.MaterialButton;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeTrainSixFragment extends Fragment {
 
@@ -37,6 +42,8 @@ public class HomeTrainSixFragment extends Fragment {
 
         requireActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
+        extractFoodDataFromExcelFile();
 
         binding.nutritionPlanBtn.setStrokeWidth(1);
 
@@ -82,6 +89,38 @@ public class HomeTrainSixFragment extends Fragment {
                 binding.logoImage.setVisibility(View.VISIBLE);
             }
         });
+    }
+
+    private void extractFoodDataFromExcelFile() {
+        List<String> foodName;
+        List<String> foodQuantity;
+        List<String> foodCal;
+        List<String> foodProtein;
+        List<String> foodCarbs;
+        List<String> foodFats;
+        List<String> foodFibers;
+
+        foodName = getFoodData(0);
+        foodQuantity = getFoodData(1);
+        foodCal = getFoodData(2);
+        foodProtein = getFoodData(3);
+        foodCarbs = getFoodData(4);
+        foodFats = getFoodData(5);
+        foodFibers = getFoodData(6);
+
+        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodName + "\n");
+        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodQuantity + "\n");
+        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodCal + "\n");
+        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodProtein + "\n");
+        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodCarbs + "\n");
+        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodFats + "\n");
+        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodFibers + "\n");
+    }
+
+
+    private List<String> getFoodData(int index) {
+        String fileName = "food_data.xls";
+        return ExcelFileReader.readerClient(fileName, requireContext()).getFoodDataFromExcel().get(index);
     }
 
     private void setClicks(MaterialButton pressedBtn, MaterialButton unpressedBtn1,

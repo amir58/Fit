@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,11 @@ import android.view.WindowManager;
 import com.fit.fast.adapters.WorkoutsAdapter;
 import com.fit.fast.databinding.FragmentHomeTrainFiveBinding;
 import com.fit.fast.models.ExcelFileReader;
+import com.fit.fast.network.RegisterSingleton;
 import com.google.android.material.button.MaterialButton;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeTrainFiveFragment extends Fragment {
 
@@ -48,7 +53,47 @@ public class HomeTrainFiveFragment extends Fragment {
 
         binding.workoutRv.setAdapter(new WorkoutsAdapter());
 
-        ExcelFileReader.readerClient("1_1.xls", requireActivity()).getDataFromExcel();
+//        ExcelFileReader.readerClient("1_1.xls", requireActivity()).getWorkoutDataFromExcel();
+
+        String sport = "SP";
+
+        switchOnSport(sport);
+    }
+
+    private void switchOnSport(String sport) {
+        switch (sport){
+            case "SP":
+                List<String> workoutName;
+                List<String> workoutSets;
+                List<String> workoutReps;
+                List<String> workoutLink;
+                List<String> workoutPhoto;
+
+                workoutName = ExcelFileReader.readerClient("s1.xls", requireActivity()).getWorkoutDataFromExcel().get(0);
+                workoutSets = ExcelFileReader.readerClient("s1.xls", requireActivity()).getWorkoutDataFromExcel().get(1);
+                workoutReps = ExcelFileReader.readerClient("s1.xls", requireActivity()).getWorkoutDataFromExcel().get(2);
+                workoutLink = ExcelFileReader.readerClient("s1.xls", requireActivity()).getWorkoutDataFromExcel().get(3);
+                workoutPhoto = ExcelFileReader.readerClient("s1.xls", requireActivity()).getWorkoutDataFromExcel().get(4);
+
+                Log.i("abdo", "switchOnSport: "+ workoutName);
+                Log.i("abdo", "switchOnSport: "+ workoutSets);
+                Log.i("abdo", "switchOnSport: "+ workoutReps);
+                Log.i("abdo", "switchOnSport: "+ workoutLink);
+                Log.i("abdo", "switchOnSport: "+ workoutPhoto);
+                break;
+            case "MMA":
+                sport = "MMA";
+                break;
+            case "FB":
+                sport = "FB";
+                break;
+            case "BB":
+                sport = "BB";
+                break;
+            default:
+                sport = "GE ";
+                break;
+        }
     }
 
     private void setClicks(MaterialButton pressedBtn, MaterialButton unpressedBtn1,
