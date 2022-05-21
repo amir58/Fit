@@ -5,6 +5,9 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSmoothScroller;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.fit.fast.adapters.FoodAdapter;
 import com.fit.fast.adapters.MealAdapter;
 import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.FragmentHomeTrainSixBinding;
@@ -21,6 +25,7 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class HomeTrainSixFragment extends Fragment {
 
@@ -45,15 +50,17 @@ public class HomeTrainSixFragment extends Fragment {
 
 //        extractFoodDataFromExcelFile();
 
+        binding.foodRV.setAdapter(new FoodAdapter(getContext(), getFoodData()));
+
         binding.nutritionPlanBtn.setStrokeWidth(1);
 
-        setClicks(binding.nutritionPlanBtn, binding.meal1Btn, binding.meal2Btn, binding.meal3Btn);
+        setClicks(binding.nutritionPlanBtn, binding.meal1Btn, binding.meal2Btn, binding.meal3Btn, 0);
 
-        setClicks(binding.meal1Btn, binding.nutritionPlanBtn, binding.meal2Btn, binding.meal3Btn);
+        setClicks(binding.meal1Btn, binding.nutritionPlanBtn, binding.meal2Btn, binding.meal3Btn, 0);
 
-        setClicks(binding.meal2Btn, binding.nutritionPlanBtn, binding.meal1Btn, binding.meal3Btn);
+        setClicks(binding.meal2Btn, binding.nutritionPlanBtn, binding.meal1Btn, binding.meal3Btn, 1);
 
-        setClicks(binding.meal3Btn, binding.nutritionPlanBtn, binding.meal1Btn, binding.meal2Btn);
+        setClicks(binding.meal3Btn, binding.nutritionPlanBtn, binding.meal1Btn, binding.meal2Btn, 2);
 
         binding.mealRv.setAdapter(new MealAdapter(new ShowItemDataI() {
             @Override
@@ -69,7 +76,7 @@ public class HomeTrainSixFragment extends Fragment {
                 binding.logoImage.setVisibility(View.INVISIBLE);
                 binding.caloriesCalculatorTv.setVisibility(View.INVISIBLE);
                 binding.caloriesLayout.setVisibility(View.INVISIBLE);
-                binding.radioBtnsLayout.setVisibility(View.INVISIBLE);
+                binding.foodRV.setVisibility(View.INVISIBLE);
 
                 Toast.makeText(requireContext(), txt, Toast.LENGTH_SHORT).show();
             }
@@ -83,7 +90,7 @@ public class HomeTrainSixFragment extends Fragment {
                 binding.logo2Image.setVisibility(View.INVISIBLE);
                 binding.mealDetailsLayout.setVisibility(View.INVISIBLE);
 
-                binding.radioBtnsLayout.setVisibility(View.VISIBLE);
+                binding.foodRV.setVisibility(View.VISIBLE);
                 binding.caloriesCalculatorTv.setVisibility(View.VISIBLE);
                 binding.caloriesLayout.setVisibility(View.VISIBLE);
                 binding.logoImage.setVisibility(View.VISIBLE);
@@ -91,39 +98,31 @@ public class HomeTrainSixFragment extends Fragment {
         });
     }
 
-//    private void extractFoodDataFromExcelFile() {
-//        List<String> foodName;
-//        List<String> foodQuantity;
-//        List<String> foodCal;
-//        List<String> foodProtein;
-//        List<String> foodCarbs;
-//        List<String> foodFats;
-//        List<String> foodFibers;
-//
-//        foodName = getFoodData(0);
-//        foodQuantity = getFoodData(1);
-//        foodCal = getFoodData(2);
-//        foodProtein = getFoodData(3);
-//        foodCarbs = getFoodData(4);
-//        foodFats = getFoodData(5);
-//        foodFibers = getFoodData(6);
-//
-//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodName + "\n");
-//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodQuantity + "\n");
-//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodCal + "\n");
-//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodProtein + "\n");
-//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodCarbs + "\n");
-//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodFats + "\n");
-//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodFibers + "\n");
-//    }
-
     private List<List<String>> getFoodData() {
         String fileName = "food_data.xls";
         return ExcelFileReader.readerClient(fileName, requireContext()).getFoodDataFromExcel();
     }
 
     private void setClicks(MaterialButton pressedBtn, MaterialButton unpressedBtn1,
-                           MaterialButton unpressedBtn2, MaterialButton unpressedBtn3) {
+                           MaterialButton unpressedBtn2, MaterialButton unpressedBtn3, int position) {
+
+//        binding.mealRv.smoothScrollToPosition(position);
+
+//        ((LinearLayoutManager) binding.mealRv.getLayoutManager()).scrollToPositionWithOffset(position, 0);
+
+        binding.mealRv.getLayoutManager().smoothScrollToPosition(binding.mealRv, new RecyclerView.State(), position);
+
+        RecyclerView.SmoothScroller smoothScroller = new LinearSmoothScroller(requireContext()) {
+            @Override protected int getVerticalSnapPreference() {
+                return LinearSmoothScroller.SNAP_TO_START;
+            }
+        };
+
+        smoothScroller.setTargetPosition(position);
+        Objects.requireNonNull(binding.mealRv.getLayoutManager()).startSmoothScroll(smoothScroller);
+
+//        binding.mealRv.setLayoutManager(new LinearLayoutManagerWithSmoothScroller(context));
+//        recyclerView.smoothScrollToPosition(position);
 
         pressedBtn.setOnClickListener(view -> {
             pressedBtn.setStrokeWidth(1);

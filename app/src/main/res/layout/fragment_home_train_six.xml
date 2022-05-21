@@ -41,6 +41,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/foodRV"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            tools:listitem="@layout/food_item"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="1"
+            app:layout_constraintTop_toBottomOf="@+id/logo_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/calories_calculator_tv"/>
 
         <LinearLayout
             android:id="@+id/radio_btns_layout"
@@ -592,7 +605,6 @@
 
 
         </LinearLayout>
-
 
         <ImageView
             android:id="@+id/play_image"

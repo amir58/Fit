@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatRadioButton
+        android:id="@+id/food_rb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:button="@drawable/selector_radio_xl"
+        android:text="foodfoodfoodfoodfoodfoodfood"
+        android:maxWidth="@dimen/_150sdp"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/aeonik_regular" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/activity_register_day_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_weight="1"
+        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+        app:boxStrokeWidth="0dp"
+        app:hintEnabled="false"
+        app:boxStrokeWidthFocused="0dp"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:theme="@style/MyTextInputLayout_overlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/foodDropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#6E000000"
+            android:gravity="center"
+            android:hint="dd"
+            android:inputType="none"
+            android:textSize="@dimen/_13ssp"
+            android:fontFamily="@font/aeonik_medium"
+            android:textColor="#8CFFFFFF" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

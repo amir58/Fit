@@ -1,15 +1,18 @@
 package com.fit.fast.adapters;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.MealItemBinding;
 
 import java.util.List;
+import java.util.Objects;
 
 
 public class MealAdapter extends RecyclerView.Adapter<MealAdapter.Holder> {
@@ -32,15 +35,27 @@ public class MealAdapter extends RecyclerView.Adapter<MealAdapter.Holder> {
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         holder.binding.mealRv.setAdapter(new MealItemsAdapter(showItemDataI, foodData));
 
-        holder.binding.headTv.setText(foodData.get(0).get(position));
+//        binding.mealRv.getLayoutManager().smoothScrollToPosition(binding.mealRv, new RecyclerView.State(), position);
+
+//        RecyclerView.SmoothScroller smoothScroller = new LinearSmoothScroller(holder.itemView.getContext()) {
+//            @Override protected int getVerticalSnapPreference() {
+//                return LinearSmoothScroller.SNAP_TO_ANY;
+//            }
+//        };
+//        smoothScroller.setTargetPosition(position);
+//        startSmoothScroll(smoothScroller);
+
+
+        position += 1;
+        holder.binding.headTv.setText("MEAL" + position);
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 3;
     }
 
-    public class Holder extends RecyclerView.ViewHolder {
+    public static class Holder extends RecyclerView.ViewHolder {
         MealItemBinding binding;
 
         public Holder(@NonNull MealItemBinding binding) {

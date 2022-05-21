@@ -1,5 +1,6 @@
 package com.fit.fast.adapters;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,18 @@ public class MealItemsAdapter extends RecyclerView.Adapter<MealItemsAdapter.Hold
                 .into(holder.binding.mealImage);
 
         holder.binding.mealRb.setText(foodData.get(0).get(position));
+
+        final boolean[] isChecked = {false};
+        holder.binding.mealRb.setOnClickListener( v-> {
+            Log.i("abdo", "onBindViewHolder: "+ isChecked[0]);
+            if (isChecked[0]){
+                holder.binding.mealRb.setChecked(false);
+                isChecked[0] = false;
+            }else {
+                holder.binding.mealRb.setChecked(true);
+                isChecked[0] = true;
+            }
+        });
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
