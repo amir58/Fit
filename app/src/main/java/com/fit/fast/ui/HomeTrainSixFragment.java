@@ -43,7 +43,7 @@ public class HomeTrainSixFragment extends Fragment {
         requireActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        extractFoodDataFromExcelFile();
+//        extractFoodDataFromExcelFile();
 
         binding.nutritionPlanBtn.setStrokeWidth(1);
 
@@ -58,7 +58,7 @@ public class HomeTrainSixFragment extends Fragment {
         binding.mealRv.setAdapter(new MealAdapter(new ShowItemDataI() {
             @Override
             public void showItemData(String txt) {
-                /**
+                /*
                  * Here where we receive the item data from the adapter through {ShowItemDataI}
                  * to show it in the ui;
                  */
@@ -73,7 +73,7 @@ public class HomeTrainSixFragment extends Fragment {
 
                 Toast.makeText(requireContext(), txt, Toast.LENGTH_SHORT).show();
             }
-        }));
+        }, getFoodData()));
 
         binding.createMealBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,36 +91,35 @@ public class HomeTrainSixFragment extends Fragment {
         });
     }
 
-    private void extractFoodDataFromExcelFile() {
-        List<String> foodName;
-        List<String> foodQuantity;
-        List<String> foodCal;
-        List<String> foodProtein;
-        List<String> foodCarbs;
-        List<String> foodFats;
-        List<String> foodFibers;
+//    private void extractFoodDataFromExcelFile() {
+//        List<String> foodName;
+//        List<String> foodQuantity;
+//        List<String> foodCal;
+//        List<String> foodProtein;
+//        List<String> foodCarbs;
+//        List<String> foodFats;
+//        List<String> foodFibers;
+//
+//        foodName = getFoodData(0);
+//        foodQuantity = getFoodData(1);
+//        foodCal = getFoodData(2);
+//        foodProtein = getFoodData(3);
+//        foodCarbs = getFoodData(4);
+//        foodFats = getFoodData(5);
+//        foodFibers = getFoodData(6);
+//
+//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodName + "\n");
+//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodQuantity + "\n");
+//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodCal + "\n");
+//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodProtein + "\n");
+//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodCarbs + "\n");
+//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodFats + "\n");
+//        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodFibers + "\n");
+//    }
 
-        foodName = getFoodData(0);
-        foodQuantity = getFoodData(1);
-        foodCal = getFoodData(2);
-        foodProtein = getFoodData(3);
-        foodCarbs = getFoodData(4);
-        foodFats = getFoodData(5);
-        foodFibers = getFoodData(6);
-
-        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodName + "\n");
-        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodQuantity + "\n");
-        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodCal + "\n");
-        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodProtein + "\n");
-        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodCarbs + "\n");
-        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodFats + "\n");
-        Log.i("abdo", "extractFoodDataFromExcelFile: lists " + foodFibers + "\n");
-    }
-
-
-    private List<String> getFoodData(int index) {
+    private List<List<String>> getFoodData() {
         String fileName = "food_data.xls";
-        return ExcelFileReader.readerClient(fileName, requireContext()).getFoodDataFromExcel().get(index);
+        return ExcelFileReader.readerClient(fileName, requireContext()).getFoodDataFromExcel();
     }
 
     private void setClicks(MaterialButton pressedBtn, MaterialButton unpressedBtn1,

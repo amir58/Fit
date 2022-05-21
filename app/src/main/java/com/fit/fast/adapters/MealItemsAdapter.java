@@ -7,15 +7,21 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.fit.fast.R;
 import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.MealImageItemBinding;
+import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 public class MealItemsAdapter extends RecyclerView.Adapter<MealItemsAdapter.Holder> {
 
     ShowItemDataI showItemDataI;
+    List<List<String>> foodData;
 
-    public MealItemsAdapter(ShowItemDataI showItemDataI) {
+    public MealItemsAdapter(ShowItemDataI showItemDataI, List<List<String>> foodData) {
         this.showItemDataI = showItemDataI;
+        this.foodData = foodData;
     }
 
     @NonNull
@@ -26,6 +32,14 @@ public class MealItemsAdapter extends RecyclerView.Adapter<MealItemsAdapter.Hold
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
+
+        Picasso
+                .get()
+                .load(foodData.get(4).get(position))
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .into(holder.binding.mealImage);
+
+        holder.binding.mealRb.setText(foodData.get(0).get(position));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +58,7 @@ public class MealItemsAdapter extends RecyclerView.Adapter<MealItemsAdapter.Hold
         return 8;
     }
 
-    public  class Holder extends RecyclerView.ViewHolder {
+    public class Holder extends RecyclerView.ViewHolder {
 
         MealImageItemBinding binding;
 
