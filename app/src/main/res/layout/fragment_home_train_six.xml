@@ -778,7 +778,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/_10ssp"
-            android:text="180 cal+"
             android:textColor="@color/white"
             android:fontFamily="@font/aeonik_regular"
             android:paddingStart="@dimen/_15sdp"

@@ -14,7 +14,7 @@
         android:maxWidth="@dimen/_150sdp"
         android:maxLines="1"
         android:textColor="@color/white"
-        android:textSize="@dimen/_10ssp"
+        android:textSize="@dimen/_12ssp"
         android:layout_gravity="center"
         android:fontFamily="@font/aeonik_regular" />
 

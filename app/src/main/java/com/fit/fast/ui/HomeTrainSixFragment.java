@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.fit.fast.adapters.FoodAdapter;
 import com.fit.fast.adapters.MealAdapter;
+import com.fit.fast.callbacks.FoodData;
 import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.FragmentHomeTrainSixBinding;
 import com.fit.fast.models.ExcelFileReader;
@@ -31,14 +32,14 @@ public class HomeTrainSixFragment extends Fragment {
 
     FragmentHomeTrainSixBinding binding;
 
+    double calories = 0.0;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentHomeTrainSixBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
-
     }
 
     @Override
@@ -50,7 +51,17 @@ public class HomeTrainSixFragment extends Fragment {
 
 //        extractFoodDataFromExcelFile();
 
-        binding.foodRV.setAdapter(new FoodAdapter(getContext(), getFoodData()));
+        FoodData foodData = (foodName, foodQuantity, foodCalories) -> {
+            Log.i("abdo", "foodData: "+ foodName);
+            Log.i("abdo", "foodData: "+ foodQuantity);
+            Log.i("abdo", "foodData: "+ foodCalories);
+
+            calories += foodCalories;
+
+            binding.caloriesLayout.setText(calories + " cal");
+        };
+
+        binding.foodRV.setAdapter(new FoodAdapter(getContext(), getFoodData(), foodData));
 
         binding.nutritionPlanBtn.setStrokeWidth(1);
 
