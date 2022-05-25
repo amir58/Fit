@@ -7,8 +7,6 @@
     android:background="#131429"
     tools:context=".ui.DetailsTrainOneActivity">
 
-
-
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/_310sdp"

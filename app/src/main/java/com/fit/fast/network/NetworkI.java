@@ -33,6 +33,7 @@ public interface NetworkI {
                                     @Part("password2") RequestBody confirmPassword,
                                     @Part MultipartBody.Part body);
 
-    @POST("/api/token/")
+
+    @POST("api-auth/login/")
     Call<LoginResponse> login(@Body LoginRequest loginRequest);
 }

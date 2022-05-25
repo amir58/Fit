@@ -1,5 +1,6 @@
 package com.fit.fast.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ import com.fit.fast.callbacks.FoodData;
 import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.FragmentHomeTrainSixBinding;
 import com.fit.fast.models.ExcelFileReader;
+import com.fit.fast.models.Food;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
@@ -51,17 +53,14 @@ public class HomeTrainSixFragment extends Fragment {
 
 //        extractFoodDataFromExcelFile();
 
-        FoodData foodData = (foodName, foodQuantity, foodCalories) -> {
-            Log.i("abdo", "foodData: "+ foodName);
-            Log.i("abdo", "foodData: "+ foodQuantity);
-            Log.i("abdo", "foodData: "+ foodCalories);
-
-            calories += foodCalories;
-
-            binding.caloriesLayout.setText(calories + " cal");
-        };
-
-        binding.foodRV.setAdapter(new FoodAdapter(getContext(), getFoodData(), foodData));
+//        FoodData foodData = (food) -> {
+//
+////            calories += foodCalories;
+//
+//            binding.caloriesLayout.setText(calories + " cal");
+//        };
+//
+//        binding.foodRV.setAdapter(new FoodAdapter(getContext(), getFoodData(), foodData));
 
         binding.nutritionPlanBtn.setStrokeWidth(1);
 
@@ -73,43 +72,47 @@ public class HomeTrainSixFragment extends Fragment {
 
         setClicks(binding.meal3Btn, binding.nutritionPlanBtn, binding.meal1Btn, binding.meal2Btn, 2);
 
-        binding.mealRv.setAdapter(new MealAdapter(new ShowItemDataI() {
-            @Override
-            public void showItemData(String txt) {
-                /*
-                 * Here where we receive the item data from the adapter through {ShowItemDataI}
-                 * to show it in the ui;
-                 */
-                binding.mealDetailsLayout.setVisibility(View.VISIBLE);
-                binding.logo2Image.setVisibility(View.VISIBLE);
-                binding.searchLayout.setVisibility(View.VISIBLE);
-
-                binding.logoImage.setVisibility(View.INVISIBLE);
-                binding.caloriesCalculatorTv.setVisibility(View.INVISIBLE);
-                binding.caloriesLayout.setVisibility(View.INVISIBLE);
-                binding.foodRV.setVisibility(View.INVISIBLE);
-
-                Toast.makeText(requireContext(), txt, Toast.LENGTH_SHORT).show();
-            }
-        }, getFoodData()));
+//        binding.mealRv.setAdapter(new MealAdapter(new ShowItemDataI() {
+//            @Override
+//            public void showItemData(String txt) {
+//                /*
+//                 * Here where we receive the item data from the adapter through {ShowItemDataI}
+//                 * to show it in the ui;
+//                 */
+//                binding.mealDetailsLayout.setVisibility(View.VISIBLE);
+//                binding.logo2Image.setVisibility(View.VISIBLE);
+//                binding.searchLayout.setVisibility(View.VISIBLE);
+//
+//                binding.logoImage.setVisibility(View.INVISIBLE);
+//                binding.caloriesCalculatorTv.setVisibility(View.INVISIBLE);
+//                binding.caloriesLayout.setVisibility(View.INVISIBLE);
+//                binding.foodRV.setVisibility(View.INVISIBLE);
+//
+//                Toast.makeText(requireContext(), txt, Toast.LENGTH_SHORT).show();
+//            }
+//        }, getFoodData()));
 
         binding.createMealBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                binding.playImage.setVisibility(View.INVISIBLE);
-                binding.searchLayout.setVisibility(View.INVISIBLE);
-                binding.logo2Image.setVisibility(View.INVISIBLE);
-                binding.mealDetailsLayout.setVisibility(View.INVISIBLE);
 
-                binding.foodRV.setVisibility(View.VISIBLE);
-                binding.caloriesCalculatorTv.setVisibility(View.VISIBLE);
-                binding.caloriesLayout.setVisibility(View.VISIBLE);
-                binding.logoImage.setVisibility(View.VISIBLE);
+                Intent intent = new Intent(requireContext(), CreateMyMealActivity.class);
+                startActivity(intent);
+
+//                binding.playImage.setVisibility(View.INVISIBLE);
+//                binding.searchLayout.setVisibility(View.INVISIBLE);
+//                binding.logo2Image.setVisibility(View.INVISIBLE);
+//                binding.mealDetailsLayout.setVisibility(View.INVISIBLE);
+//
+//                binding.foodRV.setVisibility(View.VISIBLE);
+//                binding.caloriesCalculatorTv.setVisibility(View.VISIBLE);
+//                binding.caloriesLayout.setVisibility(View.VISIBLE);
+//                binding.logoImage.setVisibility(View.VISIBLE);
             }
         });
     }
 
-    private List<List<String>> getFoodData() {
+    private List<Food> getFoodData() {
         String fileName = "food_data.xls";
         return ExcelFileReader.readerClient(fileName, requireContext()).getFoodDataFromExcel();
     }
@@ -124,7 +127,8 @@ public class HomeTrainSixFragment extends Fragment {
         binding.mealRv.getLayoutManager().smoothScrollToPosition(binding.mealRv, new RecyclerView.State(), position);
 
         RecyclerView.SmoothScroller smoothScroller = new LinearSmoothScroller(requireContext()) {
-            @Override protected int getVerticalSnapPreference() {
+            @Override
+            protected int getVerticalSnapPreference() {
                 return LinearSmoothScroller.SNAP_TO_START;
             }
         };

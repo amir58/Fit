@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.MealItemBinding;
+import com.fit.fast.models.Food;
 
 import java.util.List;
 import java.util.Objects;
@@ -18,9 +19,9 @@ import java.util.Objects;
 public class MealAdapter extends RecyclerView.Adapter<MealAdapter.Holder> {
 
     ShowItemDataI showItemDataI;
-    List<List<String>> foodData;
+    List<Food> foodData;
 
-    public MealAdapter(ShowItemDataI showItemDataI, List<List<String>> foodData) {
+    public MealAdapter(ShowItemDataI showItemDataI, List<Food> foodData) {
         this.showItemDataI = showItemDataI;
         this.foodData = foodData;
     }

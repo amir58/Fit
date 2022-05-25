@@ -26,7 +26,7 @@ public class RetrofitSingleton {
 
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("https://drf-apitest.herokuapp.com/")
+                    .baseUrl("https://django-sport-api.herokuapp.com/")
                     .client(mClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();

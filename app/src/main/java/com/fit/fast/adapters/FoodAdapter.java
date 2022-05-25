@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
@@ -15,16 +16,17 @@ import com.fit.fast.R;
 import com.fit.fast.callbacks.FoodData;
 import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.FoodItemBinding;
+import com.fit.fast.models.Food;
 
 import java.util.List;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodHolder> {
+    private static final String TAG = "FoodAdapter";
+    private final Context context;
+    private final List<Food> foodData;
+    private final FoodData foodDataI;
 
-    private Context context;
-    private List<List<String>> foodData;
-    private FoodData foodDataI;
-
-    public FoodAdapter(Context context, List<List<String>> foodData, FoodData foodDataI) {
+    public FoodAdapter(Context context, List<Food> foodData, FoodData foodDataI) {
         this.context = context;
         this.foodData = foodData;
         this.foodDataI = foodDataI;
@@ -38,8 +40,9 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull FoodHolder holder, int position) {
+        Log.i(TAG, "onBindViewHolder: " + foodData.get(position));
 
-        holder.binding.foodRb.setText(foodData.get(0).get(position));
+        holder.binding.foodRb.setText(foodData.get(position).getName());
 
         holder.binding.foodDropdown.setDropDownHeight(700);
         holder.binding.foodDropdown.setDropDownBackgroundResource(R.color.dropdown_background);
@@ -47,43 +50,38 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodHolder> {
         String[] grams = {"50", "100", "150"};
         holder.binding.foodDropdown.setAdapter(new ArrayAdapter(context, R.layout.sport_item, grams));
 
-        final boolean[] isChecked = {false};
+        holder.binding.foodRb.setChecked(foodData.get(position).isSelected());
+
         holder.binding.foodRb.setOnClickListener(v -> {
-            if (isChecked[0]) {
+            if (foodData.get(position).isSelected()) {
+                foodData.get(position).setSelected(false);
                 holder.binding.foodRb.setChecked(false);
-                isChecked[0] = false;
-                foodDataI.foodData(holder.binding.foodRb.getText().toString(),
-                        holder.binding.foodDropdown.getText().toString(),
-                        -getCalories(holder, position));
+
             } else {
+                foodData.get(position).setSelected(true);
                 holder.binding.foodRb.setChecked(true);
-                isChecked[0] = true;
 
                 String quantity = holder.binding.foodDropdown.getText().toString();
-                foodDataI.foodData(holder.binding.foodRb.getText().toString(),
-                        quantity,
-                        getCalories(holder, position));
+                foodData.get(position).setSelectedQuantity(quantity);
             }
+
+            foodDataI.foodData(foodData.get(position));
         });
 
-        String quantity = holder.binding.foodDropdown.getText().toString();
-        Log.i("abdo", "onBindViewHolder: " + quantity);
-    }
+        holder.binding.foodDropdown.setOnItemClickListener((adapterView, view, i, l) -> {
+            holder.binding.foodRb.setChecked(true);
+            foodData.get(position).setSelected(true);
 
-    private double getCalories(FoodHolder holder, int position) {
-        if (Double.parseDouble(holder.binding.foodDropdown.getText().toString()) == 100) {
-            return Double.parseDouble(foodData.get(2).get(position));
-        } else if (Double.parseDouble(holder.binding.foodDropdown.getText().toString()) == 150) {
-           return (Double.parseDouble(foodData.get(2).get(position)) +
-                    0.5 * (Double.parseDouble(foodData.get(2).get(position))));
-        }else if (Double.parseDouble(holder.binding.foodDropdown.getText().toString()) == 50){
-            return (0.5 * (Double.parseDouble(foodData.get(2).get(position))));
-        }
-        return 0.0;
+            String quantity = holder.binding.foodDropdown.getText().toString();
+            foodData.get(position).setSelectedQuantity(quantity);
+            foodDataI.foodData(foodData.get(position));
+        });
+
     }
 
     @Override
     public int getItemCount() {
+        Log.i(TAG, "getItemCount: " + foodData.size());
         return foodData.size();
     }
 

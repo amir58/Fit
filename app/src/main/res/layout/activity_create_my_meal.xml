@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HomeTrainSixFragment">
+    tools:context=".ui.CreateMyMealActivity">
 
     <View
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             android:id="@+id/logo_image"
             android:layout_width="@dimen/_45sdp"
             android:layout_height="@dimen/_45sdp"
-            android:layout_marginTop="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:src="@drawable/logo_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,7 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_45sdp"
             android:src="@drawable/logo_image"
-            android:visibility="invisible"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,7 +46,6 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:orientation="vertical"
-            android:visibility="invisible"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/calories_calculator_tv"
             app:layout_constraintEnd_toEndOf="parent"
@@ -606,96 +605,6 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/play_image"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_marginTop="@dimen/_40sdp"
-            android:src="@drawable/play_image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logo_image" />
-
-        <LinearLayout
-            android:id="@+id/meal_details_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:orientation="vertical"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="@+id/play_image"
-            app:layout_constraintStart_toStartOf="@+id/play_image"
-            app:layout_constraintTop_toBottomOf="@+id/play_image">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_2sdp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="@dimen/_15sdp"
-                    android:layout_height="@dimen/_15sdp"
-                    android:src="@drawable/correct_image" />
-
-                <TextView
-                    android:id="@+id/first_meal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:fontFamily="@font/aeonik_regular"
-                    android:text="100G BREAD"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_13ssp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_2sdp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="@dimen/_15sdp"
-                    android:layout_height="@dimen/_15sdp"
-                    android:src="@drawable/correct_image" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:fontFamily="@font/aeonik_regular"
-                    android:text="100G BREAD"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_13ssp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_2sdp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="@dimen/_15sdp"
-                    android:layout_height="@dimen/_15sdp"
-                    android:src="@drawable/correct_image" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:fontFamily="@font/aeonik_regular"
-                    android:text="100G BREAD"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_13ssp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
         <TextView
             android:id="@+id/calories_calculator_tv"
             android:layout_width="match_parent"
@@ -714,7 +623,7 @@
             android:text="CALORIES CALCULATOR"
             android:textColor="@color/fit_green"
             android:textSize="@dimen/_17ssp"
-            android:visibility="invisible"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/search_layout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radio_btns_layout" />
@@ -728,6 +637,7 @@
             android:layout_marginTop="@dimen/_15sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             android:theme="@style/MyTextInputLayout_overlay"
+            android:visibility="gone"
             app:boxCornerRadiusBottomEnd="@dimen/_30sdp"
             app:boxCornerRadiusBottomStart="@dimen/_30sdp"
             app:boxCornerRadiusTopEnd="@dimen/_30sdp"
@@ -738,24 +648,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calories_calculator_tv">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/create_meal_btn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/activity_register_name_et"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:backgroundTint="@color/white"
-                android:fontFamily="@font/aeonik_regular"
-                android:paddingVertical="@dimen/_10sdp"
-                android:text="CREATE YOUR MEAL BY YOURSELF"
-                android:textColor="@color/fit_green"
-                android:textSize="@dimen/_9ssp"
-                android:textStyle="bold"
-                app:cornerRadius="@dimen/_20sdp"
-                app:layout_constraintEnd_toEndOf="@+id/meal_rv"
-                app:layout_constraintTop_toTopOf="@+id/meal_rv"
-                app:strokeColor="@color/fit_green"
-                app:strokeWidth="0dp" />
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:fontFamily="@font/aeonik_medium"
+                android:hint="search"
+                android:inputType="text"
+                android:textColor="#8CFFFFFF"
+                android:textSize="@dimen/_13ssp"
+                app:backgroundTint="#232441"
+                app:boxStrokeWidth="0dp"
+                app:endIconDrawable="@drawable/ic_search"
+                app:hintTextColor="#8CFFFFFF" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -780,19 +686,15 @@
             android:id="@+id/calories_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
             android:background="@drawable/corners"
             android:backgroundTint="#232441"
             android:fontFamily="@font/aeonik_regular"
-            android:paddingStart="@dimen/_15sdp"
-            android:paddingTop="@dimen/_15sdp"
-            android:paddingEnd="@dimen/_15sdp"
-            android:paddingBottom="@dimen/_15sdp"
+            android:padding="@dimen/_10sdp"
             android:textColor="@color/white"
             android:textSize="@dimen/_10ssp"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@+id/search_layout"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/btns_linear_layout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/search_layout" />
 
@@ -800,27 +702,27 @@
             android:id="@+id/btns_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/search_layout">
+            app:layout_constraintTop_toBottomOf="@id/calories_layout">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/nutrition_plan_btn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="@dimen/_90sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:fontFamily="@font/aeonik_regular"
-                android:text="NUTRITION PLAN"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_7ssp"
-                app:cornerRadius="@dimen/_20sdp"
-                app:strokeColor="@color/fit_green"
-                app:strokeWidth="0dp" />
+            <!--            <com.google.android.material.button.MaterialButton-->
+            <!--                android:id="@+id/nutrition_plan_btn"-->
+            <!--                style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+            <!--                android:layout_width="@dimen/_90sdp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/_5sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_5sdp"-->
+            <!--                android:fontFamily="@font/aeonik_regular"-->
+            <!--                android:text="NUTRITION PLAN"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="@dimen/_7ssp"-->
+            <!--                app:cornerRadius="@dimen/_20sdp"-->
+            <!--                app:strokeColor="@color/fit_green"-->
+            <!--                app:strokeWidth="0dp" />-->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/meal1_btn"
@@ -866,18 +768,200 @@
 
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/meal_rv"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btns_linear_layout"
-            app:spanCount="4"
-            tools:listitem="@layout/meal_item" />
+            app:layout_constraintTop_toBottomOf="@id/btns_linear_layout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_meal_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/aeonik_bold"
+                    android:text="MEAL 1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_25ssp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/first_choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:backgroundTint="#131429"
+                            android:orientation="vertical"
+                            app:cardCornerRadius="@dimen/_15sdp"
+                            tools:ignore="RtlSymmetry">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="@dimen/_15sdp"
+                                    app:cardElevation="@dimen/_2sdp">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_110sdp"
+                                        android:layout_height="@dimen/_140sdp"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/six_packs_image" />
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <androidx.appcompat.widget.AppCompatRadioButton
+                                    android:id="@+id/rb_first"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:button="@drawable/selector_radio_small"
+                                    android:checked="true"
+                                    android:enabled="false"
+                                    android:layoutDirection="rtl"
+                                    android:text="First choice"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/second_choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:backgroundTint="#131429"
+                            android:orientation="vertical"
+                            app:cardCornerRadius="@dimen/_15sdp"
+                            tools:ignore="RtlSymmetry">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="@dimen/_15sdp"
+                                    app:cardElevation="@dimen/_2sdp">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_110sdp"
+                                        android:layout_height="@dimen/_140sdp"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/six_packs_image" />
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <androidx.appcompat.widget.AppCompatRadioButton
+                                    android:id="@+id/rb_second"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:button="@drawable/selector_radio_small"
+                                    android:enabled="false"
+                                    android:layoutDirection="rtl"
+                                    android:text="Second choice"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/third_choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:backgroundTint="#131429"
+                            android:orientation="vertical"
+                            app:cardCornerRadius="@dimen/_15sdp"
+                            tools:ignore="RtlSymmetry">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="@dimen/_15sdp"
+                                    app:cardElevation="@dimen/_2sdp">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/_110sdp"
+                                        android:layout_height="@dimen/_140sdp"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/six_packs_image" />
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <androidx.appcompat.widget.AppCompatRadioButton
+                                    android:id="@+id/rb_third"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:button="@drawable/selector_radio_small"
+                                    android:enabled="false"
+                                    android:layoutDirection="rtl"
+                                    android:text="Third choice"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_confirm_meal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:text="Confirm meal" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,16 +11,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.fit.fast.R;
 import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.MealImageItemBinding;
+import com.fit.fast.models.Food;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class MealItemsAdapter extends RecyclerView.Adapter<MealItemsAdapter.Holder> {
-
+    private static final String TAG = "MealItemsAdapter";
     ShowItemDataI showItemDataI;
-    List<List<String>> foodData;
+    List<Food> foodData;
 
-    public MealItemsAdapter(ShowItemDataI showItemDataI, List<List<String>> foodData) {
+    public MealItemsAdapter(ShowItemDataI showItemDataI, List<Food> foodData) {
         this.showItemDataI = showItemDataI;
         this.foodData = foodData;
     }
@@ -36,11 +37,11 @@ public class MealItemsAdapter extends RecyclerView.Adapter<MealItemsAdapter.Hold
 
         Picasso
                 .get()
-                .load(foodData.get(4).get(position))
+                .load(foodData.get(4).getName())
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .into(holder.binding.mealImage);
 
-        holder.binding.mealRb.setText(foodData.get(0).get(position));
+        holder.binding.mealRb.setText(foodData.get(position).getName());
 
         final boolean[] isChecked = {false};
         holder.binding.mealRb.setOnClickListener( v-> {
@@ -68,7 +69,8 @@ public class MealItemsAdapter extends RecyclerView.Adapter<MealItemsAdapter.Hold
 
     @Override
     public int getItemCount() {
-        return 8;
+        Log.i(TAG, "getItemCount: " + foodData.size());
+        return foodData.size();
     }
 
     public class Holder extends RecyclerView.ViewHolder {

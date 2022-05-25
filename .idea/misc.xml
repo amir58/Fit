@@ -49,7 +49,6 @@
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_second_info.xml" value="0.22" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/activity_welcome.xml" value="0.25" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/day_item.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/food_item.xml" value="0.16417272338606242" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/fragment_follow_up.xml" value="0.25" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/fragment_home_train_five.xml" value="0.25" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/fragment_home_train_six.xml" value="0.25" />
@@ -63,7 +62,13 @@
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/workouts_item.xml" value="0.22402736212056434" />
         <entry key="..\:/Users/Abdullah Amin/AndroidStudioProjects/Fit/app/src/main/res/layout/year_item.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Abdullah Amin/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.22402736212056434" />
+        <entry key="app/src/main/res/layout/activity_create_my_meal.xml" value="0.42875" />
+        <entry key="app/src/main/res/layout/activity_details_train_one.xml" value="0.2925" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.27685185185185185" />
+        <entry key="app/src/main/res/layout/food_item.xml" value="0.2425" />
+        <entry key="app/src/main/res/layout/fragment_home_train_six.xml" value="0.46484375" />
+        <entry key="app/src/main/res/layout/meal_image_item.xml" value="0.46484375" />
+        <entry key="app/src/main/res/layout/meal_item.xml" value="0.46484375" />
       </map>
     </option>
   </component>
