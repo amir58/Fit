@@ -15,16 +15,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.Toast;
-
-import com.fit.fast.adapters.FoodAdapter;
-import com.fit.fast.adapters.MealAdapter;
-import com.fit.fast.callbacks.FoodData;
-import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.FragmentHomeTrainSixBinding;
 import com.fit.fast.models.ExcelFileReader;
 import com.fit.fast.models.Food;
 import com.google.android.material.button.MaterialButton;
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,6 +88,16 @@ public class HomeTrainSixFragment extends Fragment {
 //                Toast.makeText(requireContext(), txt, Toast.LENGTH_SHORT).show();
 //            }
 //        }, getFoodData()));
+
+        JSONArray json = new JSONArray(getFoodData());
+
+        Gson gson = new Gson();
+
+        String array = gson.toJson(getFoodData());
+
+        ArrayList<ArrayList<String>> food = gson.fromJson(array, ArrayList.class);
+
+        Log.i("oooo", "onViewCreated: "+ food);
 
         binding.createMealBtn.setOnClickListener(new View.OnClickListener() {
             @Override

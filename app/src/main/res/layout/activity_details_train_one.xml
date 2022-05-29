@@ -7,10 +7,12 @@
     android:background="#131429"
     tools:context=".ui.DetailsTrainOneActivity">
 
-    <View
+    <ImageView
+        android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_310sdp"
         android:background="@drawable/weights_image"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

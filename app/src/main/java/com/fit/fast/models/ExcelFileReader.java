@@ -22,12 +22,13 @@ import java.util.List;
 public class ExcelFileReader {
 
 
-    private final List<String> workoutName = new ArrayList<>();
-    private final List<String> workoutSets = new ArrayList<>();
-    private final List<String> workoutReps = new ArrayList<>();
-    private final List<String> workoutLink = new ArrayList<>();
-    private final List<String> workoutPhoto = new ArrayList<>();
-    private final List<List<String>> workoutDataList = new ArrayList<>();
+    private final List<Workout> sports = new ArrayList<>();
+//    private final List<String> workoutName = new ArrayList<>();
+//    private final List<String> workoutSets = new ArrayList<>();
+//    private final List<String> workoutReps = new ArrayList<>();
+//    private final List<String> workoutLink = new ArrayList<>();
+//    private final List<String> workoutPhoto = new ArrayList<>();
+//    private final List<List<String>> workoutDataList = new ArrayList<>();
 
     private final List<Food> foods = new ArrayList<>();
 //    private final List<String> foodName = new ArrayList<>();
@@ -59,7 +60,7 @@ public class ExcelFileReader {
         return INSTANCE;
     }
 
-    public List<List<String>> getWorkoutDataFromExcel() {
+    public List<Workout> getWorkoutDataFromExcel() {
         try {
             InputStream stream = context.getAssets().open(fileName);
             POIFSFileSystem poifsFileSystem = new POIFSFileSystem(stream);
@@ -72,34 +73,32 @@ public class ExcelFileReader {
                 if (rowNumber != 0) {
                     Iterator<Cell> cellIterator = row.cellIterator();
                     int columnNumber = 0;
+
+                    Workout workout = new Workout();
                     while (cellIterator.hasNext()) {
                         HSSFCell cell = (HSSFCell) cellIterator.next();
                         if (columnNumber == 0) {
-                            workoutName.add(cell.toString());
+                            workout.setName(cell.toString());
                         } else if (columnNumber == 1) {
-                            workoutSets.add(cell.toString());
+                            workout.setSets(cell.toString());
                         } else if (columnNumber == 2) {
-                            workoutReps.add(cell.toString());
+                            workout.setReps(cell.toString());
                         } else if (columnNumber == 3) {
-                            workoutLink.add(cell.toString());
+                            workout.setLink(cell.toString());
                         } else if (columnNumber == 4) {
-                            workoutPhoto.add(cell.toString());
+                            workout.setPhoto(cell.toString());
                         }
                         columnNumber++;
                     }
+                    sports.add(workout);
                 }
                 rowNumber++;
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        workoutDataList.add(workoutName);
-        workoutDataList.add(workoutSets);
-        workoutDataList.add(workoutReps);
-        workoutDataList.add(workoutLink);
-        workoutDataList.add(workoutPhoto);
 
-        return workoutDataList;
+        return sports;
     }
 
     public List<Food> getFoodDataFromExcel() {

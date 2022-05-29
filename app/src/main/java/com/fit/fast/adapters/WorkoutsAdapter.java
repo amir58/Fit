@@ -1,5 +1,6 @@
 package com.fit.fast.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -9,9 +10,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fit.fast.callbacks.OpenTrainDetailsI;
 import com.fit.fast.databinding.WorkoutsItemBinding;
+import com.fit.fast.models.Workout;
 import com.fit.fast.ui.DetailsTrainOneActivity;
 
+import java.util.List;
+
 public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.Holder>{
+
+    private List<Workout> sport;
+    public WorkoutsAdapter(List<Workout> sport) {
+        this.sport = sport;
+    }
 
     @NonNull
     @Override
@@ -20,14 +29,15 @@ public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.Holder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Holder holder, int position) {
+    public void onBindViewHolder(@NonNull Holder holder, @SuppressLint("RecyclerView") int position) {
         holder.binding.workoutRv.setAdapter(new PopularWorkoutsAdapter(new OpenTrainDetailsI() {
             @Override
-            public void openTrainDetails(String data) {
-                holder.itemView.getContext().startActivity(
-                        new Intent(holder.itemView.getContext(), DetailsTrainOneActivity.class));
+            public void openTrainDetails(List<Workout> data) {
+                Intent intent = new Intent(holder.itemView.getContext(), DetailsTrainOneActivity.class);
+                intent.putExtra("sport", sport.get(position));
+                holder.itemView.getContext().startActivity(intent);
             }
-        }));
+        }, sport));
     }
 
     @Override

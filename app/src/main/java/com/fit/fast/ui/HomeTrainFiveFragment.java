@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import com.fit.fast.adapters.WorkoutsAdapter;
 import com.fit.fast.databinding.FragmentHomeTrainFiveBinding;
 import com.fit.fast.models.ExcelFileReader;
+import com.fit.fast.models.Workout;
 import com.fit.fast.network.RegisterSingleton;
 import com.google.android.material.button.MaterialButton;
 
@@ -24,6 +25,9 @@ import java.util.List;
 public class HomeTrainFiveFragment extends Fragment {
 
     FragmentHomeTrainFiveBinding binding;
+
+    private List<Workout> workouts;
+    private Workout workoutSport;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,6 +45,8 @@ public class HomeTrainFiveFragment extends Fragment {
         requireActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
+        binding.workoutRv.setAdapter(new WorkoutsAdapter(switchOnSport("SP")));
+
         binding.workoutBtn.setStrokeWidth(1);
 
         setClicks(binding.workoutBtn, binding.legDayBtn, binding.pullDyBtn, binding.pushDayBtn);
@@ -50,37 +56,17 @@ public class HomeTrainFiveFragment extends Fragment {
         setClicks(binding.pullDyBtn, binding.legDayBtn, binding.workoutBtn, binding.pushDayBtn);
 
         setClicks(binding.legDayBtn, binding.workoutBtn, binding.pullDyBtn, binding.pushDayBtn);
+        
+//        String sport = String.valueOf(ExcelFileReader.readerClient(
+//                "1_1.xls", requireActivity()).getWorkoutDataFromExcel()
+//        );
 
-        binding.workoutRv.setAdapter(new WorkoutsAdapter());
-
-//        ExcelFileReader.readerClient("1_1.xls", requireActivity()).getWorkoutDataFromExcel();
-
-        String sport = "SP";
-
-        switchOnSport(sport);
     }
 
-    private void switchOnSport(String sport) {
-        switch (sport){
+    private List<Workout> switchOnSport(String sport) {
+        switch (sport) {
             case "SP":
-                List<String> workoutName;
-                List<String> workoutSets;
-                List<String> workoutReps;
-                List<String> workoutLink;
-                List<String> workoutPhoto;
-
-                workoutName = ExcelFileReader.readerClient("s1.xls", requireActivity()).getWorkoutDataFromExcel().get(0);
-                workoutSets = ExcelFileReader.readerClient("s1.xls", requireActivity()).getWorkoutDataFromExcel().get(1);
-                workoutReps = ExcelFileReader.readerClient("s1.xls", requireActivity()).getWorkoutDataFromExcel().get(2);
-                workoutLink = ExcelFileReader.readerClient("s1.xls", requireActivity()).getWorkoutDataFromExcel().get(3);
-                workoutPhoto = ExcelFileReader.readerClient("s1.xls", requireActivity()).getWorkoutDataFromExcel().get(4);
-
-                Log.i("abdo", "switchOnSport: "+ workoutName);
-                Log.i("abdo", "switchOnSport: "+ workoutSets);
-                Log.i("abdo", "switchOnSport: "+ workoutReps);
-                Log.i("abdo", "switchOnSport: "+ workoutLink);
-                Log.i("abdo", "switchOnSport: "+ workoutPhoto);
-                break;
+                return getSportWithSpecificFile("s1.xls");
             case "MMA":
                 sport = "MMA";
                 break;
@@ -94,6 +80,8 @@ public class HomeTrainFiveFragment extends Fragment {
                 sport = "GE ";
                 break;
         }
+        
+        return workouts = new ArrayList<>();
     }
 
     private void setClicks(MaterialButton pressedBtn, MaterialButton unpressedBtn1,
@@ -105,5 +93,9 @@ public class HomeTrainFiveFragment extends Fragment {
             unpressedBtn2.setStrokeWidth(0);
             unpressedBtn3.setStrokeWidth(0);
         });
+    }
+
+    private List<Workout> getSportWithSpecificFile(String fileName) {
+        return ExcelFileReader.readerClient(fileName, requireActivity()).getWorkoutDataFromExcel();
     }
 }

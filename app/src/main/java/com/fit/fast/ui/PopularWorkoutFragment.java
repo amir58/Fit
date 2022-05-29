@@ -13,8 +13,14 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 
 import com.fit.fast.adapters.PopularWorkoutsAdapter;
+import com.fit.fast.adapters.WorkoutsAdapter;
 import com.fit.fast.callbacks.OpenTrainDetailsI;
 import com.fit.fast.databinding.FragmentPopularWorkoutBinding;
+import com.fit.fast.models.ExcelFileReader;
+import com.fit.fast.models.Workout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PopularWorkoutFragment extends Fragment {
 
@@ -35,11 +41,31 @@ public class PopularWorkoutFragment extends Fragment {
         requireActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        binding.popularWorkoutRv.setAdapter(new PopularWorkoutsAdapter(new OpenTrainDetailsI() {
-            @Override
-            public void openTrainDetails(String data) {
-                startActivity(new Intent(requireContext(), DetailsTrainOneActivity.class));
-            }
-        }));
+        binding.popularWorkoutRv.setAdapter(new WorkoutsAdapter(switchOnSport("SP")));
+    }
+
+    private List<Workout> switchOnSport(String sport) {
+        switch (sport) {
+            case "SP":
+                return getSportWithSpecificFile("s1.xls");
+            case "MMA":
+                sport = "MMA";
+                break;
+            case "FB":
+                sport = "FB";
+                break;
+            case "BB":
+                sport = "BB";
+                break;
+            default:
+                sport = "GE ";
+                break;
+        }
+
+        return new ArrayList<>();
+    }
+
+    private List<Workout> getSportWithSpecificFile(String fileName) {
+        return ExcelFileReader.readerClient(fileName, requireActivity()).getWorkoutDataFromExcel();
     }
 }
