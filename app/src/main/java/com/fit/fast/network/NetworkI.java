@@ -15,7 +15,7 @@ import retrofit2.http.Part;
 public interface NetworkI {
 
     @Multipart
-    @POST("people/?format=json")
+    @POST("register/")
     Call<RegisterResponse> register(@Part("Name") RequestBody name,
                                     @Part("Username") RequestBody username,
                                     @Part("Age") RequestBody age,
@@ -34,6 +34,6 @@ public interface NetworkI {
                                     @Part MultipartBody.Part body);
 
 
-    @POST("api-auth/login/")
+    @POST("login/")
     Call<LoginResponse> login(@Body LoginRequest loginRequest);
 }

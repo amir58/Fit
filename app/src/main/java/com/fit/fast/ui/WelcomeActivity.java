@@ -23,7 +23,7 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     public void startNow(View view) {
-        startActivity(new Intent(this, HomeTrainBottomNavigationActivity.class));
+        startActivity(new Intent(this, LoginActivity.class));
         overridePendingTransition(R.anim.anim_slide_left, R.anim.anim_slide_right);
         finish();
     }

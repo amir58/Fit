@@ -70,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<LoginResponse> call, Throwable t) {
+                        Log.i(TAG, "onFailure: "+ t.getLocalizedMessage());
                         Toast.makeText(LoginActivity.this, t.getLocalizedMessage() + "", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -84,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Toast.makeText(LoginActivity.this, loginResponse.getErrorMessage() + "", Toast.LENGTH_LONG).show();
+//        Toast.makeText(LoginActivity.this, loginResponse.getErrorMessage() + "", Toast.LENGTH_LONG).show();
 
     }
 

@@ -1,5 +1,8 @@
 package com.fit.fast.network;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -24,11 +27,15 @@ public class RetrofitSingleton {
         OkHttpClient mClient = new OkHttpClient.Builder()
                 .addInterceptor(interceptor).build();
 
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl("https://django-sport-api.herokuapp.com/")
                     .client(mClient)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
         }
         return retrofit.create(NetworkI.class);

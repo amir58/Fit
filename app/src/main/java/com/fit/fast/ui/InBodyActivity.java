@@ -3,6 +3,7 @@ package com.fit.fast.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -89,6 +90,12 @@ public class InBodyActivity extends AppCompatActivity {
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
 
                         if (response.isSuccessful()) {
+                            SharedPreferences preferences = getSharedPreferences("registerResponse", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            Gson gson = new Gson();
+                            String json = gson.toJson(response.body());
+                            editor.putString("userData", json);
+                            editor.apply();
                             startActivity(new Intent(InBodyActivity.this, PhotoOrInBodyLoadingActivity.class));
                             finish();
                         } else {

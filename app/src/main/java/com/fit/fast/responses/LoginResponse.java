@@ -4,45 +4,33 @@ import com.google.gson.annotations.SerializedName;
 
 public class LoginResponse{
 
-	@SerializedName("access")
-	private String access;
+	@SerializedName("id")
+	private int id;
 
-	@SerializedName("refresh")
-	private String refresh;
+	@SerializedName("Error")
+	private String error;
 
-	@SerializedName("detail")
-	private String errorMessage;
-
-	public void setAccess(String access){
-		this.access = access;
+	public void setId(int id){
+		this.id = id;
 	}
 
-	public String getAccess(){
-		return access;
+	public int getId(){
+		return id;
 	}
 
-	public void setRefresh(String refresh){
-		this.refresh = refresh;
+	public String getError() {
+		return error;
 	}
 
-	public String getRefresh(){
-		return refresh;
-	}
-
-	public String getErrorMessage() {
-		return errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setError(String error) {
+		this.error = error;
 	}
 
 	@Override
 	public String toString() {
 		return "LoginResponse{" +
-				"access='" + access + '\'' +
-				", refresh='" + refresh + '\'' +
-				", errorMessage='" + errorMessage + '\'' +
+				"id=" + id +
+				", error=" + error +
 				'}';
 	}
 }
