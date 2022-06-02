@@ -45,32 +45,31 @@ public class LoginActivity extends AppCompatActivity {
         String username = binding.activityLoginUsernameEt.getText().toString();
         String password = binding.activityLoginPasswordEt.getText().toString();
 
-        if (username.isEmpty() || password.isEmpty()){
+        if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Username and password required", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        RetrofitSingleton.getClient().login(new LoginRequest(username, password))
+        RetrofitSingleton.getClient().login(username, password)
                 .enqueue(new Callback<LoginResponse>() {
                     @Override
                     public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                        if (response.isSuccessful() || response.body().getError() == null){
-                            Log.i(TAG, "onResponse: success --- "+ response.body());
+                        if (response.isSuccessful() && response.body().getError() == null) {
+                            Log.i(TAG, "onResponse: success --- " + response.body());
                             startActivity(new Intent(LoginActivity.this,
                                     HomeTrainBottomNavigationActivity.class));
                             finish();
-                        }
-                        else{
-                            Log.i(TAG, "onResponse: not success --- ");
-                            Log.i(TAG, "onResponse: ---------------- "+ response.errorBody());
+                        } else {
+                            Log.i(TAG, "onResponse: not success --- " + response.body().getError());
+                            Log.i(TAG, "onResponse: ---------------- " + response.errorBody());
 
-                            getErrorBody(response);
+//                            getErrorBody(response);
                         }
                     }
 
                     @Override
                     public void onFailure(Call<LoginResponse> call, Throwable t) {
-                        Log.i(TAG, "onFailure: "+ t.getLocalizedMessage());
+                        Log.i(TAG, "onFailure: " + t.getLocalizedMessage());
                         Toast.makeText(LoginActivity.this, t.getLocalizedMessage() + "", Toast.LENGTH_SHORT).show();
                     }
                 });

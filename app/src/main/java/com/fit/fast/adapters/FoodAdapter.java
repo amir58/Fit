@@ -93,4 +93,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodHolder> {
             this.binding = binding;
         }
     }
+
 }
+
