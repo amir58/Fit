@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                 .enqueue(new Callback<LoginResponse>() {
                     @Override
                     public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                        if (response.isSuccessful()){
+                        if (response.isSuccessful() || response.body().getError() == null){
                             Log.i(TAG, "onResponse: success --- "+ response.body());
                             startActivity(new Intent(LoginActivity.this,
                                     HomeTrainBottomNavigationActivity.class));
