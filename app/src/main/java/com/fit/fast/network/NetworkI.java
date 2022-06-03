@@ -1,6 +1,10 @@
 package com.fit.fast.network;
 
+import com.fit.fast.requests.AddRequest;
+import com.fit.fast.requests.ChangePasswordRequest;
 import com.fit.fast.requests.LoginRequest;
+import com.fit.fast.responses.AddResponse;
+import com.fit.fast.responses.ChangePasswordResponse;
 import com.fit.fast.responses.LoginResponse;
 import com.fit.fast.responses.RegisterResponse;
 
@@ -10,8 +14,10 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
 
 public interface NetworkI {
@@ -41,5 +47,11 @@ public interface NetworkI {
     Call<LoginResponse> login(
             @Field("Username") String username,
             @Field("Password") String password
-            );
+    );
+
+    @PUT("change-password/")
+    Call<ChangePasswordResponse> changePassword(@Body ChangePasswordRequest changePasswordRequest);
+
+    @POST("addlist/")
+    Call<AddResponse> add(@Body AddRequest addRequest);
 }

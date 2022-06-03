@@ -1,8 +1,10 @@
 package com.fit.fast.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -56,6 +58,10 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                         if (response.isSuccessful() && response.body().getError() == null) {
                             Log.i(TAG, "onResponse: success --- " + response.body());
+                            SharedPreferences sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("id", String.valueOf(response.body().getId()));
+                            editor.apply();
                             startActivity(new Intent(LoginActivity.this,
                                     HomeTrainBottomNavigationActivity.class));
                             finish();
@@ -68,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<LoginResponse> call, Throwable t) {
+                    public void onFailure(@NonNull Call<LoginResponse> call, Throwable t) {
                         Log.i(TAG, "onFailure: " + t.getLocalizedMessage());
                         Toast.makeText(LoginActivity.this, t.getLocalizedMessage() + "", Toast.LENGTH_SHORT).show();
                     }

@@ -229,10 +229,10 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/ads_cv"
                 android:layout_width="@dimen/_140sdp"
-                android:layout_height="@dimen/_125sdp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:visibility="invisible"
+                android:visibility="visible"
                 app:cardCornerRadius="@dimen/_30sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -257,50 +257,50 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/security_tv" />
 
-                    <TextView
-                        android:id="@+id/location_tv"
-                        android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/add"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:fontFamily="@font/aeonik_regular"
-                        android:gravity="center"
-                        android:text="Location: .........................................."
+                        android:gravity="start"
+                        android:hint="Add:"
                         android:textColor="@color/fit_green"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/line_view" />
 
-                    <TextView
-                        android:id="@+id/target_tv"
-                        android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/target"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:fontFamily="@font/aeonik_regular"
-                        android:gravity="center"
-                        android:text="Set your target: ............................."
+                        android:gravity="start"
+                        android:hint="Set your target:"
                         android:textColor="@color/fit_green"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/line_view" />
 
-                    <TextView
-                        android:id="@+id/duration_tv"
-                        android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/duration"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:fontFamily="@font/aeonik_regular"
-                        android:gravity="center"
-                        android:text="Duration: ....................................."
+                        android:gravity="start"
+                        android:hint="Duration:"
                         android:textColor="@color/fit_green"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/line_view" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/fragment_rate_driver_dialog_save_btn"
+                        android:id="@+id/publish"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -378,8 +378,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/change_password_cv"
-                android:layout_width="@dimen/_140sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:visibility="invisible"
                 app:cardCornerRadius="@dimen/_25sdp"
@@ -404,32 +404,40 @@
                         android:textSize="@dimen/_12ssp"
                         app:layout_constraintStart_toStartOf="parent" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/old_password"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
                         android:fontFamily="@font/aeonik_regular"
-                        android:gravity="center"
-                        android:text="Old password : ************"
+                        android:gravity="start"
+                        android:hint="Old password :"
                         android:textColor="@color/fit_green"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintStart_toStartOf="parent" />
 
-                    <TextView
-                        android:id="@+id/new_password_tv"
-                        android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/new_password"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
                         android:fontFamily="@font/aeonik_regular"
-                        android:gravity="center"
-                        android:text="New password : ***********"
+                        android:gravity="start"
+                        android:hint="New password :"
                         android:textColor="@color/fit_green"
                         android:textSize="@dimen/_10ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/line_view" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/okBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ok"
+                        android:layout_gravity="center"/>
 
                 </LinearLayout>
 

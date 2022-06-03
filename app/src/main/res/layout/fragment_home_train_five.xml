@@ -79,75 +79,87 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:id="@+id/btns_linear_layout"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/daysBtnRV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/day_btn_item"
             android:layout_marginTop="@dimen/_10sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/search_layout">
+            app:layout_constraintTop_toBottomOf="@id/search_layout"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/workout_btn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="workout"
-                android:textSize="@dimen/_8ssp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/aeonik_regular"
-                app:strokeWidth="0dp"
-                app:strokeColor="@color/fit_green"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:layout_marginStart="@dimen/_5sdp"
-                app:cornerRadius="@dimen/_20sdp"/>
+<!--        <LinearLayout-->
+<!--            android:id="@+id/btns_linear_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_marginTop="@dimen/_10sdp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/search_layout">-->
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/push_day_btn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="push day"
-                android:textSize="@dimen/_8ssp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/aeonik_regular"
-                app:strokeColor="@color/fit_green"
-                app:strokeWidth="0dp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                app:cornerRadius="@dimen/_20sdp"/>
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/workout_btn"-->
+<!--                style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="workout"-->
+<!--                android:textSize="@dimen/_8ssp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:fontFamily="@font/aeonik_regular"-->
+<!--                app:strokeWidth="0dp"-->
+<!--                app:strokeColor="@color/fit_green"-->
+<!--                android:layout_marginEnd="@dimen/_5sdp"-->
+<!--                android:layout_marginStart="@dimen/_5sdp"-->
+<!--                app:cornerRadius="@dimen/_20sdp"/>-->
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/pull_dy_btn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="pull day"
-                android:textSize="@dimen/_8ssp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/aeonik_regular"
-                app:strokeColor="@color/fit_green"
-                app:strokeWidth="0dp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                app:cornerRadius="@dimen/_20sdp"/>
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/push_day_btn"-->
+<!--                style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="push day"-->
+<!--                android:textSize="@dimen/_8ssp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:fontFamily="@font/aeonik_regular"-->
+<!--                app:strokeColor="@color/fit_green"-->
+<!--                app:strokeWidth="0dp"-->
+<!--                android:layout_marginEnd="@dimen/_5sdp"-->
+<!--                app:cornerRadius="@dimen/_20sdp"/>-->
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/leg_day_btn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="leg day"
-                android:textSize="@dimen/_8ssp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/aeonik_regular"
-                app:strokeColor="@color/fit_green"
-                app:strokeWidth="0dp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                app:cornerRadius="@dimen/_20sdp"/>
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/pull_dy_btn"-->
+<!--                style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="pull day"-->
+<!--                android:textSize="@dimen/_8ssp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:fontFamily="@font/aeonik_regular"-->
+<!--                app:strokeColor="@color/fit_green"-->
+<!--                app:strokeWidth="0dp"-->
+<!--                android:layout_marginEnd="@dimen/_5sdp"-->
+<!--                app:cornerRadius="@dimen/_20sdp"/>-->
 
-        </LinearLayout>
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/leg_day_btn"-->
+<!--                style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="leg day"-->
+<!--                android:textSize="@dimen/_8ssp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:fontFamily="@font/aeonik_regular"-->
+<!--                app:strokeColor="@color/fit_green"-->
+<!--                app:strokeWidth="0dp"-->
+<!--                android:layout_marginEnd="@dimen/_5sdp"-->
+<!--                app:cornerRadius="@dimen/_20sdp"/>-->
+
+<!--        </LinearLayout>-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/workout_rv"
@@ -157,7 +169,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="vertical"
             app:spanCount="4"
-            app:layout_constraintTop_toBottomOf="@id/btns_linear_layout"
+            app:layout_constraintTop_toBottomOf="@id/daysBtnRV"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
