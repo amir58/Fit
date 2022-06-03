@@ -22,6 +22,7 @@ import com.fit.fast.adapters.DaysAdapter;
 import com.fit.fast.adapters.WorkoutsAdapter;
 import com.fit.fast.callbacks.DaysCallback;
 import com.fit.fast.databinding.FragmentHomeTrainFiveBinding;
+import com.fit.fast.models.Days;
 import com.fit.fast.models.ExcelFileReader;
 import com.fit.fast.models.Workout;
 import com.fit.fast.network.RegisterSingleton;
@@ -77,31 +78,43 @@ public class HomeTrainFiveFragment extends Fragment {
         RegisterResponse response =
                 gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
 
-        int days = response.getTrain().intValue();
+//        int days = response.getTrain().intValue();
 
-        binding.workoutRv.setAdapter(new WorkoutsAdapter(switchOnSport("SP")));
+        binding.workoutRv.setAdapter(new WorkoutsAdapter(response.getSport(), getDaysAccordingToSport(response)));
 
+        binding.daysBtnRV.setAdapter(new DaysAdapter(requireActivity(), getDaysAccordingToSport(response), days1 -> {
+            Objects.requireNonNull(binding.workoutRv.getLayoutManager())
+                    .smoothScrollToPosition(binding.workoutRv, new RecyclerView.State(), days1);
 
-        binding.daysBtnRV.setAdapter(new DaysAdapter(requireActivity(), days, new DaysCallback() {
-            @Override
-            public void days(int days) {
-                Objects.requireNonNull(binding.daysBtnRV.getLayoutManager()).smoothScrollToPosition(binding.daysBtnRV, new RecyclerView.State(), days);
+            RecyclerView.SmoothScroller smoothScroller = new LinearSmoothScroller(requireContext()) {
+                @Override
+                protected int getVerticalSnapPreference() {
+                    return LinearSmoothScroller.SNAP_TO_START;
+                }
+            };
 
-                RecyclerView.SmoothScroller smoothScroller = new LinearSmoothScroller(requireContext()) {
-                    @Override
-                    protected int getVerticalSnapPreference() {
-                        return LinearSmoothScroller.SNAP_TO_START;
-                    }
-                };
-
-                smoothScroller.setTargetPosition(days);
-                Objects.requireNonNull(binding.daysBtnRV.getLayoutManager()).startSmoothScroll(smoothScroller);
-            }
+            smoothScroller.setTargetPosition(days1 - 2);
+            Objects.requireNonNull(binding.workoutRv.getLayoutManager()).startSmoothScroll(smoothScroller);
         }));
     }
 
+    private int getDaysAccordingToSport(RegisterResponse response) {
+        switch (response.getSport()){
+            case "SP":
+                return Days.SP.getDays();
+            case "MMA":
+                return Days.MMA.getDays();
+//            case "FB":
+//                return Days.BB.getDays();
+            case "BB":
+                return Days.BB.getDays();
+            default:
+                return Days.GE.getDays();
+        }
+    }
+
     private List<Workout> switchOnSport(String sport) {
-        switch (sport) {
+        switch (sport.trim()) {
             case "SP":
                 return getSportWithSpecificFile("s1.xls");
             case "MMA":

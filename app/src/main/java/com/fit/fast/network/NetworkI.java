@@ -49,8 +49,11 @@ public interface NetworkI {
             @Field("Password") String password
     );
 
-    @PUT("change-password/")
-    Call<ChangePasswordResponse> changePassword(@Body ChangePasswordRequest changePasswordRequest);
+    @FormUrlEncoded
+    @POST("change/")
+    Call<ChangePasswordResponse> changePassword(@Field("old") String oldPassword,
+                                                @Field("new") String newPassword,
+                                                @Field("id") String id);
 
     @POST("addlist/")
     Call<AddResponse> add(@Body AddRequest addRequest);

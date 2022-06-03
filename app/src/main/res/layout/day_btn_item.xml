@@ -22,6 +22,7 @@
             android:fontFamily="@font/aeonik_regular"
             app:strokeColor="@color/fit_green"
             app:strokeWidth="0dp"
+            android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_5sdp"
             app:cornerRadius="@dimen/_20sdp" />
 

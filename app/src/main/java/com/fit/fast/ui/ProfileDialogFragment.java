@@ -155,7 +155,7 @@ public class ProfileDialogFragment extends DialogFragment {
 
     private void changePwd(String oldPwd, String newPwd) {
         RetrofitSingleton.getClient()
-                .changePassword(new ChangePasswordRequest(oldPwd, newPwd))
+                .changePassword(oldPwd, newPwd, getUserId())
                 .enqueue(new Callback<ChangePasswordResponse>() {
                     @Override
                     public void onResponse(Call<ChangePasswordResponse> call, Response<ChangePasswordResponse> response) {

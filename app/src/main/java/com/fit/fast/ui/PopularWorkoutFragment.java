@@ -1,6 +1,8 @@
 package com.fit.fast.ui;
 
-import android.content.Intent;
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,12 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 
-import com.fit.fast.adapters.PopularWorkoutsAdapter;
 import com.fit.fast.adapters.WorkoutsAdapter;
-import com.fit.fast.callbacks.OpenTrainDetailsI;
 import com.fit.fast.databinding.FragmentPopularWorkoutBinding;
+import com.fit.fast.models.Days;
 import com.fit.fast.models.ExcelFileReader;
 import com.fit.fast.models.Workout;
+import com.fit.fast.responses.RegisterResponse;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +44,30 @@ public class PopularWorkoutFragment extends Fragment {
         requireActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        binding.popularWorkoutRv.setAdapter(new WorkoutsAdapter(switchOnSport("SP")));
+        SharedPreferences preferences = getActivity().getSharedPreferences("registerResponse", MODE_PRIVATE);
+
+        Gson gson = new Gson();
+        RegisterResponse response =
+                gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
+
+        int days = response.getTrain().intValue();
+
+        binding.popularWorkoutRv.setAdapter(new WorkoutsAdapter(response.getSport(), getDaysAccordingToSport(response)));
+    }
+
+    private int getDaysAccordingToSport(RegisterResponse response) {
+        switch (response.getSport()){
+            case "SP":
+                return Days.SP.getDays();
+            case "MMA":
+                return Days.MMA.getDays();
+//            case "FB":
+//                return Days.BB.getDays();
+            case "BB":
+                return Days.BB.getDays();
+            default:
+                return Days.GE.getDays();
+        }
     }
 
     private List<Workout> switchOnSport(String sport) {

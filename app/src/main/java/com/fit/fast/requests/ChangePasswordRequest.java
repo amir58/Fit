@@ -4,39 +4,51 @@ import com.google.gson.annotations.SerializedName;
 
 public class ChangePasswordRequest{
 
-	@SerializedName("old_password")
+	@SerializedName("old")
 	private String oldPassword;
 
-	@SerializedName("new_password")
+	@SerializedName("new")
 	private String newPassword;
 
-	public ChangePasswordRequest(String oldPassword, String newPassword) {
+	@SerializedName("id")
+	private String id;
+
+	public ChangePasswordRequest(String oldPassword, String newPassword, String id) {
 		this.oldPassword = oldPassword;
 		this.newPassword = newPassword;
+		this.id = id;
 	}
 
-	public void setOldPassword(String oldPassword){
-		this.oldPassword = oldPassword;
-	}
-
-	public String getOldPassword(){
+	public String getOldPassword() {
 		return oldPassword;
 	}
 
-	public void setNewPassword(String newPassword){
-		this.newPassword = newPassword;
+	public void setOldPassword(String oldPassword) {
+		this.oldPassword = oldPassword;
 	}
 
-	public String getNewPassword(){
+	public String getNewPassword() {
 		return newPassword;
 	}
 
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	@Override
- 	public String toString(){
-		return 
-			"ChangePasswordRequest{" + 
-			"old_password = '" + oldPassword + '\'' + 
-			",new_password = '" + newPassword + '\'' + 
-			"}";
-		}
+	public String toString() {
+		return "ChangePasswordRequest{" +
+				"oldPassword='" + oldPassword + '\'' +
+				", newPassword='" + newPassword + '\'' +
+				", id='" + id + '\'' +
+				'}';
+	}
 }

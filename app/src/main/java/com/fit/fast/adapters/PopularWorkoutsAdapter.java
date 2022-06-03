@@ -1,5 +1,6 @@
 package com.fit.fast.adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.fit.fast.R;
 import com.fit.fast.callbacks.OpenTrainDetailsI;
 import com.fit.fast.databinding.PopularWorkoutItemBinding;
+import com.fit.fast.models.ExcelFileReader;
 import com.fit.fast.models.Workout;
 import com.squareup.picasso.Picasso;
 
@@ -19,10 +21,12 @@ public class PopularWorkoutsAdapter extends RecyclerView.Adapter<PopularWorkouts
 
     OpenTrainDetailsI openTrainDetailsI;
     private List<Workout> sport;
+    private int days;
 
-    public PopularWorkoutsAdapter(OpenTrainDetailsI openTrainDetailsI, List<Workout> sport) {
+    public PopularWorkoutsAdapter(OpenTrainDetailsI openTrainDetailsI, List<Workout> sport, int days) {
         this.openTrainDetailsI = openTrainDetailsI;
         this.sport = sport;
+        this.days = days;
     }
 
     @NonNull
@@ -34,7 +38,14 @@ public class PopularWorkoutsAdapter extends RecyclerView.Adapter<PopularWorkouts
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
 
-        String photo = sport.get(position).getPhoto().isEmpty() ?
+//        List<Workout> workouts = getSportByName(holder.itemView.getContext());
+
+        String photo = sport.get(position).getPhoto() == null ?
+                "\thttps://cdn.shopify.com/s/files/1/0044/7266/8275/articles/Squat_f6a8765f-d8b5-" +
+                        "46e3-8aff-c327ec994283_1000x.jpg?v=1647352001\n" :
+                sport.get(position).getPhoto();
+
+        photo = photo.isEmpty() ?
                 "\thttps://cdn.shopify.com/s/files/1/0044/7266/8275/articles/Squat_f6a8765f-d8b5-" +
                         "46e3-8aff-c327ec994283_1000x.jpg?v=1647352001\n" :
                 sport.get(position).getPhoto();
@@ -52,9 +63,13 @@ public class PopularWorkoutsAdapter extends RecyclerView.Adapter<PopularWorkouts
         });
     }
 
+//    private List<Workout> getSportByName(Context context) {
+//        return ExcelFileReader.readerClient(sport, context).getWorkoutDataFromExcel();
+//    }
+
     @Override
     public int getItemCount() {
-        return sport.size();
+        return 7;
     }
 
     public class Holder extends RecyclerView.ViewHolder {
