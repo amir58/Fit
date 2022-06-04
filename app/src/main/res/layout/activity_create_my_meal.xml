@@ -54,6 +54,19 @@
             app:spanCount="1"
             tools:listitem="@layout/food_item" />
 
+        <ImageButton
+            android:id="@+id/foodRVTerminator"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:translationZ="@dimen/_200sdp"
+            android:src="@drawable/ic_locked"
+            android:backgroundTint="#4D000000"
+            android:visibility="invisible"
+            app:layout_constraintTop_toTopOf="@+id/foodRV"
+            app:layout_constraintStart_toStartOf="@+id/foodRV"
+            app:layout_constraintEnd_toEndOf="@+id/foodRV"
+            app:layout_constraintBottom_toBottomOf="@+id/foodRV"/>
+
         <LinearLayout
             android:id="@+id/radio_btns_layout"
             android:layout_width="wrap_content"

@@ -75,12 +75,12 @@ public class SecondInfoActivity extends AppCompatActivity {
         }
         else if (binding.activitySecondGainWeightRb.isChecked()){
             RegisterSingleton.setData().setGoalType(RequestBody.create(
-                    MediaType.parse("multipart/form-data"), "G ")
+                    MediaType.parse("multipart/form-data"), "G")
             );
         }
         else if (binding.activitySecondInfoWorkStableWeightRb.isChecked()){
             RegisterSingleton.setData().setGoalType(RequestBody.create(
-                    MediaType.parse("multipart/form-data"), "S ")
+                    MediaType.parse("multipart/form-data"), "S")
             );
         }
         else{

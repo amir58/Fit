@@ -80,6 +80,8 @@ public class HomeTrainFiveFragment extends Fragment {
 
 //        int days = response.getTrain().intValue();
 
+        Log.i("abdo", "onViewCreated: rerere"+ response.toString());
+
         binding.workoutRv.setAdapter(new WorkoutsAdapter(response.getSport(), getDaysAccordingToSport(response)));
 
         binding.daysBtnRV.setAdapter(new DaysAdapter(requireActivity(), getDaysAccordingToSport(response), days1 -> {

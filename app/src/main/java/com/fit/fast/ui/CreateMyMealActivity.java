@@ -3,6 +3,7 @@ package com.fit.fast.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +17,8 @@ import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.ActivityCreateMyMealBinding;
 import com.fit.fast.models.ExcelFileReader;
 import com.fit.fast.models.Food;
+import com.fit.fast.responses.RegisterResponse;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +47,13 @@ public class CreateMyMealActivity extends AppCompatActivity {
             int fats = 0;
             int fibers = 0;
 
+            SharedPreferences preferences = getSharedPreferences("registerResponse", MODE_PRIVATE);
+            Gson gson = new Gson();
+            RegisterResponse response =
+                    gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
+
+
+
             for (Food food : foods) {
                 if (food.isSelected()) {
                     calories += Double.parseDouble(food.getCalories()) * food.getRealQuantity();
@@ -52,6 +62,13 @@ public class CreateMyMealActivity extends AppCompatActivity {
                     fats += Double.parseDouble(food.getFats()) * food.getRealQuantity();
                     fibers += Double.parseDouble(food.getFibers()) * food.getRealQuantity();
                 }
+            }
+
+            if (calories > getPrecisedCalories(response)){
+                Toast.makeText(this, "That is a big amount of CALORIES(" + calories + " cal)," +
+                        " you can't eat any more", Toast.LENGTH_LONG).show();
+
+                binding.foodRVTerminator.setVisibility(View.VISIBLE);
             }
 
             binding.caloriesLayout.setText(
@@ -66,6 +83,31 @@ public class CreateMyMealActivity extends AppCompatActivity {
         binding.foodRV.setAdapter(new FoodAdapter(this, foods, foodData));
 
         clicks();
+    }
+
+    private double getPrecisedCalories(RegisterResponse response) {
+        switch (response.getGoalType().trim()){
+            case "L":
+                switch (response.getGoalWeight().trim()){
+                    case "1":
+                        return response.getCalculateTDEE() - 1100;
+                    case "1/2":
+                        return response.getCalculateTDEE() - 550;
+                    case "1/4":
+                        return response.getCalculateTDEE() - 275;
+                }
+            case "G":
+                switch (response.getGoalWeight().trim()){
+                    case "1":
+                        return response.getCalculateTDEE() + 1100;
+                    case "1/2":
+                        return response.getCalculateTDEE() + 550;
+                    case "1/4":
+                        return response.getCalculateTDEE() + 275;
+                }
+            default:
+                return response.getCalculateTDEE();
+        }
     }
 
     private void clicks() {
