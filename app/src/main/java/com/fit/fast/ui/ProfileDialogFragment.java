@@ -4,6 +4,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -114,6 +115,11 @@ public class ProfileDialogFragment extends DialogFragment {
         binding.publish.setOnClickListener(v->{
             add();
         });
+
+        binding.logoutTv.setOnClickListener(p-> {
+            startActivity(new Intent(requireContext(), LoginActivity.class));
+            requireActivity().finish();
+        });
     }
 
     private RegisterResponse getRegisterResponse() {
@@ -140,6 +146,7 @@ public class ProfileDialogFragment extends DialogFragment {
                     public void onResponse(Call<AddResponse> call, Response<AddResponse> response) {
                         if (response.isSuccessful()){
                             Toast.makeText(requireContext(), "Added successfully", Toast.LENGTH_SHORT).show();
+                            binding.adsCv.setVisibility(View.INVISIBLE);
                         }else{
                             Log.i(TAG, "onResponse: not success");
                         }
@@ -174,6 +181,7 @@ public class ProfileDialogFragment extends DialogFragment {
                     public void onResponse(Call<ChangePasswordResponse> call, Response<ChangePasswordResponse> response) {
                         if (response.isSuccessful()){
                             Toast.makeText(requireContext(), "Password changed successfully", Toast.LENGTH_SHORT).show();
+                            binding.changePasswordCv.setVisibility(View.INVISIBLE);
                         }else{
                             Log.i(TAG, "onResponse: not success");
                         }
