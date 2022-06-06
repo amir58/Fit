@@ -1,5 +1,7 @@
 package com.fit.fast.ui;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -24,6 +26,8 @@ import com.fit.fast.requests.AddRequest;
 import com.fit.fast.requests.ChangePasswordRequest;
 import com.fit.fast.responses.AddResponse;
 import com.fit.fast.responses.ChangePasswordResponse;
+import com.fit.fast.responses.RegisterResponse;
+import com.google.gson.Gson;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -51,6 +55,8 @@ public class ProfileDialogFragment extends DialogFragment {
         requireActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
+        binding.nameTv.setText("Name: " + getRegisterResponse().getName());
+
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         binding.backImage.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +79,7 @@ public class ProfileDialogFragment extends DialogFragment {
         binding.securityTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                binding.emailTv.setText(getRegisterResponse().getEmail());
                 binding.securityCv.setVisibility(View.VISIBLE);
                 binding.adsCv.setVisibility(View.INVISIBLE);
                 binding.profileAnalysisCv.setVisibility(View.INVISIBLE);
@@ -107,6 +114,12 @@ public class ProfileDialogFragment extends DialogFragment {
         binding.publish.setOnClickListener(v->{
             add();
         });
+    }
+
+    private RegisterResponse getRegisterResponse() {
+        SharedPreferences preferences = getActivity().getSharedPreferences("registerResponse", MODE_PRIVATE);
+        Gson gson = new Gson();
+        return gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
     }
 
     private void add() {
