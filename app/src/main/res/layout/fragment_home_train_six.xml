@@ -622,7 +622,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
             android:orientation="vertical"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="@+id/play_image"
             app:layout_constraintStart_toStartOf="@+id/play_image"
             app:layout_constraintTop_toBottomOf="@+id/play_image">
@@ -654,7 +654,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="@dimen/_15sdp"
@@ -676,7 +677,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="@dimen/_15sdp"
@@ -815,7 +817,7 @@
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:fontFamily="@font/aeonik_regular"
-                android:text="NUTRITION PLAN"
+                android:text="PLAN 1"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_7ssp"
                 app:cornerRadius="@dimen/_20sdp"
@@ -829,7 +831,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:fontFamily="@font/aeonik_regular"
-                android:text="MEAL 1"
+                android:text="PLAN 2"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_7ssp"
                 app:cornerRadius="@dimen/_20sdp"
@@ -843,7 +845,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:fontFamily="@font/aeonik_regular"
-                android:text="MEAL 2"
+                android:text="PLAN 3"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_7ssp"
                 app:cornerRadius="@dimen/_20sdp"
@@ -857,7 +859,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:fontFamily="@font/aeonik_regular"
-                android:text="MEAL 3"
+                android:text="PLAN 4"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_7ssp"
                 app:cornerRadius="@dimen/_20sdp"
@@ -870,7 +872,7 @@
             android:id="@+id/meal_rv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

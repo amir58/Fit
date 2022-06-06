@@ -3,17 +3,34 @@ package com.fit.fast.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.fit.fast.adapters.FoodPlanAdapter;
 import com.fit.fast.databinding.ActivityHomeTrainBottomNavigationBinding;
+import com.fit.fast.models.ExcelFileReader;
+import com.fit.fast.models.Food;
+import com.fit.fast.responses.RegisterResponse;
 import com.google.android.material.tabs.TabLayout;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
-
+    private static final String TAG = "HomeTrainBottomNavigati";
     private ActivityHomeTrainBottomNavigationBinding binding;
+
+    private List<Food> getFoodData() {
+        String fileName = "food_data.xls";
+        return ExcelFileReader.readerClient(fileName, this)
+                .getFoodDataFromExcel(fileName);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +38,10 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
         binding = ActivityHomeTrainBottomNavigationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(binding.fragmentContainerView.getId(), new FollowUpFragment())
+                .replace(binding.fragmentContainerView.getId(), new HomeTrainFiveFragment())
                 .commit();
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
@@ -46,27 +64,33 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
         });
     }
 
+
     private void openFragment(TabLayout.Tab tab) {
         int tabId = tab.getPosition();
 
         switch (tabId) {
-            case 1:
+            case 0:
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(binding.fragmentContainerView.getId(), new HomeTrainFiveFragment())
                         .commit();
                 break;
-            case 2:
+            case 1:
+                List<Food> foods = getFoodData();
+                for (Food food : foods) {
+                    Log.i(TAG, "openFragment: " + food.toString());
+                }
+
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(binding.fragmentContainerView.getId(), new HomeTrainSixFragment())
+                        .replace(binding.fragmentContainerView.getId(), new HomeTrainSixFragment(foods))
                         .commit();
                 break;
-            case 3:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(binding.fragmentContainerView.getId(), new PopularWorkoutFragment())
-                        .commit();
+            case 2:
+//                getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .replace(binding.fragmentContainerView.getId(), new PopularWorkoutFragment())
+//                        .commit();
 
                 getSupportFragmentManager()
                         .beginTransaction()
@@ -76,7 +100,7 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
             default:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(binding.fragmentContainerView.getId(), new PopularWorkoutFragment())
+                        .replace(binding.fragmentContainerView.getId(), new HomeTrainFiveFragment())
                         .commit();
 
                 Toast.makeText(HomeTrainBottomNavigationActivity.this, "followUpTab", Toast.LENGTH_SHORT).show();
@@ -85,7 +109,8 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
-       startActivity(new Intent(this, LoginActivity.class));
-       finish();
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
     }
+
 }
