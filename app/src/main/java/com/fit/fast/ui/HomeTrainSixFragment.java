@@ -1,6 +1,9 @@
 package com.fit.fast.ui;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,23 +18,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+
+import com.fit.fast.adapters.FoodPlanAdapter;
+import com.fit.fast.adapters.MealAdapter;
 import com.fit.fast.databinding.FragmentHomeTrainSixBinding;
 import com.fit.fast.models.ExcelFileReader;
 import com.fit.fast.models.Food;
+import com.fit.fast.responses.RegisterResponse;
 import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
 public class HomeTrainSixFragment extends Fragment {
-
+    private static final String TAG = "HomeTrainSixFragment";
     FragmentHomeTrainSixBinding binding;
+    List<Food> foodData;
 
-    double calories = 0.0;
+    public HomeTrainSixFragment(List<Food> foodData) {
+        this.foodData = foodData;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,18 +59,8 @@ public class HomeTrainSixFragment extends Fragment {
         requireActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-//        extractFoodDataFromExcelFile();
-
-//        FoodData foodData = (food) -> {
-//
-////            calories += foodCalories;
-//
-//            binding.caloriesLayout.setText(calories + " cal");
-//        };
-//
-//        binding.foodRV.setAdapter(new FoodAdapter(getContext(), getFoodData(), foodData));
-
         binding.nutritionPlanBtn.setStrokeWidth(1);
+        createMeals();
 
         setClicks(binding.nutritionPlanBtn, binding.meal1Btn, binding.meal2Btn, binding.meal3Btn, 0);
 
@@ -88,17 +89,6 @@ public class HomeTrainSixFragment extends Fragment {
 //                Toast.makeText(requireContext(), txt, Toast.LENGTH_SHORT).show();
 //            }
 //        }, getFoodData()));
-
-        JSONArray json = new JSONArray(getFoodData());
-
-        Gson gson = new Gson();
-
-        String array = gson.toJson(getFoodData());
-
-        ArrayList<ArrayList<String>> food = gson.fromJson(array, ArrayList.class);
-
-        Log.i("oooo", "onViewCreated: "+ food);
-
         binding.createMealBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,34 +109,64 @@ public class HomeTrainSixFragment extends Fragment {
         });
     }
 
-    private List<Food> getFoodData() {
-        String fileName = "food_data.xls";
-        return ExcelFileReader.readerClient(fileName, requireContext()).getFoodDataFromExcel();
+    private void createMeals() {
+        List<Food> selectedFoods = new ArrayList<>();
+
+        double totalCalories = getPrecisedCalories();
+        Collections.shuffle(foodData);
+
+        double calculateCalories = 0;
+
+        for (Food food : foodData) {
+            if (calculateCalories + 150 >= totalCalories) break;
+            Log.i("PLANS", "createMeals: " + calculateCalories);
+            Log.i("PLANS", "createMeals: " + food.toString());
+            selectedFoods.add(food);
+            calculateCalories += Double.parseDouble(food.getCalories());
+        }
+
+        binding.firstMeal.setText(calculateCalories + " Calories");
+        binding.mealRv.setAdapter(new FoodPlanAdapter(selectedFoods));
+    }
+
+    private double getPrecisedCalories() {
+        SharedPreferences preferences = requireContext().getSharedPreferences("registerResponse", MODE_PRIVATE);
+        Gson gson = new Gson();
+        RegisterResponse response = gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
+
+
+        Log.i(TAG, "getPrecisedCalories: " + response.getCalculateBMR());
+        Log.i(TAG, "getPrecisedCalories: " + response.getCalculateTDEE());
+        switch (response.getGoalType().trim()) {
+            case "L":
+                switch (response.getGoalWeight().trim()) {
+                    case "1":
+                        return response.getCalculateTDEE() - 1100;
+                    case "1/2":
+                        return response.getCalculateTDEE() - 550;
+                    case "1/4":
+                        return response.getCalculateTDEE() - 275;
+                }
+            case "G":
+                switch (response.getGoalWeight().trim()) {
+                    case "1":
+                        return response.getCalculateTDEE() + 1100;
+                    case "1/2":
+                        return response.getCalculateTDEE() + 550;
+                    case "1/4":
+                        return response.getCalculateTDEE() + 275;
+                }
+            default:
+                return response.getCalculateTDEE();
+        }
     }
 
     private void setClicks(MaterialButton pressedBtn, MaterialButton unpressedBtn1,
                            MaterialButton unpressedBtn2, MaterialButton unpressedBtn3, int position) {
 
-//        binding.mealRv.smoothScrollToPosition(position);
-
-//        ((LinearLayoutManager) binding.mealRv.getLayoutManager()).scrollToPositionWithOffset(position, 0);
-
-        binding.mealRv.getLayoutManager().smoothScrollToPosition(binding.mealRv, new RecyclerView.State(), position);
-
-        RecyclerView.SmoothScroller smoothScroller = new LinearSmoothScroller(requireContext()) {
-            @Override
-            protected int getVerticalSnapPreference() {
-                return LinearSmoothScroller.SNAP_TO_START;
-            }
-        };
-
-        smoothScroller.setTargetPosition(position);
-        Objects.requireNonNull(binding.mealRv.getLayoutManager()).startSmoothScroll(smoothScroller);
-
-//        binding.mealRv.setLayoutManager(new LinearLayoutManagerWithSmoothScroller(context));
-//        recyclerView.smoothScrollToPosition(position);
 
         pressedBtn.setOnClickListener(view -> {
+            createMeals();
             pressedBtn.setStrokeWidth(1);
             unpressedBtn1.setStrokeWidth(0);
             unpressedBtn2.setStrokeWidth(0);

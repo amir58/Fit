@@ -7,13 +7,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-import com.fit.fast.R;
 import com.fit.fast.adapters.FoodAdapter;
-import com.fit.fast.adapters.MealAdapter;
 import com.fit.fast.callbacks.FoodData;
-import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.ActivityCreateMyMealBinding;
 import com.fit.fast.models.ExcelFileReader;
 import com.fit.fast.models.Food;
@@ -24,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CreateMyMealActivity extends AppCompatActivity {
-
+    private static final String TAG = "CreateMyMealActivity";
     ActivityCreateMyMealBinding binding;
 
 
@@ -47,13 +43,6 @@ public class CreateMyMealActivity extends AppCompatActivity {
             int fats = 0;
             int fibers = 0;
 
-            SharedPreferences preferences = getSharedPreferences("registerResponse", MODE_PRIVATE);
-            Gson gson = new Gson();
-            RegisterResponse response =
-                    gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
-
-
-
             for (Food food : foods) {
                 if (food.isSelected()) {
                     calories += Double.parseDouble(food.getCalories()) * food.getRealQuantity();
@@ -64,15 +53,18 @@ public class CreateMyMealActivity extends AppCompatActivity {
                 }
             }
 
-            if (calories > getPrecisedCalories(response)){
-                Toast.makeText(this, "That is a big amount of CALORIES(" + calories + " cal)," +
-                        " you can't eat any more", Toast.LENGTH_LONG).show();
+            if (calories > getPrecisedCalories()) {
+//                Toast.makeText(this, "That is a big amount of CALORIES(" + calories + " cal)," +
+//                        " you can't eat any more", Toast.LENGTH_LONG).show();
 
-                binding.foodRVTerminator.setVisibility(View.VISIBLE);
+                binding.errorMessageTv.setVisibility(View.VISIBLE);
+            } else {
+                binding.errorMessageTv.setVisibility(View.GONE);
+
             }
 
             binding.caloriesLayout.setText(
-                            calories + " calories" + "\n" +
+                    calories + " calories" + "\n" +
                             protein + " protein" + "\n" +
                             carb + " carb" + "\n" +
                             fats + " fats" + "\n" +
@@ -85,10 +77,17 @@ public class CreateMyMealActivity extends AppCompatActivity {
         clicks();
     }
 
-    private double getPrecisedCalories(RegisterResponse response) {
-        switch (response.getGoalType().trim()){
+    private double getPrecisedCalories() {
+        SharedPreferences preferences = getSharedPreferences("registerResponse", MODE_PRIVATE);
+        Gson gson = new Gson();
+        RegisterResponse response = gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
+
+
+        Log.i(TAG, "getPrecisedCalories: " + response.getCalculateBMR());
+        Log.i(TAG, "getPrecisedCalories: " + response.getCalculateTDEE());
+        switch (response.getGoalType().trim()) {
             case "L":
-                switch (response.getGoalWeight().trim()){
+                switch (response.getGoalWeight().trim()) {
                     case "1":
                         return response.getCalculateTDEE() - 1100;
                     case "1/2":
@@ -97,7 +96,7 @@ public class CreateMyMealActivity extends AppCompatActivity {
                         return response.getCalculateTDEE() - 275;
                 }
             case "G":
-                switch (response.getGoalWeight().trim()){
+                switch (response.getGoalWeight().trim()) {
                     case "1":
                         return response.getCalculateTDEE() + 1100;
                     case "1/2":
@@ -132,6 +131,10 @@ public class CreateMyMealActivity extends AppCompatActivity {
             binding.rbThird.setChecked(true);
         });
 
+        binding.btnConfirmMeal.setOnClickListener(view -> {
+            finish();
+        });
+
     }
 
     private void changeCurrentMeal(String mealName) {
@@ -148,7 +151,8 @@ public class CreateMyMealActivity extends AppCompatActivity {
 
     private List<Food> getFoodData() {
         String fileName = "food_data.xls";
-        foods = ExcelFileReader.readerClient(fileName, this).getFoodDataFromExcel();
+        foods = ExcelFileReader.readerClient(fileName, this)
+                .getFoodDataFromExcel(fileName);
         return foods;
     }
 

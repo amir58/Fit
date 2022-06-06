@@ -11,7 +11,6 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -101,9 +100,9 @@ public class ExcelFileReader {
         return sports;
     }
 
-    public List<Food> getFoodDataFromExcel() {
+    public List<Food> getFoodDataFromExcel(String fileName) {
         try {
-            InputStream stream = context.getAssets().open(fileName);
+            InputStream stream = context.getAssets().open("food_data.xls");
             POIFSFileSystem poifsFileSystem = new POIFSFileSystem(stream);
             HSSFWorkbook workbook = new HSSFWorkbook(poifsFileSystem);
             HSSFSheet sheet = workbook.getSheetAt(0);

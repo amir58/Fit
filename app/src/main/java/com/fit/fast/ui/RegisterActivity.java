@@ -69,6 +69,19 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void next(View view) {
+        String password = binding.activityRegisterPasswordEt.getText().toString();
+
+        if (password.isEmpty()) {
+            Toast.makeText(this, "password required", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if (password.length() < 8) {
+            Toast.makeText(this, "password must be at least 8 characters ", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+
         Log.i("abdo", "next: "+ binding.activityRegisterNameEt.getText());
         RegisterSingleton.setData().setName(RequestBody.create(
                 MediaType.parse("multipart/form-data"),

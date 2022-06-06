@@ -40,6 +40,7 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp"
+                android:text="HoussemAzzag22"
                 android:fontFamily="@font/aeonik_regular"
                 android:maxLines="1"
                 android:inputType="textEmailAddress"/>
@@ -63,6 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textColor="@color/white"
+                android:text="HoussemAzzag21"
                 android:textSize="@dimen/_13ssp"
                 android:fontFamily="@font/aeonik_regular"
                 android:maxLines="1"

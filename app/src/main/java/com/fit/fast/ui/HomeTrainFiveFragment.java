@@ -24,6 +24,7 @@ import com.fit.fast.callbacks.DaysCallback;
 import com.fit.fast.databinding.FragmentHomeTrainFiveBinding;
 import com.fit.fast.models.Days;
 import com.fit.fast.models.ExcelFileReader;
+import com.fit.fast.models.Food;
 import com.fit.fast.models.Workout;
 import com.fit.fast.network.RegisterSingleton;
 import com.fit.fast.responses.RegisterResponse;
@@ -31,11 +32,12 @@ import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
 public class HomeTrainFiveFragment extends Fragment {
-
+    private static final String TAG = "HomeTrainFiveFragment";
     FragmentHomeTrainFiveBinding binding;
 
     private List<Workout> workouts;
@@ -99,6 +101,9 @@ public class HomeTrainFiveFragment extends Fragment {
             Objects.requireNonNull(binding.workoutRv.getLayoutManager()).startSmoothScroll(smoothScroller);
         }));
     }
+
+
+
 
     private int getDaysAccordingToSport(RegisterResponse response) {
         switch (response.getSport()){
