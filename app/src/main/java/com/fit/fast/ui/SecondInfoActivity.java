@@ -93,19 +93,19 @@ public class SecondInfoActivity extends AppCompatActivity {
         if (binding.activitySecondInfo025kgRb.isChecked() ||
                 binding.activitySecondInfoSecond025kgRb.isChecked()){
             RegisterSingleton.setData().setGoalWeight(RequestBody.create(
-                    MediaType.parse("multipart/form-data"),"1/4 ")
+                    MediaType.parse("multipart/form-data"),"1 ")
             );
         }
         else if (binding.activitySecondInfo05kgRb.isChecked()||
                 binding.activitySecondInfoSecond05kgRb.isChecked()){
             RegisterSingleton.setData().setGoalWeight(RequestBody.create(
-                    MediaType.parse("multipart/form-data"),"1/2 ")
+                    MediaType.parse("multipart/form-data"),"2")
             );
         }
         else if (binding.activitySecondInfo1kgRb.isChecked() ||
                 binding.activitySecondInfoSecond1kgRb.isChecked()){
             RegisterSingleton.setData().setGoalWeight(RequestBody.create(
-                    MediaType.parse("multipart/form-data"),"1 ")
+                    MediaType.parse("multipart/form-data"),"3")
             );
         }
         else{

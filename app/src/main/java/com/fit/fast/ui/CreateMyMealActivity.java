@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CreateMyMealActivity extends AppCompatActivity {
-
+    private static final String TAG = "CreateMyMealActivity";
     ActivityCreateMyMealBinding binding;
 
 
@@ -49,9 +49,7 @@ public class CreateMyMealActivity extends AppCompatActivity {
 
             SharedPreferences preferences = getSharedPreferences("registerResponse", MODE_PRIVATE);
             Gson gson = new Gson();
-            RegisterResponse response =
-                    gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
-
+            RegisterResponse response = gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
 
 
             for (Food food : foods) {
@@ -64,15 +62,18 @@ public class CreateMyMealActivity extends AppCompatActivity {
                 }
             }
 
-            if (calories > getPrecisedCalories(response)){
-                Toast.makeText(this, "That is a big amount of CALORIES(" + calories + " cal)," +
-                        " you can't eat any more", Toast.LENGTH_LONG).show();
+            if (calories > getPrecisedCalories(response)) {
+//                Toast.makeText(this, "That is a big amount of CALORIES(" + calories + " cal)," +
+//                        " you can't eat any more", Toast.LENGTH_LONG).show();
 
-                binding.foodRVTerminator.setVisibility(View.VISIBLE);
+                binding.errorMessageTv.setVisibility(View.VISIBLE);
+            } else {
+                binding.errorMessageTv.setVisibility(View.GONE);
+
             }
 
             binding.caloriesLayout.setText(
-                            calories + " calories" + "\n" +
+                    calories + " calories" + "\n" +
                             protein + " protein" + "\n" +
                             carb + " carb" + "\n" +
                             fats + " fats" + "\n" +
@@ -86,9 +87,11 @@ public class CreateMyMealActivity extends AppCompatActivity {
     }
 
     private double getPrecisedCalories(RegisterResponse response) {
-        switch (response.getGoalType().trim()){
+        Log.i(TAG, "getPrecisedCalories: " + response.getCalculateBMR());
+        Log.i(TAG, "getPrecisedCalories: " + response.getCalculateTDEE());
+        switch (response.getGoalType().trim()) {
             case "L":
-                switch (response.getGoalWeight().trim()){
+                switch (response.getGoalWeight().trim()) {
                     case "1":
                         return response.getCalculateTDEE() - 1100;
                     case "1/2":
@@ -97,7 +100,7 @@ public class CreateMyMealActivity extends AppCompatActivity {
                         return response.getCalculateTDEE() - 275;
                 }
             case "G":
-                switch (response.getGoalWeight().trim()){
+                switch (response.getGoalWeight().trim()) {
                     case "1":
                         return response.getCalculateTDEE() + 1100;
                     case "1/2":
@@ -131,6 +134,13 @@ public class CreateMyMealActivity extends AppCompatActivity {
             changeCurrentOption("thirdOption");
             binding.rbThird.setChecked(true);
         });
+
+        binding.thirdChoice.setOnClickListener(view -> {
+            changeCurrentOption("thirdOption");
+            binding.rbThird.setChecked(true);
+        });
+
+
 
     }
 
