@@ -969,6 +969,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_confirm_meal"
                     android:layout_width="match_parent"
+                    android:visibility="gone"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_15sdp"
                     android:text="Confirm meal" />
