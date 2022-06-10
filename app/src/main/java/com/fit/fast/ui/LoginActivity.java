@@ -68,6 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                         } else {
                             Log.i(TAG, "onResponse: not success --- " + response.body().getError());
                             Log.i(TAG, "onResponse: ---------------- " + response.errorBody());
+                            Toast.makeText(LoginActivity.this, response.body().getError() + " or password is incorrect", Toast.LENGTH_LONG).show();
 
 //                            getErrorBody(response);
                         }
@@ -90,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        Toast.makeText(LoginActivity.this, loginResponse.getErrorMessage() + "", Toast.LENGTH_LONG).show();
+        Toast.makeText(LoginActivity.this, loginResponse.getError() + "", Toast.LENGTH_LONG).show();
 
     }
 

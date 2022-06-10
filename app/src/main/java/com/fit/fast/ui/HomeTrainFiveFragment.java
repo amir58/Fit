@@ -84,7 +84,9 @@ public class HomeTrainFiveFragment extends Fragment {
 
         Log.i("abdo", "onViewCreated: rerere"+ response.toString());
 
-        binding.workoutRv.setAdapter(new WorkoutsAdapter(response.getSport(), (int) (response.getTrain() + 0)));
+        WorkoutsAdapter adapter = new WorkoutsAdapter(response.getSport(), (int) (response.getTrain() + 0));
+        binding.workoutRv.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
         binding.daysBtnRV.setAdapter(new DaysAdapter(requireActivity(), (int) (response.getTrain() + 0), days1 -> {
             Objects.requireNonNull(binding.workoutRv.getLayoutManager())
