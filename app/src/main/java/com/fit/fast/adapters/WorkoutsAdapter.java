@@ -50,10 +50,11 @@ public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.Holder
                 holder.itemView.getContext().startActivity(intent);
             }
         }, getSportList(sport, ++position, holder.itemView.getContext()), days));
+//        notifyItemChanged(position);
     }
 
     private List<Workout> getSportList(String sport, int position, Context context) {
-        Log.i("abdo", "getSportList: ssss "+ sport);
+        Log.i("abdo", "getSportList: ssss " + sport);
         switch (sport.trim()) {
             case "SP":
                 if (position == 1)
@@ -75,15 +76,13 @@ public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.Holder
                     return ExcelFileReader.readerClient("g6_1.xls", context).getWorkoutDataFromExcel();
                 else if (position == 2)
                     return ExcelFileReader.readerClient("g6_2.xls", context).getWorkoutDataFromExcel();
-                else if (position == 3){
-                    Log.i("abdo", "getSportList: pppp "+ position);
+                else if (position == 3) {
+                    Log.i("abdo", "getSportList: pppp " + position);
                     return ExcelFileReader.readerClient("g6_3.xls", context).getWorkoutDataFromExcel();
-                }
-                else if (position == 4){
-                    Log.i("abdo", "getSportList: pppp "+ position);
+                } else if (position == 4) {
+                    Log.i("abdo", "getSportList: pppp " + position);
                     return ExcelFileReader.readerClient("g6_4.xls", context).getWorkoutDataFromExcel();
-                }
-                else if (position == 5)
+                } else if (position == 5)
                     return ExcelFileReader.readerClient("g6_5.xls", context).getWorkoutDataFromExcel();
                 else if (position == 6)
                     return ExcelFileReader.readerClient("g6_6.xls", context).getWorkoutDataFromExcel();
