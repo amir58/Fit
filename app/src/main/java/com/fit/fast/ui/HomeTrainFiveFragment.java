@@ -86,7 +86,13 @@ public class HomeTrainFiveFragment extends Fragment {
 
         WorkoutsAdapter adapter = new WorkoutsAdapter(response.getSport(), (int) (response.getTrain() + 0));
         binding.workoutRv.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+        binding.workoutRv.post(new Runnable()
+        {
+            @Override
+            public void run() {
+                adapter.notifyDataSetChanged();
+            }
+        });
 
         binding.daysBtnRV.setAdapter(new DaysAdapter(requireActivity(), (int) (response.getTrain() + 0), days1 -> {
             Objects.requireNonNull(binding.workoutRv.getLayoutManager())
