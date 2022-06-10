@@ -43,7 +43,7 @@ public class PhotoOrInBodyLoadingActivity extends AppCompatActivity {
         progressBar.setProgressDrawable(draw);
 
 
-        CountDownTimer timer = new CountDownTimer(1000, 10) {
+        CountDownTimer timer = new CountDownTimer(1000, 100) {
             @Override
             public void onTick(long l) {
                 progressBar.setProgress((int) l);
@@ -51,7 +51,8 @@ public class PhotoOrInBodyLoadingActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                startActivity(new Intent(PhotoOrInBodyLoadingActivity.this, HomeTrainActivityOne.class));
+                startActivity(new Intent(PhotoOrInBodyLoadingActivity.this,
+                        HomeTrainActivityOne.class));
                 finish();
             }
         };

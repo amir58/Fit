@@ -84,9 +84,9 @@ public class HomeTrainFiveFragment extends Fragment {
 
         Log.i("abdo", "onViewCreated: rerere"+ response.toString());
 
-        binding.workoutRv.setAdapter(new WorkoutsAdapter(response.getSport(), getDaysAccordingToSport(response)));
+        binding.workoutRv.setAdapter(new WorkoutsAdapter(response.getSport(), (int) (response.getTrain() + 0)));
 
-        binding.daysBtnRV.setAdapter(new DaysAdapter(requireActivity(), getDaysAccordingToSport(response), days1 -> {
+        binding.daysBtnRV.setAdapter(new DaysAdapter(requireActivity(), (int) (response.getTrain() + 0), days1 -> {
             Objects.requireNonNull(binding.workoutRv.getLayoutManager())
                     .smoothScrollToPosition(binding.workoutRv, new RecyclerView.State(), days1);
 

@@ -71,18 +71,18 @@
             android:layout_marginTop="@dimen/_100sdp"
             android:gravity="center"
             android:fontFamily="@font/aeonik_medium"
-            android:text="HOW MANY TIMES A WEEK DO YOU EXERCISE ?"
+            android:text="HOW MANY DAYS A WEEK DO YOU EXERCISE ?"
             android:textColor="@color/white"
             android:textSize="@dimen/_11ssp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/activity_first_info_exercise_layout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_30sdp"
-            android:hint="number of times do you train per week"
+            android:hint="number of days do you train per week"
             app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
             app:boxCornerRadiusBottomStart="@dimen/_15sdp"
             app:boxCornerRadiusTopEnd="@dimen/_15sdp"
@@ -94,13 +94,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/activity_first_info_exercise_et"
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/activity_first_info_exercise_menu"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="#6640D876"
                 android:fontFamily="@font/aeonik_medium"
-                android:inputType="number"
+                android:inputType="none"
                 android:textColor="#8CFFFFFF"
                 android:textSize="@dimen/_11ssp"
                 app:boxStrokeWidth="0dp" />
@@ -231,5 +231,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
+
+<!--    git-->
 
 </LinearLayout>

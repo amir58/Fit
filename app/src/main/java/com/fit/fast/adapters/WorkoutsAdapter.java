@@ -21,8 +21,8 @@ import java.util.List;
 
 public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.Holder> {
 
-    private String sport;
-    private int days;
+    private final String sport;
+    private final int days;
 
     public WorkoutsAdapter(String sport, int days) {
         this.sport = sport;

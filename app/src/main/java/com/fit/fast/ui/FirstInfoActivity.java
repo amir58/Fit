@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import com.fit.fast.R;
@@ -22,6 +23,7 @@ public class FirstInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ////
         binding = ActivityFirstInfoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -34,6 +36,25 @@ public class FirstInfoActivity extends AppCompatActivity {
         String[] sports = {"GYM EXERCISE", "SPRINTERS", "MMA", "FOOTBALL", "BASKETBALL"};
         binding.activityFirstInfoSportMenu.setAdapter(new ArrayAdapter(this, R.layout.sport_item, sports));
 
+        binding.activityFirstInfoExerciseMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String sport = binding.activityFirstInfoSportMenu.getText().toString();
+                if (sport.equals("GYM EXERCISE")){
+                    binding.activityFirstInfoExerciseMenu.setText("1");
+                    binding.activityFirstInfoExerciseMenu.setDropDownHeight(700);
+                    binding.activityFirstInfoExerciseMenu.setDropDownBackgroundResource(R.color.dropdown_background);
+                    String[] days = {"1", "2", "3", "4", "5", "6"};
+                    binding.activityFirstInfoExerciseMenu.setAdapter(new ArrayAdapter(view.getContext(), R.layout.sport_item, days));
+                }else {
+                    binding.activityFirstInfoExerciseMenu.setText("1");
+                    binding.activityFirstInfoExerciseMenu.setDropDownHeight(700);
+                    binding.activityFirstInfoExerciseMenu.setDropDownBackgroundResource(R.color.dropdown_background);
+                    String[] days = {"1", "2"};
+                    binding.activityFirstInfoExerciseMenu.setAdapter(new ArrayAdapter(view.getContext(), R.layout.sport_item, days));
+                }
+            }
+        });
     }
 
     public void back(View view) {
@@ -59,7 +80,7 @@ public class FirstInfoActivity extends AppCompatActivity {
         );
         RegisterSingleton.setData().setTrain(RequestBody.create(
                 MediaType.parse("multipart/form-data"),
-                String.valueOf(binding.activityFirstInfoExerciseEt.getText()))
+                String.valueOf(binding.activityFirstInfoExerciseMenu.getText()))
         );
 
         String sport;
