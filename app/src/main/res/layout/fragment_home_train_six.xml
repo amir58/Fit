@@ -8,7 +8,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_310sdp"
+        android:layout_height="@dimen/_250sdp"
         android:background="@drawable/meat_image"
         android:scaleY="1.2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
             android:id="@+id/logo_image"
             android:layout_width="@dimen/_45sdp"
             android:layout_height="@dimen/_45sdp"
-            android:layout_marginTop="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_25sdp"
             android:src="@drawable/logo_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -798,88 +798,104 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/search_layout" />
 
-        <LinearLayout
-            android:id="@+id/btns_linear_layout"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:gravity="center"
-            android:orientation="horizontal"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_layout">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/nutrition_plan_btn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="@dimen/_90sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:fontFamily="@font/aeonik_regular"
-                android:text="PLAN 1"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_7ssp"
-                app:cornerRadius="@dimen/_20sdp"
-                app:strokeColor="@color/fit_green"
-                app:strokeWidth="0dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/meal1_btn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="@dimen/_60sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:fontFamily="@font/aeonik_regular"
-                android:text="PLAN 2"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_7ssp"
-                app:cornerRadius="@dimen/_20sdp"
-                app:strokeColor="@color/fit_green"
-                app:strokeWidth="0dp" />
+                <LinearLayout
+                    android:id="@+id/btns_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/search_layout">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/meal2_btn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="@dimen/_60sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:fontFamily="@font/aeonik_regular"
-                android:text="PLAN 3"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_7ssp"
-                app:cornerRadius="@dimen/_20sdp"
-                app:strokeColor="@color/fit_green"
-                app:strokeWidth="0dp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/nutrition_plan_btn"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:fontFamily="@font/aeonik_regular"
+                        android:text="PLAN 1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_7ssp"
+                        app:cornerRadius="@dimen/_20sdp"
+                        app:strokeColor="@color/fit_green"
+                        app:strokeWidth="0dp" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/meal3_btn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="@dimen/_60sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:fontFamily="@font/aeonik_regular"
-                android:text="PLAN 4"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_7ssp"
-                app:cornerRadius="@dimen/_20sdp"
-                app:strokeColor="@color/fit_green"
-                app:strokeWidth="0dp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/meal1_btn"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:fontFamily="@font/aeonik_regular"
+                        android:text="PLAN 2"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_7ssp"
+                        app:cornerRadius="@dimen/_20sdp"
+                        app:strokeColor="@color/fit_green"
+                        app:strokeWidth="0dp" />
 
-        </LinearLayout>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/meal2_btn"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:fontFamily="@font/aeonik_regular"
+                        android:text="PLAN 3"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_7ssp"
+                        app:cornerRadius="@dimen/_20sdp"
+                        app:strokeColor="@color/fit_green"
+                        app:strokeWidth="0dp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/meal_rv"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btns_linear_layout"
-            app:spanCount="4"
-            tools:listitem="@layout/meal_item" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/meal3_btn"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:fontFamily="@font/aeonik_regular"
+                        android:text="PLAN 4"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_7ssp"
+                        app:cornerRadius="@dimen/_20sdp"
+                        app:strokeColor="@color/fit_green"
+                        app:strokeWidth="0dp" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/meal_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btns_linear_layout"
+                    app:spanCount="4"
+                    tools:listitem="@layout/meal_item" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
