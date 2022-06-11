@@ -18,6 +18,7 @@ import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.FoodItemBinding;
 import com.fit.fast.models.Food;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodHolder> {
@@ -25,11 +26,16 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodHolder> {
     private final Context context;
     private final List<Food> foodData;
     private final FoodData foodDataI;
+    List<String> grams = new ArrayList<>();
 
     public FoodAdapter(Context context, List<Food> foodData, FoodData foodDataI) {
         this.context = context;
         this.foodData = foodData;
         this.foodDataI = foodDataI;
+
+        for (int i = 10; i <= 500; i += 10) {
+            grams.add("" + i);
+        }
     }
 
     @NonNull
@@ -47,7 +53,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodHolder> {
         holder.binding.foodDropdown.setDropDownHeight(700);
         holder.binding.foodDropdown.setDropDownBackgroundResource(R.color.dropdown_background);
         holder.binding.foodDropdown.setText("100");
-        String[] grams = {"50", "100", "150"};
+
         holder.binding.foodDropdown.setAdapter(new ArrayAdapter(context, R.layout.sport_item, grams));
 
         holder.binding.foodRb.setChecked(foodData.get(position).isSelected());
