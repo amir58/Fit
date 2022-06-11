@@ -33,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
+        int[] daysOfMonths = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         List<String> days = new ArrayList<>();
         for (int i = 1; i < 32; i++) {
             days.add(String.valueOf(i));
@@ -45,6 +46,16 @@ public class RegisterActivity extends AppCompatActivity {
         binding.activityRegisterMonthMenu.setDropDownHeight(400);
         binding.activityRegisterMonthMenu.setDropDownBackgroundResource(R.color.dropdown_background);
         binding.activityRegisterMonthMenu.setAdapter(new ArrayAdapter<String>(this, R.layout.month_item, months));
+        binding.activityRegisterMonthMenu.setOnItemClickListener((adapterView, view, i, l) -> {
+            days.clear();
+            for (int x = 1; x <= daysOfMonths[i]; x++) {
+                days.add(String.valueOf(x));
+            }
+            binding.activityRegisterDayMenu.setDropDownHeight(400);
+            binding.activityRegisterDayMenu.setDropDownBackgroundResource(R.color.dropdown_background);
+            binding.activityRegisterDayMenu.setAdapter(new ArrayAdapter<String>(this, R.layout.day_item, days));
+
+        });
 
         List<String> years = new ArrayList<>();
         for (int i = 1; i < 123; i++) {
