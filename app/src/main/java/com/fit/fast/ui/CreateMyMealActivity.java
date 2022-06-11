@@ -29,6 +29,7 @@ public class CreateMyMealActivity extends AppCompatActivity {
     String mealName = "MEAL 1";
     String optionNumber = "firstOption";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +54,11 @@ public class CreateMyMealActivity extends AppCompatActivity {
                 }
             }
 
-            if (calories > getPrecisedCalories()) {
+            if (calories > getPrecisedCalories() ||
+                    protein > getProtein() ||
+                    carb > getCarbs() ||
+                    fats > getFat()
+            ) {
 //                Toast.makeText(this, "That is a big amount of CALORIES(" + calories + " cal)," +
 //                        " you can't eat any more", Toast.LENGTH_LONG).show();
 
@@ -108,6 +113,27 @@ public class CreateMyMealActivity extends AppCompatActivity {
                 return response.getCalculateTDEE();
         }
     }
+
+    private int getFat() {
+        return (int) (getPrecisedCalories() * 0.25 / 9);
+    }
+
+    private double getCarbs() {
+        return getPrecisedCalories() - (getProtein() * 4) - (getFat() * 9) / 4;
+    }
+
+    private int getProtein() {
+        SharedPreferences preferences = this.getSharedPreferences("registerResponse", MODE_PRIVATE);
+        Gson gson = new Gson();
+        RegisterResponse response = gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
+
+        if (response.getWeight() >= 95) {
+            return (int) (response.getWeight() * 2.2);
+        } else {
+            return (int) (response.getWeight() * 1.8);
+        }
+    }
+
 
     private void clicks() {
         binding.meal1Btn.setOnClickListener(view -> changeCurrentMeal("MEAL 1"));
