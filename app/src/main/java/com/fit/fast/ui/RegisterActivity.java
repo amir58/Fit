@@ -82,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
 
-        Log.i("abdo", "next: "+ binding.activityRegisterNameEt.getText());
+        Log.i("abdo", "next: " + binding.activityRegisterNameEt.getText());
         RegisterSingleton.setData().setName(RequestBody.create(
                 MediaType.parse("multipart/form-data"),
                 String.valueOf(binding.activityRegisterNameEt.getText()))
@@ -109,22 +109,31 @@ public class RegisterActivity extends AppCompatActivity {
                 String.valueOf(2022 - Integer.parseInt(binding.activityRegisterYearMenu.getText().toString())))
         );
 
-        if (binding.activityRegisterFemaleRadioBtn.isChecked()){
+        if (binding.activityRegisterFemaleRadioBtn.isChecked()) {
             RegisterSingleton.setData().setGender(RequestBody.create(
                     MediaType.parse("multipart/form-data"), "F")
             );
-        }
-        else if (binding.activityRegisterMaleRadioBtn.isChecked()){
+        } else if (binding.activityRegisterMaleRadioBtn.isChecked()) {
             RegisterSingleton.setData().setGender(RequestBody.create(
                     MediaType.parse("multipart/form-data"), "M")
             );
-        }
-        else{
+        } else {
             Toast.makeText(this, "Please select your gender", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Log.i("abdo", "next: "+ String.valueOf(2022 - Integer.parseInt(binding.activityRegisterYearMenu.getText().toString())));
+        Log.i("abdo", "next: " + (2022 - Integer.parseInt(binding.activityRegisterYearMenu.getText().toString())));
+
+        if (binding.activityRegisterNameEt.getText().toString().equals("")
+                || binding.activityRegisterUsernameEt.getText().toString().equals("")
+                || binding.activityRegisterEmailEt.getText().toString().equals("")
+                || binding.activityRegisterPasswordEt.getText().toString().equals("")
+                || binding.activityRegisterDayMenu.getText().toString().equals("")
+                || binding.activityRegisterMonthMenu.getText().toString().equals("")
+                || binding.activityRegisterYearMenu.getText().toString().equals("")) {
+            Toast.makeText(this, "Fields can not be empty", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         startActivity(new Intent(this, FirstInfoActivity.class));
         finish();

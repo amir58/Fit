@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.fit.fast.R;
 import com.fit.fast.databinding.ActivityFirstInfoBinding;
@@ -106,6 +107,14 @@ public class FirstInfoActivity extends AppCompatActivity {
         RegisterSingleton.setData().setSport(
                 RequestBody.create(MediaType.parse("multipart/form-data"), sport)
         );
+
+        if (binding.activityFirstInfoSportMenu.getText().toString().equals("")
+                || binding.activityFirstInfoExerciseMenu.getText().toString().equals("")
+                || binding.activityFirstInfoWeightEt.getText().toString().equals("")
+                || binding.activityFirstInfoHeightEt.getText().toString().equals("")) {
+            Toast.makeText(this, "Fields can not be empty", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         startActivity(new Intent(this, SecondInfoActivity.class));
     }

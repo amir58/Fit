@@ -62,67 +62,72 @@ public class InBodyActivity extends AppCompatActivity {
 
     public void finish(View view) {
 
-        //pass it like this
-        File file = new File(RegisterSingleton.registerRequestBody.getImage());
-
-        RequestBody requestFile =
-                RequestBody.create(MediaType.parse("multipart/form-data"), file);
-
-        // MultipartBody.Part is used to send also the actual file name
-        MultipartBody.Part body =
-                MultipartBody.Part.createFormData("Image", file.getName(), requestFile);
-
-        // add another part within the multipart request
-
-        RetrofitSingleton.getClient().register(
-                RegisterSingleton.registerRequestBody.getName(),
-                RegisterSingleton.registerRequestBody.getUsername(),
-                RegisterSingleton.registerRequestBody.getAge(),
-                RegisterSingleton.registerRequestBody.getSport(),
-                RegisterSingleton.registerRequestBody.getEmail(),
-                RegisterSingleton.registerRequestBody.getGender(),
-                RegisterSingleton.registerRequestBody.getTrain(),
-                RegisterSingleton.registerRequestBody.getWeight(),
-                RegisterSingleton.registerRequestBody.getHeight(),
-                RegisterSingleton.registerRequestBody.getHours(),
-                RegisterSingleton.registerRequestBody.getEffort(),
-                RegisterSingleton.registerRequestBody.getGoalType(),
-                RegisterSingleton.registerRequestBody.getGoalWeight(),
-                RegisterSingleton.registerRequestBody.getPassword(),
-                RegisterSingleton.registerRequestBody.getPassword2(),
-                body)
-                .enqueue(new Callback<RegisterResponse>() {
-                    @Override
-                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
-
-                        if (response.isSuccessful()) {
-                            SharedPreferences preferences = getSharedPreferences("registerResponse", MODE_PRIVATE);
-                            SharedPreferences.Editor editor = preferences.edit();
-                            Gson gson = new Gson();
-                            String json = gson.toJson(response.body());
-                            editor.putString("userData", json);
-                            editor.apply();
+//        //pass it like this
+//        File file = null;
+//        try {
+//            file = new File(RegisterSingleton.registerRequestBody.getImage());
+//        }catch (Exception e){
+//            Toast.makeText(this, "Something went wrong please try again", Toast.LENGTH_LONG).show();
+//        }
+//
+//        RequestBody requestFile =
+//                RequestBody.create(MediaType.parse("multipart/form-data"), file);
+//
+//        // MultipartBody.Part is used to send also the actual file name
+//        MultipartBody.Part body =
+//                MultipartBody.Part.createFormData("Image", file.getName(), requestFile);
+//
+//        // add another part within the multipart request
+//
+//        RetrofitSingleton.getClient().register(
+//                RegisterSingleton.registerRequestBody.getName(),
+//                RegisterSingleton.registerRequestBody.getUsername(),
+//                RegisterSingleton.registerRequestBody.getAge(),
+//                RegisterSingleton.registerRequestBody.getSport(),
+//                RegisterSingleton.registerRequestBody.getEmail(),
+//                RegisterSingleton.registerRequestBody.getGender(),
+//                RegisterSingleton.registerRequestBody.getTrain(),
+//                RegisterSingleton.registerRequestBody.getWeight(),
+//                RegisterSingleton.registerRequestBody.getHeight(),
+//                RegisterSingleton.registerRequestBody.getHours(),
+//                RegisterSingleton.registerRequestBody.getEffort(),
+//                RegisterSingleton.registerRequestBody.getGoalType(),
+//                RegisterSingleton.registerRequestBody.getGoalWeight(),
+//                RegisterSingleton.registerRequestBody.getPassword(),
+//                RegisterSingleton.registerRequestBody.getPassword2(),
+//                body)
+//                .enqueue(new Callback<RegisterResponse>() {
+//                    @Override
+//                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+//
+//                        if (response.isSuccessful()) {
+//                            SharedPreferences preferences = getSharedPreferences("registerResponse", MODE_PRIVATE);
+//                            SharedPreferences.Editor editor = preferences.edit();
+//                            Gson gson = new Gson();
+//                            String json = gson.toJson(response.body());
+//                            editor.putString("userData", json);
+//                            editor.apply();
                             startActivity(new Intent(InBodyActivity.this, PhotoOrInBodyLoadingActivity.class));
                             finish();
-                        } else {
-
-
-                            Gson gson = new Gson();
-                            RegisterResponseErrorBody requestErrorBody = new RegisterResponseErrorBody();
-                            try {
-                                requestErrorBody = gson.fromJson(response.errorBody().string(), RegisterResponseErrorBody.class);
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                            Toast.makeText(InBodyActivity.this, requestErrorBody.toString(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
-                        Toast.makeText(InBodyActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+//                        } else {
+//
+//
+//                            Gson gson = new Gson();
+//                            RegisterResponseErrorBody requestErrorBody = new RegisterResponseErrorBody();
+//                            try {
+//                                requestErrorBody = gson.fromJson(response.errorBody().string(), RegisterResponseErrorBody.class);
+//                            } catch (IOException e) {
+//                                e.printStackTrace();
+//                            }
+//                            Toast.makeText(InBodyActivity.this, requestErrorBody.toString(), Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+//                        Toast.makeText(InBodyActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+//                    }
+//                });
 
     }
 

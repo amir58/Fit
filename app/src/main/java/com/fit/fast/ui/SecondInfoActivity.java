@@ -46,74 +46,76 @@ public class SecondInfoActivity extends AppCompatActivity {
                 MediaType.parse("multipart/form-data"),
                 binding.activitySecondInfoWorkingHoursEt.getText().toString()));
 
-        if (binding.activitySecondInfoLightlyActiveRb.isChecked()){
+        if (binding.activitySecondInfoLightlyActiveRb.isChecked()) {
             RegisterSingleton.setData().setEffort(RequestBody.create(
                     MediaType.parse("multipart/form-data"), "LA ")
             );
-        }
-        else if (binding.activitySecondModeratelyActiveRb.isChecked()){
+        } else if (binding.activitySecondModeratelyActiveRb.isChecked()) {
             RegisterSingleton.setData().setEffort(RequestBody.create(
                     MediaType.parse("multipart/form-data"), "MA")
             );
-        }
-        else if (binding.activitySecondInfoWorkHighlyActiveRb.isChecked()){
+        } else if (binding.activitySecondInfoWorkHighlyActiveRb.isChecked()) {
             RegisterSingleton.setData().setEffort(RequestBody.create(
                     MediaType.parse("multipart/form-data"), "HA")
             );
-        }
-        else{
+        } else {
             Toast.makeText(this, "Please select your effort", Toast.LENGTH_SHORT).show();
             return;
         }
 
         //////////
+        boolean isStablility;
 
-        if (binding.activitySecondInfoLoseFatRb.isChecked()){
+        if (binding.activitySecondInfoLoseFatRb.isChecked()) {
             RegisterSingleton.setData().setGoalType(RequestBody.create(
                     MediaType.parse("multipart/form-data"), "L ")
             );
-        }
-        else if (binding.activitySecondGainWeightRb.isChecked()){
+            isStablility = true;
+
+        } else if (binding.activitySecondGainWeightRb.isChecked()) {
             RegisterSingleton.setData().setGoalType(RequestBody.create(
                     MediaType.parse("multipart/form-data"), "G")
             );
-        }
-        else if (binding.activitySecondInfoWorkStableWeightRb.isChecked()){
+            isStablility = true;
+
+        } else if (binding.activitySecondInfoWorkStableWeightRb.isChecked()) {
             RegisterSingleton.setData().setGoalType(RequestBody.create(
                     MediaType.parse("multipart/form-data"), "S")
             );
-        }
-        else{
+            isStablility = false;
+        } else {
             Toast.makeText(this, "Please select your goal type", Toast.LENGTH_SHORT).show();
             return;
         }
 
         //////////
 
-        if (binding.activitySecondInfo025kgRb.isChecked() ||
-                binding.activitySecondInfoSecond025kgRb.isChecked()){
+        if ((binding.activitySecondInfo025kgRb.isChecked() ||
+                binding.activitySecondInfoSecond025kgRb.isChecked()) || !isStablility) {
             RegisterSingleton.setData().setGoalWeight(RequestBody.create(
-                    MediaType.parse("multipart/form-data"),"1 ")
+                    MediaType.parse("multipart/form-data"), "1 ")
             );
-        }
-        else if (binding.activitySecondInfo05kgRb.isChecked()||
-                binding.activitySecondInfoSecond05kgRb.isChecked()){
+        } else if ((binding.activitySecondInfo05kgRb.isChecked() ||
+                binding.activitySecondInfoSecond05kgRb.isChecked()) || !isStablility) {
             RegisterSingleton.setData().setGoalWeight(RequestBody.create(
-                    MediaType.parse("multipart/form-data"),"2")
+                    MediaType.parse("multipart/form-data"), "2")
             );
-        }
-        else if (binding.activitySecondInfo1kgRb.isChecked() ||
-                binding.activitySecondInfoSecond1kgRb.isChecked()){
+        } else if ((binding.activitySecondInfo1kgRb.isChecked() ||
+                binding.activitySecondInfoSecond1kgRb.isChecked()) || !isStablility) {
             RegisterSingleton.setData().setGoalWeight(RequestBody.create(
-                    MediaType.parse("multipart/form-data"),"3")
+                    MediaType.parse("multipart/form-data"), "3")
             );
-        }
-        else{
+        } else {
             Toast.makeText(this, "Please select your goal type", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Log.i("abdo", "next: "+ RegisterSingleton.registerRequestBody.toString());
+        Log.i("abdo", "next: " + RegisterSingleton.registerRequestBody.toString());
+
+        if (binding.activitySecondInfoWorkingHoursEt.getText().toString().equals("")) {
+            Toast.makeText(this, "Fields can not be empty", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         startActivity(new Intent(this, PhotoOrInBodyActivity.class));
     }

@@ -59,7 +59,7 @@
                 android:layout_margin="@dimen/_15sdp"
                 android:progressDrawable="@drawable/custom_progress_bar"
                 android:progressTint="@color/fit_green"
-                android:progress="15"/>
+                android:progress="0"/>
 
         </com.google.android.material.card.MaterialCardView>
 
