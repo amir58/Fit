@@ -20,7 +20,7 @@ import com.fit.fast.ui.DetailsTrainOneActivity;
 import java.util.List;
 
 public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.Holder> {
-
+    private static final String TAG = "WorkoutsAdapter";
     private final String sport;
     private final int days;
 
@@ -54,40 +54,42 @@ public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.Holder
     }
 
     private List<Workout> getSportList(String sport, int position, Context context) {
-        Log.i("abdo", "getSportList: ssss " + sport);
+        Log.i(TAG, "getSportList: ssss " + sport);
+        Log.i(TAG, "getSportList: ssss " + position);
         switch (sport.trim()) {
             case "SP":
                 if (position == 1)
-                    return ExcelFileReader.readerClient("s1.xls", context).getWorkoutDataFromExcel();
+                    return new ExcelFileReader("s1.xls", context).getWorkoutDataFromExcel();
                 else if (position == 2)
-                    return ExcelFileReader.readerClient("s2.xls", context).getWorkoutDataFromExcel();
+                    return new ExcelFileReader("s2.xls", context).getWorkoutDataFromExcel();
             case "MMA":
                 if (position == 1)
-                    return ExcelFileReader.readerClient("m1.xls", context).getWorkoutDataFromExcel();
+                    return new ExcelFileReader("m1.xls", context).getWorkoutDataFromExcel();
                 else if (position == 2)
-                    return ExcelFileReader.readerClient("m2.xls", context).getWorkoutDataFromExcel();
+                    return new ExcelFileReader("m2.xls", context).getWorkoutDataFromExcel();
             case "BB":
                 if (position == 1)
-                    return ExcelFileReader.readerClient("b1.xls", context).getWorkoutDataFromExcel();
+                    return new ExcelFileReader("b1.xls", context).getWorkoutDataFromExcel();
                 else if (position == 2)
-                    return ExcelFileReader.readerClient("b2.xls", context).getWorkoutDataFromExcel();
+                    return new ExcelFileReader("b2.xls", context).getWorkoutDataFromExcel();
             default:
-                if (position == 1)
-                    return ExcelFileReader.readerClient("g6_1.xls", context).getWorkoutDataFromExcel();
-                else if (position == 2)
-                    return ExcelFileReader.readerClient("g6_2.xls", context).getWorkoutDataFromExcel();
-                else if (position == 3) {
+                if (position == 1) {
+                    return new ExcelFileReader("g6_1.xls", context).getWorkoutDataFromExcel();
+                } else if (position == 2) {
+                    return new ExcelFileReader("g6_2.xls", context).getWorkoutDataFromExcel();
+                } else if (position == 3) {
                     Log.i("abdo", "getSportList: pppp " + position);
-                    return ExcelFileReader.readerClient("g6_3.xls", context).getWorkoutDataFromExcel();
+                    return new ExcelFileReader("g6_3.xls", context).getWorkoutDataFromExcel();
                 } else if (position == 4) {
                     Log.i("abdo", "getSportList: pppp " + position);
-                    return ExcelFileReader.readerClient("g6_4.xls", context).getWorkoutDataFromExcel();
-                } else if (position == 5)
-                    return ExcelFileReader.readerClient("g6_5.xls", context).getWorkoutDataFromExcel();
-                else if (position == 6)
-                    return ExcelFileReader.readerClient("g6_6.xls", context).getWorkoutDataFromExcel();
+                    return new ExcelFileReader("g6_4.xls", context).getWorkoutDataFromExcel();
+                } else if (position == 5) {
+                    return new ExcelFileReader("g6_5.xls", context).getWorkoutDataFromExcel();
+                } else if (position == 6) {
+                    return new ExcelFileReader("g6_6.xls", context).getWorkoutDataFromExcel();
+                }
         }
-        return ExcelFileReader.readerClient("s2.xls", context).getWorkoutDataFromExcel();
+        return new ExcelFileReader("s2.xls", context).getWorkoutDataFromExcel();
     }
 
     @Override

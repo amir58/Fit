@@ -1,6 +1,7 @@
 package com.fit.fast.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PopularWorkoutsAdapter extends RecyclerView.Adapter<PopularWorkoutsAdapter.Holder> {
-
+    private static final String TAG = "PopularWorkoutsAdapter";
     OpenTrainDetailsI openTrainDetailsI;
     private List<Workout> sport;
     private int days;
@@ -27,6 +28,8 @@ public class PopularWorkoutsAdapter extends RecyclerView.Adapter<PopularWorkouts
         this.openTrainDetailsI = openTrainDetailsI;
         this.sport = sport;
         this.days = days;
+
+        Log.i(TAG, "PopularWorkoutsAdapter: " + sport.get(0).toString());
     }
 
     @NonNull

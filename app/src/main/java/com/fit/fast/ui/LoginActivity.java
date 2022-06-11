@@ -88,16 +88,20 @@ public class LoginActivity extends AppCompatActivity {
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                        Log.i(TAG, "onResponse: " + response.code());
+                        startActivity(new Intent(LoginActivity.this, HomeTrainBottomNavigationActivity.class));
+                        finish();
+
                         if (response.isSuccessful()) {
                             SharedPreferences preferences = getSharedPreferences("registerResponse", MODE_PRIVATE);
                             SharedPreferences.Editor editor = preferences.edit();
                             Gson gson = new Gson();
                             String json = gson.toJson(response.body());
+                            Log.i(TAG, "onResponse: " + json);
                             editor.putString("userData", json);
                             editor.apply();
 
-                            startActivity(new Intent(LoginActivity.this, HomeTrainBottomNavigationActivity.class));
-                            finish();
+
 
                         } else {
                             Toast.makeText(LoginActivity.this, response.message(), Toast.LENGTH_SHORT).show();

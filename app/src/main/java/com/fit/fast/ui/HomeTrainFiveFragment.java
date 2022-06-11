@@ -90,6 +90,7 @@ public class HomeTrainFiveFragment extends Fragment {
         {
             @Override
             public void run() {
+                Log.i(TAG, "run: " + Thread.currentThread().getName());
                 adapter.notifyDataSetChanged();
             }
         });
@@ -109,8 +110,6 @@ public class HomeTrainFiveFragment extends Fragment {
             Objects.requireNonNull(binding.workoutRv.getLayoutManager()).startSmoothScroll(smoothScroller);
         }));
     }
-
-
 
 
     private int getDaysAccordingToSport(RegisterResponse response) {

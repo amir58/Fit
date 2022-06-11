@@ -100,6 +100,47 @@ public class ExcelFileReader {
         return sports;
     }
 
+    public List<Workout> getWorkoutDataFromExcel(String fileName) {
+        try {
+            InputStream stream = context.getAssets().open(fileName);
+            POIFSFileSystem poifsFileSystem = new POIFSFileSystem(stream);
+            HSSFWorkbook workbook = new HSSFWorkbook(poifsFileSystem);
+            HSSFSheet sheet = workbook.getSheetAt(0);
+            Iterator<Row> rowIterator = sheet.rowIterator();
+            int rowNumber = 0;
+            while (rowIterator.hasNext()) {
+                HSSFRow row = (HSSFRow) rowIterator.next();
+                if (rowNumber != 0) {
+                    Iterator<Cell> cellIterator = row.cellIterator();
+                    int columnNumber = 0;
+
+                    Workout workout = new Workout();
+                    while (cellIterator.hasNext()) {
+                        HSSFCell cell = (HSSFCell) cellIterator.next();
+                        if (columnNumber == 0) {
+                            workout.setName(cell.toString());
+                        } else if (columnNumber == 1) {
+                            workout.setSets(cell.toString());
+                        } else if (columnNumber == 2) {
+                            workout.setReps(cell.toString());
+                        } else if (columnNumber == 3) {
+                            workout.setLink(cell.toString());
+                        } else if (columnNumber == 4) {
+                            workout.setPhoto(cell.toString());
+                        }
+                        columnNumber++;
+                    }
+                    sports.add(workout);
+                }
+                rowNumber++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return sports;
+    }
+
     public List<Food> getFoodDataFromExcel(String fileName) {
         try {
             InputStream stream = context.getAssets().open("food_data.xls");
