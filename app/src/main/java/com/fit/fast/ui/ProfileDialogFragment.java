@@ -48,6 +48,59 @@ public class ProfileDialogFragment extends DialogFragment {
         return binding.getRoot();
     }
 
+    private int getFat() {
+        return (int) (getPrecisedCalories() * 0.25 / 9);
+    }
+
+    private int getCarbs() {
+        return getPrecisedCalories() - (getProtein() * 4) - (getFat() * 9) / 4;
+    }
+
+    private int getProtein() {
+        SharedPreferences preferences = requireContext().getSharedPreferences("registerResponse", MODE_PRIVATE);
+        Gson gson = new Gson();
+        RegisterResponse response = gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
+
+        if (response.getWeight() >= 95){
+            return (int) (response.getWeight() * 2.2);
+        }else {
+            return (int) (response.getWeight() * 1.8);
+        }
+    }
+
+    private int getPrecisedCalories() {
+        SharedPreferences preferences = requireContext().getSharedPreferences("registerResponse", MODE_PRIVATE);
+        Gson gson = new Gson();
+        RegisterResponse response = gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
+
+
+        Log.i(TAG, "getPrecisedCalories: " + response.getCalculateBMR());
+        Log.i(TAG, "getPrecisedCalories: " + response.getCalculateTDEE());
+        switch (response.getGoalType().trim()) {
+            case "L":
+                switch (response.getGoalWeight().trim()) {
+                    case "1":
+                        return (int) (response.getCalculateTDEE() - 1100);
+                    case "1/2":
+                        return (int) (response.getCalculateTDEE() - 550);
+                    case "1/4":
+                        return (int) (response.getCalculateTDEE() - 275);
+                }
+            case "G":
+                switch (response.getGoalWeight().trim()) {
+                    case "1":
+                        return (int) (response.getCalculateTDEE() + 1100);
+                    case "1/2":
+                        return (int) (response.getCalculateTDEE() + 550);
+                    case "1/4":
+                        return (int) (response.getCalculateTDEE() + 275);
+                }
+            default:
+                return (int) (response.getCalculateTDEE() + 0);
+        }
+    }
+
+
     @SuppressLint("ResourceType")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -57,6 +110,11 @@ public class ProfileDialogFragment extends DialogFragment {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         binding.nameTv.setText("Name: " + getRegisterResponse().getName());
+
+        binding.caloriesIntakeTv.append(getPrecisedCalories() + "CAL");
+        binding.fatTv.append(getFat() + "g");
+        binding.proteinTv.append(getProtein() + "g");
+        binding.carbohydratesTv.append(getCarbs() + "g");
 
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
