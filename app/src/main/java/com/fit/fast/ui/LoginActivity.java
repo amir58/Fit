@@ -15,6 +15,7 @@ import com.fit.fast.databinding.ActivityLoginBinding;
 import com.fit.fast.network.RetrofitSingleton;
 import com.fit.fast.requests.LoginRequest;
 import com.fit.fast.responses.LoginResponse;
+import com.fit.fast.responses.RegisterResponse;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -62,9 +63,9 @@ public class LoginActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putString("id", String.valueOf(response.body().getId()));
                             editor.apply();
-                            startActivity(new Intent(LoginActivity.this,
-                                    HomeTrainBottomNavigationActivity.class));
-                            finish();
+
+                            getUserData(response.body().getId());
+
                         } else {
                             Log.i(TAG, "onResponse: not success --- " + response.body().getError());
                             Log.i(TAG, "onResponse: ---------------- " + response.errorBody());
@@ -81,6 +82,36 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    private void getUserData(int id) {
+        RetrofitSingleton.getClient().getAccountDetails(id)
+                .enqueue(new Callback<RegisterResponse>() {
+                    @Override
+                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                        if (response.isSuccessful()) {
+                            SharedPreferences preferences = getSharedPreferences("registerResponse", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            Gson gson = new Gson();
+                            String json = gson.toJson(response.body());
+                            editor.putString("userData", json);
+                            editor.apply();
+
+                            startActivity(new Intent(LoginActivity.this, HomeTrainBottomNavigationActivity.class));
+                            finish();
+
+                        } else {
+                            Toast.makeText(LoginActivity.this, response.message(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                        Log.i(TAG, "onFailure: " + t.getLocalizedMessage());
+                        Toast.makeText(LoginActivity.this, t.getLocalizedMessage() + "", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
 
     private void getErrorBody(Response<LoginResponse> response) {
         Gson gson = new Gson();

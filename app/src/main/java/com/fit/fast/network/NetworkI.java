@@ -19,6 +19,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 
 public interface NetworkI {
 
@@ -57,4 +58,8 @@ public interface NetworkI {
 
     @POST("addlist/")
     Call<AddResponse> add(@Body AddRequest addRequest);
+
+    @GET("person/{id}")
+    Call<RegisterResponse> getAccountDetails(@Path("id") int id);
+
 }
