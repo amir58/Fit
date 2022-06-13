@@ -3,6 +3,7 @@ package com.fit.fast.network;
 import com.fit.fast.requests.AddRequest;
 import com.fit.fast.requests.ChangePasswordRequest;
 import com.fit.fast.requests.LoginRequest;
+import com.fit.fast.requests.WeightModel;
 import com.fit.fast.responses.AddResponse;
 import com.fit.fast.responses.ChangePasswordResponse;
 import com.fit.fast.responses.LoginResponse;
@@ -61,5 +62,10 @@ public interface NetworkI {
 
     @GET("person/{id}")
     Call<RegisterResponse> getAccountDetails(@Path("id") int id);
+
+    @POST("addweight/")
+    Call<WeightModel> setNewWeight(@Body WeightModel weightModel);
+
+
 
 }

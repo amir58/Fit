@@ -82,6 +82,7 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_50sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/line_view">
 
@@ -124,54 +125,54 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/weight_percentage_layout"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_30sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:layout_marginEnd="@dimen/_30sdp"
-                    android:hint="percentage of Your commitment to the training days"
-                    android:theme="@style/MyTextInputLayout_overlay"
-                    app:boxCornerRadiusBottomEnd="@dimen/_30sdp"
-                    app:boxCornerRadiusBottomStart="@dimen/_30sdp"
-                    app:boxCornerRadiusTopEnd="@dimen/_30sdp"
-                    app:boxCornerRadiusTopStart="@dimen/_30sdp"
-                    app:boxStrokeWidth="0dp"
-                    app:boxStrokeWidthFocused="0dp"
-                    app:hintTextColor="#8CFFFFFF"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/new_weight_layout">
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:id="@+id/weight_percentage_layout"-->
+<!--                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/_30sdp"-->
+<!--                    android:layout_marginTop="@dimen/_15sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_30sdp"-->
+<!--                    android:hint="percentage of Your commitment to the training days"-->
+<!--                    android:theme="@style/MyTextInputLayout_overlay"-->
+<!--                    app:boxCornerRadiusBottomEnd="@dimen/_30sdp"-->
+<!--                    app:boxCornerRadiusBottomStart="@dimen/_30sdp"-->
+<!--                    app:boxCornerRadiusTopEnd="@dimen/_30sdp"-->
+<!--                    app:boxCornerRadiusTopStart="@dimen/_30sdp"-->
+<!--                    app:boxStrokeWidth="0dp"-->
+<!--                    app:boxStrokeWidthFocused="0dp"-->
+<!--                    app:hintTextColor="#8CFFFFFF"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/new_weight_layout">-->
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/weight_percentage_et"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="#232441"
-                        android:fontFamily="@font/aeonik_regular"
-                        android:inputType="text"
-                        android:textColor="#B5FFFFFF"
-                        android:textSize="@dimen/_10ssp"
-                        app:boxStrokeWidth="0dp" />
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/weight_percentage_et"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:backgroundTint="#232441"-->
+<!--                        android:fontFamily="@font/aeonik_regular"-->
+<!--                        android:inputType="text"-->
+<!--                        android:textColor="#B5FFFFFF"-->
+<!--                        android:textSize="@dimen/_10ssp"-->
+<!--                        app:boxStrokeWidth="0dp" />-->
 
-                </com.google.android.material.textfield.TextInputLayout>
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/photo_for_body_btn"
+                    android:id="@+id/newWeightBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_60sdp"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_60sdp"
                     android:backgroundTint="@color/fit_green"
                     android:fontFamily="@font/aeonik_regular"
                     android:paddingTop="@dimen/_10sdp"
                     android:paddingBottom="@dimen/_10sdp"
-                    android:text="NEW PHOTO FOR YOUR BODY"
+                    android:text="SET NEW WEIGHT"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_11ssp"
                     app:cornerRadius="@dimen/_30sdp"
-                    android:layout_marginStart="@dimen/_40sdp"
-                    android:layout_marginEnd="@dimen/_40sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/weight_percentage_layout" />

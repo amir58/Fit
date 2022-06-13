@@ -1,5 +1,7 @@
 package com.fit.fast.ui;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,16 +14,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.fit.fast.R;
 import com.fit.fast.databinding.FragmentFollowUpBinding;
+import com.fit.fast.network.RetrofitSingleton;
+import com.fit.fast.requests.WeightModel;
+import com.fit.fast.responses.RegisterResponse;
+import com.google.gson.Gson;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class FollowUpFragment extends Fragment {
 
     private FragmentFollowUpBinding binding;
     NavController navController;
-    View view;
     private boolean isFragmentVisible;
 
     @Override
@@ -47,10 +57,43 @@ public class FollowUpFragment extends Fragment {
             navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerView);
         }
 
-        binding.photoForBodyBtn.setOnClickListener(new View.OnClickListener() {
+        binding.newWeightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_followUpFragment_to_bodyPhotoActivityOne);
+
+                String weight = binding.newWeightEt.getText().toString();
+                if (weight.isEmpty()){
+                    Toast.makeText(requireActivity(), "Please insert your new WEIGHT !!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                SharedPreferences registerPreferences = requireContext().getSharedPreferences(
+                        "registerResponse", Context.MODE_PRIVATE);
+                Gson gson = new Gson();
+                RegisterResponse response =
+                        gson.fromJson(registerPreferences.getString("userData", ""), RegisterResponse.class);
+
+                SharedPreferences loginPreferences = requireContext().getSharedPreferences(
+                        "login", Context.MODE_PRIVATE);
+                String id = loginPreferences.getString("id", "");
+
+                RetrofitSingleton.getClient().setNewWeight(new WeightModel(id, weight))
+                        .enqueue(new Callback<WeightModel>() {
+                            @Override
+                            public void onResponse(Call<WeightModel> call, Response<WeightModel> response) {
+                                if (response.isSuccessful()){
+                                    Toast.makeText(requireActivity(), "Weight set successfully", Toast.LENGTH_SHORT).show();
+                                    navController.navigate(R.id.action_followUpFragment_to_bodyPhotoActivityOne);
+                                }else{
+                                    Toast.makeText(requireActivity(), response.message(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<WeightModel> call, Throwable t) {
+                                Toast.makeText(requireActivity(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
             }
         });
     }
