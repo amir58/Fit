@@ -63,8 +63,10 @@ public interface NetworkI {
     @GET("person/{id}")
     Call<RegisterResponse> getAccountDetails(@Path("id") int id);
 
+    @FormUrlEncoded
     @POST("addweight/")
-    Call<WeightModel> setNewWeight(@Body WeightModel weightModel);
+    Call<WeightModel> setNewWeight(@Field("id_user") String userId,
+                                   @Field("weight") String weight);
 
 
 

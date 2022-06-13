@@ -31,7 +31,7 @@ import retrofit2.Response;
 public class FollowUpFragment extends Fragment {
 
     private FragmentFollowUpBinding binding;
-    NavController navController;
+//    NavController navController;
     private boolean isFragmentVisible;
 
     @Override
@@ -48,13 +48,13 @@ public class FollowUpFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 //        this.view = view;
-        navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerView);
+//        navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerView);
 
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         if (!isFragmentVisible) {
-            navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerView);
+//            navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerView);
         }
 
         binding.newWeightBtn.setOnClickListener(new View.OnClickListener() {
@@ -77,13 +77,13 @@ public class FollowUpFragment extends Fragment {
                         "login", Context.MODE_PRIVATE);
                 String id = loginPreferences.getString("id", "");
 
-                RetrofitSingleton.getClient().setNewWeight(new WeightModel(id, weight))
+                RetrofitSingleton.getClient().setNewWeight(id, weight)
                         .enqueue(new Callback<WeightModel>() {
                             @Override
                             public void onResponse(Call<WeightModel> call, Response<WeightModel> response) {
                                 if (response.isSuccessful()){
                                     Toast.makeText(requireActivity(), "Weight set successfully", Toast.LENGTH_SHORT).show();
-                                    navController.navigate(R.id.action_followUpFragment_to_bodyPhotoActivityOne);
+//                                    navController.navigate(R.id.action_followUpFragment_to_bodyPhotoActivityOne);
                                 }else{
                                     Toast.makeText(requireActivity(), response.message(), Toast.LENGTH_SHORT).show();
                                 }

@@ -89,8 +89,6 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                         Log.i(TAG, "onResponse: " + response.code());
-                        startActivity(new Intent(LoginActivity.this, HomeTrainBottomNavigationActivity.class));
-                        finish();
 
                         if (response.isSuccessful()) {
                             SharedPreferences preferences = getSharedPreferences("registerResponse", MODE_PRIVATE);
@@ -101,7 +99,8 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("userData", json);
                             editor.apply();
 
-
+                            startActivity(new Intent(LoginActivity.this, HomeTrainActivityOne.class));
+                            finish();
 
                         } else {
                             Toast.makeText(LoginActivity.this, response.message(), Toast.LENGTH_SHORT).show();

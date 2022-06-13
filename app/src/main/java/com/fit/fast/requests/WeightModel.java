@@ -7,7 +7,7 @@ public class WeightModel {
     @SerializedName("id_user")
     private String id;
 
-    @SerializedName("weihgt")
+    @SerializedName("weight")
     private String weight;
 
     public WeightModel(String id, String weight) {

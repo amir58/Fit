@@ -87,20 +87,21 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
                         .commit();
                 break;
             case 2:
-//                getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(binding.fragmentContainerView.getId(), new PopularWorkoutFragment())
-//                        .commit();
-
                 getSupportFragmentManager()
                         .beginTransaction()
                         .add(new ProfileDialogFragment(), "profile")
                         .commit();
                 break;
+                case 3:
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(binding.fragmentContainerView.getId(), new FollowUpFragment())
+                            .commit();
+                break;
             default:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(binding.fragmentContainerView.getId(), new HomeTrainFiveFragment())
+                        .replace(binding.fragmentContainerView.getId(), new FollowUpFragment())
                         .commit();
 
                 Toast.makeText(HomeTrainBottomNavigationActivity.this, "followUpTab", Toast.LENGTH_SHORT).show();
