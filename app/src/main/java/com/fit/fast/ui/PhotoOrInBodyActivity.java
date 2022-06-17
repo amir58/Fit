@@ -8,13 +8,17 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.fit.fast.R;
+import com.fit.fast.databinding.ActivityPhotoOrInBodyBinding;
 
 public class PhotoOrInBodyActivity extends AppCompatActivity {
+
+    ActivityPhotoOrInBodyBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_photo_or_in_body);
+        binding = ActivityPhotoOrInBodyBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
