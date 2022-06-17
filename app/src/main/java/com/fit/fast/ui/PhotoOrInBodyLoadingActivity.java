@@ -149,12 +149,16 @@ public class PhotoOrInBodyLoadingActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                             Toast.makeText(PhotoOrInBodyLoadingActivity.this, requestErrorBody.toString(), Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(PhotoOrInBodyLoadingActivity.this, InBodyActivity.class));
+                            finish();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<RegisterResponse> call, Throwable t) {
                         Toast.makeText(PhotoOrInBodyLoadingActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(PhotoOrInBodyLoadingActivity.this, InBodyActivity.class));
+                        finish();
                     }
                 });
 

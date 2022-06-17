@@ -108,10 +108,10 @@ public class FirstInfoActivity extends AppCompatActivity {
                 RequestBody.create(MediaType.parse("multipart/form-data"), sport)
         );
 
-        if (binding.activityFirstInfoSportMenu.getText().toString().equals("")
-                || binding.activityFirstInfoExerciseMenu.getText().toString().equals("")
-                || binding.activityFirstInfoWeightEt.getText().toString().equals("")
-                || binding.activityFirstInfoHeightEt.getText().toString().equals("")) {
+        if (binding.activityFirstInfoSportMenu.getText().toString().isEmpty()
+                || binding.activityFirstInfoExerciseMenu.getText().toString().isEmpty()
+                || binding.activityFirstInfoWeightEt.getText().toString().isEmpty()
+                || binding.activityFirstInfoHeightEt.getText().toString().isEmpty()) {
             Toast.makeText(this, "Fields can not be empty", Toast.LENGTH_LONG).show();
             return;
         }

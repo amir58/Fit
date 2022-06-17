@@ -135,13 +135,13 @@ public class RegisterActivity extends AppCompatActivity {
 
         Log.i("abdo", "next: " + (2022 - Integer.parseInt(binding.activityRegisterYearMenu.getText().toString())));
 
-        if (binding.activityRegisterNameEt.getText().toString().equals("")
-                || binding.activityRegisterUsernameEt.getText().toString().equals("")
-                || binding.activityRegisterEmailEt.getText().toString().equals("")
-                || binding.activityRegisterPasswordEt.getText().toString().equals("")
-                || binding.activityRegisterDayMenu.getText().toString().equals("")
-                || binding.activityRegisterMonthMenu.getText().toString().equals("")
-                || binding.activityRegisterYearMenu.getText().toString().equals("")) {
+        if (binding.activityRegisterNameEt.getText().toString().isEmpty()
+                || binding.activityRegisterUsernameEt.getText().toString().isEmpty()
+                || binding.activityRegisterEmailEt.getText().toString().isEmpty()
+                || binding.activityRegisterPasswordEt.getText().toString().isEmpty()
+                || binding.activityRegisterDayMenu.getText().toString().isEmpty()
+                || binding.activityRegisterMonthMenu.getText().toString().isEmpty()
+                || binding.activityRegisterYearMenu.getText().toString().isEmpty()) {
             Toast.makeText(this, "Fields can not be empty", Toast.LENGTH_LONG).show();
             return;
         }
