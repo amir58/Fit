@@ -27,6 +27,23 @@ public class SecondInfoActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
+        binding.activitySecondGainWeightRb.setOnClickListener(view -> {
+            binding.rgGainWeight.setVisibility(View.VISIBLE);
+            binding.rgLoseFat.setVisibility(View.GONE);
+        });
+
+        binding.activitySecondInfoLoseFatRb.setOnClickListener(view -> {
+            binding.rgGainWeight.setVisibility(View.GONE);
+            binding.rgLoseFat.setVisibility(View.VISIBLE);
+        });
+
+        binding.activitySecondInfoWorkStableWeightRb.setOnClickListener(view -> {
+            binding.rgGainWeight.setVisibility(View.GONE);
+            binding.rgLoseFat.setVisibility(View.GONE);
+        });
+
+
     }
 
     public void back(View view) {

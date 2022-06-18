@@ -1,6 +1,9 @@
 package com.fit.fast.ui;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -10,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,9 +33,9 @@ import retrofit2.Response;
 
 
 public class FollowUpFragment extends Fragment {
-
+    private static final String TAG = "FollowUpFragment";
     private FragmentFollowUpBinding binding;
-//    NavController navController;
+    //    NavController navController;
     private boolean isFragmentVisible;
 
     @Override
@@ -62,29 +66,32 @@ public class FollowUpFragment extends Fragment {
             public void onClick(View view) {
 
                 String weight = binding.newWeightEt.getText().toString();
-                if (weight.isEmpty()){
+                if (weight.isEmpty()) {
                     Toast.makeText(requireActivity(), "Please insert your new WEIGHT !!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 SharedPreferences registerPreferences = requireContext().getSharedPreferences(
-                        "registerResponse", Context.MODE_PRIVATE);
+                        "registerResponse", MODE_PRIVATE);
                 Gson gson = new Gson();
                 RegisterResponse response =
                         gson.fromJson(registerPreferences.getString("userData", ""), RegisterResponse.class);
 
                 SharedPreferences loginPreferences = requireContext().getSharedPreferences(
-                        "login", Context.MODE_PRIVATE);
+                        "login", MODE_PRIVATE);
                 String id = loginPreferences.getString("id", "");
 
+                Log.i(TAG, "onClick: " + id);
+                Log.i(TAG, "onClick: " + weight);
                 RetrofitSingleton.getClient().setNewWeight(id, weight)
                         .enqueue(new Callback<WeightModel>() {
                             @Override
                             public void onResponse(Call<WeightModel> call, Response<WeightModel> response) {
-                                if (response.isSuccessful()){
+                                if (response.isSuccessful()) {
+                                    getUserData(Integer.parseInt(id));
                                     Toast.makeText(requireActivity(), "Weight set successfully", Toast.LENGTH_SHORT).show();
-//                                    navController.navigate(R.id.action_followUpFragment_to_bodyPhotoActivityOne);
-                                }else{
+
+                                } else {
                                     Toast.makeText(requireActivity(), response.message(), Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -97,6 +104,36 @@ public class FollowUpFragment extends Fragment {
             }
         });
     }
+
+    private void getUserData(int id) {
+        RetrofitSingleton.getClient().getAccountDetails(id)
+                .enqueue(new Callback<RegisterResponse>() {
+                    @Override
+                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                        Log.i(TAG, "onResponse: " + response.code());
+
+                        if (response.isSuccessful()) {
+                            SharedPreferences preferences = requireActivity().getSharedPreferences("registerResponse", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            Gson gson = new Gson();
+                            String json = gson.toJson(response.body());
+                            Log.i(TAG, "onResponse: " + json);
+                            editor.putString("userData", json);
+                            editor.apply();
+
+                        } else {
+                            Toast.makeText(requireContext(), response.message(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                        Log.i(TAG, "onFailure: " + t.getLocalizedMessage());
+                        Toast.makeText(requireContext(), t.getLocalizedMessage() + "", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
 
     @Override
     public void onStart() {

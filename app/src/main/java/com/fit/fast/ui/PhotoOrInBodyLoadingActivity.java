@@ -42,14 +42,6 @@ public class PhotoOrInBodyLoadingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo_or_in_body_loading);
 
-        SharedPreferences preferences = getSharedPreferences("registerResponse", MODE_PRIVATE);
-
-        Gson gson = new Gson();
-        RegisterResponse response =
-                gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
-
-        Log.i("abdo", "onCreate: rererere " + response.toString());
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
@@ -104,22 +96,22 @@ public class PhotoOrInBodyLoadingActivity extends AppCompatActivity {
         // add another part within the multipart request
 
         RetrofitSingleton.getClient().register(
-                RegisterSingleton.registerRequestBody.getName(),
-                RegisterSingleton.registerRequestBody.getUsername(),
-                RegisterSingleton.registerRequestBody.getAge(),
-                RegisterSingleton.registerRequestBody.getSport(),
-                RegisterSingleton.registerRequestBody.getEmail(),
-                RegisterSingleton.registerRequestBody.getGender(),
-                RegisterSingleton.registerRequestBody.getTrain(),
-                RegisterSingleton.registerRequestBody.getWeight(),
-                RegisterSingleton.registerRequestBody.getHeight(),
-                RegisterSingleton.registerRequestBody.getHours(),
-                RegisterSingleton.registerRequestBody.getEffort(),
-                RegisterSingleton.registerRequestBody.getGoalType(),
-                RegisterSingleton.registerRequestBody.getGoalWeight(),
-                RegisterSingleton.registerRequestBody.getPassword(),
-                RegisterSingleton.registerRequestBody.getPassword2(),
-                body)
+                        RegisterSingleton.registerRequestBody.getName(),
+                        RegisterSingleton.registerRequestBody.getUsername(),
+                        RegisterSingleton.registerRequestBody.getAge(),
+                        RegisterSingleton.registerRequestBody.getSport(),
+                        RegisterSingleton.registerRequestBody.getEmail(),
+                        RegisterSingleton.registerRequestBody.getGender(),
+                        RegisterSingleton.registerRequestBody.getTrain(),
+                        RegisterSingleton.registerRequestBody.getWeight(),
+                        RegisterSingleton.registerRequestBody.getHeight(),
+                        RegisterSingleton.registerRequestBody.getHours(),
+                        RegisterSingleton.registerRequestBody.getEffort(),
+                        RegisterSingleton.registerRequestBody.getGoalType(),
+                        RegisterSingleton.registerRequestBody.getGoalWeight(),
+                        RegisterSingleton.registerRequestBody.getPassword(),
+                        RegisterSingleton.registerRequestBody.getPassword2(),
+                        body)
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {

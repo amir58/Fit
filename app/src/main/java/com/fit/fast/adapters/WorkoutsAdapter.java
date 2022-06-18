@@ -15,7 +15,7 @@ import com.fit.fast.databinding.WorkoutsItemBinding;
 import com.fit.fast.models.Days;
 import com.fit.fast.models.ExcelFileReader;
 import com.fit.fast.models.Workout;
-import com.fit.fast.ui.DetailsTrainOneActivity;
+import com.fit.fast.ui.DetailsTrainTwoActivity;
 
 import java.util.List;
 
@@ -44,9 +44,9 @@ public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.Holder
         int finalPosition = position;
         holder.binding.workoutRv.setAdapter(new PopularWorkoutsAdapter(new OpenTrainDetailsI() {
             @Override
-            public void openTrainDetails(List<Workout> data) {
-                Intent intent = new Intent(holder.itemView.getContext(), DetailsTrainOneActivity.class);
-                intent.putExtra("sport", data.get(finalPosition));
+            public void openTrainDetails(Workout data) {
+                Intent intent = new Intent(holder.itemView.getContext(), DetailsTrainTwoActivity.class);
+                intent.putExtra("sport", data);
                 holder.itemView.getContext().startActivity(intent);
             }
         }, getSportList(sport, ++position, holder.itemView.getContext()), days));

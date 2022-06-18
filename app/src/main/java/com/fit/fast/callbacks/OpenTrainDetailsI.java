@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface OpenTrainDetailsI {
 
-    void openTrainDetails(List<Workout> data);
+    void openTrainDetails(Workout data);
 }

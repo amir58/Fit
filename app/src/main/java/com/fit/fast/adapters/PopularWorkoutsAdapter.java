@@ -62,7 +62,7 @@ public class PopularWorkoutsAdapter extends RecyclerView.Adapter<PopularWorkouts
         holder.binding.workoutTv.setText(sport.get(position).getName());
 
         holder.itemView.setOnClickListener(v -> {
-            openTrainDetailsI.openTrainDetails(sport);
+            openTrainDetailsI.openTrainDetails(sport.get(position));
         });
     }
 
@@ -72,7 +72,7 @@ public class PopularWorkoutsAdapter extends RecyclerView.Adapter<PopularWorkouts
 
     @Override
     public int getItemCount() {
-        return 7;
+        return sport.size();
     }
 
     public class Holder extends RecyclerView.ViewHolder {

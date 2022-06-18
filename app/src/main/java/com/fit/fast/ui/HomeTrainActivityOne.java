@@ -67,20 +67,20 @@ public class HomeTrainActivityOne extends AppCompatActivity {
         switch (response.getGoalType().trim()) {
             case "L":
                 switch (response.getGoalWeight().trim()) {
-                    case "1":
+                    case "3":
                         return (int) (response.getCalculateTDEE() - 1100);
-                    case "1/2":
+                    case "2":
                         return (int) (response.getCalculateTDEE() - 550);
-                    case "1/4":
+                    case "1":
                         return (int) (response.getCalculateTDEE() - 275);
                 }
             case "G":
                 switch (response.getGoalWeight().trim()) {
-                    case "1":
+                    case "3":
                         return (int) (response.getCalculateTDEE() + 1100);
-                    case "1/2":
+                    case "2":
                         return (int) (response.getCalculateTDEE() + 550);
-                    case "1/4":
+                    case "1":
                         return (int) (response.getCalculateTDEE() + 275);
                 }
             default:

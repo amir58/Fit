@@ -53,7 +53,7 @@ public class ProfileDialogFragment extends DialogFragment {
     }
 
     private int getCarbs() {
-        return getPrecisedCalories() - (getProtein() * 4) - (getFat() * 9) / 4;
+        return (getPrecisedCalories() - (getProtein() * 4) - (getFat() * 9) ) / 4;
     }
 
     private int getProtein() {
@@ -61,9 +61,9 @@ public class ProfileDialogFragment extends DialogFragment {
         Gson gson = new Gson();
         RegisterResponse response = gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
 
-        if (response.getWeight() >= 95){
+        if (response.getWeight() >= 95) {
             return (int) (response.getWeight() * 2.2);
-        }else {
+        } else {
             return (int) (response.getWeight() * 1.8);
         }
     }
@@ -79,20 +79,20 @@ public class ProfileDialogFragment extends DialogFragment {
         switch (response.getGoalType().trim()) {
             case "L":
                 switch (response.getGoalWeight().trim()) {
-                    case "1":
+                    case "3":
                         return (int) (response.getCalculateTDEE() - 1100);
-                    case "1/2":
+                    case "2":
                         return (int) (response.getCalculateTDEE() - 550);
-                    case "1/4":
+                    case "1":
                         return (int) (response.getCalculateTDEE() - 275);
                 }
             case "G":
                 switch (response.getGoalWeight().trim()) {
-                    case "1":
+                    case "3":
                         return (int) (response.getCalculateTDEE() + 1100);
-                    case "1/2":
+                    case "2":
                         return (int) (response.getCalculateTDEE() + 550);
-                    case "1/4":
+                    case "1":
                         return (int) (response.getCalculateTDEE() + 275);
                 }
             default:
@@ -170,11 +170,11 @@ public class ProfileDialogFragment extends DialogFragment {
             getNewPassword();
         });
 
-        binding.publish.setOnClickListener(v->{
+        binding.publish.setOnClickListener(v -> {
             add();
         });
 
-        binding.logoutTv.setOnClickListener(p-> {
+        binding.logoutTv.setOnClickListener(p -> {
             startActivity(new Intent(requireContext(), LoginActivity.class));
             requireActivity().finish();
         });
@@ -191,7 +191,7 @@ public class ProfileDialogFragment extends DialogFragment {
         String target = binding.target.getText().toString();
         String duration = binding.duration.getText().toString();
 
-        if (!add.isEmpty() && !target.isEmpty() && !duration.isEmpty()){
+        if (!add.isEmpty() && !target.isEmpty() && !duration.isEmpty()) {
             addData(add, target, duration);
         }
     }
@@ -202,10 +202,10 @@ public class ProfileDialogFragment extends DialogFragment {
                 .enqueue(new Callback<AddResponse>() {
                     @Override
                     public void onResponse(Call<AddResponse> call, Response<AddResponse> response) {
-                        if (response.isSuccessful()){
+                        if (response.isSuccessful()) {
                             Toast.makeText(requireContext(), "Added successfully", Toast.LENGTH_SHORT).show();
                             binding.adsCv.setVisibility(View.INVISIBLE);
-                        }else{
+                        } else {
                             Log.i(TAG, "onResponse: not success");
                         }
                     }
@@ -226,7 +226,7 @@ public class ProfileDialogFragment extends DialogFragment {
         String oldPwd = binding.oldPassword.getText().toString();
         String newPwd = binding.newPassword.getText().toString();
 
-        if (!oldPwd.isEmpty() && !newPwd.isEmpty()){
+        if (!oldPwd.isEmpty() && !newPwd.isEmpty()) {
             changePwd(oldPwd, newPwd);
         }
     }
@@ -237,10 +237,10 @@ public class ProfileDialogFragment extends DialogFragment {
                 .enqueue(new Callback<ChangePasswordResponse>() {
                     @Override
                     public void onResponse(Call<ChangePasswordResponse> call, Response<ChangePasswordResponse> response) {
-                        if (response.isSuccessful()){
+                        if (response.isSuccessful()) {
                             Toast.makeText(requireContext(), "Password changed successfully", Toast.LENGTH_SHORT).show();
                             binding.changePasswordCv.setVisibility(View.INVISIBLE);
-                        }else{
+                        } else {
                             Log.i(TAG, "onResponse: not success");
                         }
                     }

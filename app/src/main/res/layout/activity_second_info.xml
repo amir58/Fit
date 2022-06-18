@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/training3"
+    android:background="@drawable/three"
     tools:context=".ui.SecondInfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
         android:background="#B00B183C"
+        android:gravity="center"
+        android:orientation="vertical"
         android:paddingBottom="@dimen/_30sdp">
 
         <ImageView
@@ -25,9 +25,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
             android:fontFamily="@font/aeonik_medium"
             android:text="YOUR WORKING HOURS ?"
             android:textColor="@color/white"
@@ -41,13 +41,13 @@
             android:layout_marginStart="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_30sdp"
             android:hint="Number of Hours"
+            android:theme="@style/MyTextInputLayout_overlay"
             app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
             app:boxCornerRadiusBottomStart="@dimen/_15sdp"
             app:boxCornerRadiusTopEnd="@dimen/_15sdp"
             app:boxCornerRadiusTopStart="@dimen/_15sdp"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
-            android:theme="@style/MyTextInputLayout_overlay"
             app:hintTextColor="#8CFFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -57,9 +57,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="#6640D876"
+                android:fontFamily="@font/aeonik_medium"
                 android:inputType="number"
                 android:textColor="#8CFFFFFF"
-                android:fontFamily="@font/aeonik_medium"
                 android:textSize="@dimen/_15ssp"
                 app:boxStrokeWidth="0dp" />
 
@@ -68,44 +68,44 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:fontFamily="@font/aeonik_medium"
             android:text="YOUR EFFORT AT WORK ?"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15ssp"
-            android:fontFamily="@font/aeonik_medium"/>
+            android:textSize="@dimen/_15ssp" />
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_30sdp">
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/activity_second_info_lightly_active_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"
                 android:button="@drawable/selector_radio_xl"
-                android:layoutDirection="rtl"
-                android:text="Lightly Active"
                 android:fontFamily="@font/aeonik_medium"
-                android:textSize="@dimen/_15ssp"
-                android:textColor="#8CFFFFFF"
+                android:layoutDirection="rtl"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_15sdp"
-                android:background="@drawable/corners"
-                android:backgroundTint="#6640D876"/>
+                android:text="Lightly Active"
+                android:textColor="#8CFFFFFF"
+                android:textSize="@dimen/_15ssp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_35sdp"
                 android:layout_marginEnd="@dimen/_35sdp"
-                android:gravity="center"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:fontFamily="@font/aeonik_regular"
+                android:gravity="center"
                 android:text="Works a desk job, takes pet for a walk most days in addition to lifting"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_10ssp" />
@@ -114,25 +114,25 @@
                 android:id="@+id/activity_second_moderately_active_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"
                 android:button="@drawable/selector_radio_xl"
-                android:layoutDirection="rtl"
                 android:fontFamily="@font/aeonik_medium"
-                android:text="Moderately Active"
-                android:textSize="@dimen/_15ssp"
-                android:textColor="#8CFFFFFF"
+                android:layoutDirection="rtl"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_15sdp"
-                android:background="@drawable/corners"
-                android:backgroundTint="#6640D876"/>
+                android:text="Moderately Active"
+                android:textColor="#8CFFFFFF"
+                android:textSize="@dimen/_15ssp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_35sdp"
                 android:layout_marginEnd="@dimen/_35sdp"
-                android:gravity="center"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:fontFamily="@font/aeonik_regular"
+                android:gravity="center"
                 android:text="Works as a full-time waitress, Occasionally plays tennis in addition to lifting"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_10ssp" />
@@ -141,25 +141,25 @@
                 android:id="@+id/activity_second_info_work_highly_active_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"
                 android:button="@drawable/selector_radio_xl"
-                android:layoutDirection="rtl"
-                android:text="Highly Active"
                 android:fontFamily="@font/aeonik_medium"
-                android:textSize="@dimen/_15ssp"
-                android:textColor="#8CFFFFFF"
+                android:layoutDirection="rtl"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_15sdp"
-                android:background="@drawable/corners"
-                android:backgroundTint="#6640D876"/>
+                android:text="Highly Active"
+                android:textColor="#8CFFFFFF"
+                android:textSize="@dimen/_15ssp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_35sdp"
                 android:layout_marginEnd="@dimen/_35sdp"
-                android:gravity="center"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:fontFamily="@font/aeonik_regular"
+                android:gravity="center"
                 android:text="Works as a construction worker, Regular hiking in addition to lifting"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_10ssp" />
@@ -169,82 +169,85 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:fontFamily="@font/aeonik_medium"
             android:text="THE GOAL YOU WANT TO ACHIEVE"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15ssp"
-            android:fontFamily="@font/aeonik_medium"/>
+            android:textSize="@dimen/_15ssp" />
 
         <RadioGroup
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_30sdp">
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/activity_second_info_lose_fat_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"
                 android:button="@drawable/selector_radio_xl"
-                android:layoutDirection="rtl"
-                android:text="Lose fat"
                 android:fontFamily="@font/aeonik_medium"
-                android:textSize="@dimen/_15ssp"
-                android:textColor="#8CFFFFFF"
+                android:layoutDirection="rtl"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_15sdp"
-                android:background="@drawable/corners"
-                android:backgroundTint="#6640D876"/>
+                android:text="Lose fat"
+                android:textColor="#8CFFFFFF"
+                android:textSize="@dimen/_15ssp" />
 
             <RadioGroup
+                android:id="@+id/rgLoseFat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_25sdp"
                 android:layout_marginEnd="@dimen/_25sdp"
                 android:gravity="center"
                 android:orientation="horizontal"
+                android:visibility="gone"
                 android:weightSum="3"
-                >
+                tools:visibility="visible">
 
                 <androidx.appcompat.widget.AppCompatRadioButton
+
                     android:id="@+id/activity_second_info_0.25kg_rb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="end|center"
-                    android:text="1/4 KG"
-                    android:textColor="@color/white"
-                    android:layoutDirection="rtl"
+                    android:button="@drawable/selector_radio_small"
                     android:fontFamily="@font/aeonik_regular"
-                    android:button="@drawable/selector_radio_small"/>
+                    android:gravity="end|center"
+                    android:layoutDirection="rtl"
+                    android:text="1/4 KG"
+                    android:textColor="@color/white" />
 
                 <androidx.appcompat.widget.AppCompatRadioButton
                     android:id="@+id/activity_second_info_0.5kg_rb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1/2 KG"
                     android:layout_weight="1"
-                    android:gravity="end|center"
-                    android:textColor="@color/white"
-                    android:layoutDirection="rtl"
+                    android:button="@drawable/selector_radio_small"
                     android:fontFamily="@font/aeonik_regular"
-                    android:button="@drawable/selector_radio_small"/>
+                    android:gravity="end|center"
+                    android:layoutDirection="rtl"
+                    android:text="1/2 KG"
+                    android:textColor="@color/white" />
 
                 <androidx.appcompat.widget.AppCompatRadioButton
                     android:id="@+id/activity_second_info_1kg_rb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1 KG"
                     android:layout_weight="1"
-                    android:gravity="end|center"
-                    android:textColor="@color/white"
-                    android:layoutDirection="rtl"
+                    android:button="@drawable/selector_radio_small"
                     android:fontFamily="@font/aeonik_regular"
-                    android:button="@drawable/selector_radio_small"/>
+                    android:gravity="end|center"
+                    android:layoutDirection="rtl"
+                    android:text="1 KG"
+                    android:textColor="@color/white" />
 
             </RadioGroup>
 
@@ -252,63 +255,65 @@
                 android:id="@+id/activity_second_gain_weight_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"
                 android:button="@drawable/selector_radio_xl"
-                android:layoutDirection="rtl"
-                android:text="Gain weight"
                 android:fontFamily="@font/aeonik_medium"
-                android:textSize="@dimen/_15ssp"
-                android:textColor="#8CFFFFFF"
+                android:layoutDirection="rtl"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_15sdp"
-                android:background="@drawable/corners"
-                android:backgroundTint="#6640D876"/>
+                android:text="Gain weight"
+                android:textColor="#8CFFFFFF"
+                android:textSize="@dimen/_15ssp" />
 
             <RadioGroup
+                android:id="@+id/rgGainWeight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_25sdp"
                 android:layout_marginEnd="@dimen/_25sdp"
                 android:gravity="center"
                 android:orientation="horizontal"
+                android:visibility="gone"
                 android:weightSum="3"
-                >
+                tools:visibility="visible">
 
                 <androidx.appcompat.widget.AppCompatRadioButton
                     android:id="@+id/activity_second_info_second_0.25kg_rb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1/4 KG"
                     android:layout_weight="1"
-                    android:gravity="end|center"
-                    android:textColor="@color/white"
-                    android:layoutDirection="rtl"
+                    android:button="@drawable/selector_radio_small"
                     android:fontFamily="@font/aeonik_regular"
-                    android:button="@drawable/selector_radio_small"/>
+                    android:gravity="end|center"
+                    android:layoutDirection="rtl"
+                    android:text="1/4 KG"
+                    android:textColor="@color/white" />
 
                 <androidx.appcompat.widget.AppCompatRadioButton
                     android:id="@+id/activity_second_info_second_0.5kg_rb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1/2 KG"
                     android:layout_weight="1"
-                    android:gravity="end|center"
-                    android:textColor="@color/white"
-                    android:layoutDirection="rtl"
+                    android:button="@drawable/selector_radio_small"
                     android:fontFamily="@font/aeonik_regular"
-                    android:button="@drawable/selector_radio_small"/>
+                    android:gravity="end|center"
+                    android:layoutDirection="rtl"
+                    android:text="1/2 KG"
+                    android:textColor="@color/white" />
 
                 <androidx.appcompat.widget.AppCompatRadioButton
                     android:id="@+id/activity_second_info_second_1kg_rb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1 KG"
                     android:layout_weight="1"
-                    android:gravity="end|center"
-                    android:textColor="@color/white"
-                    android:layoutDirection="rtl"
+                    android:button="@drawable/selector_radio_small"
                     android:fontFamily="@font/aeonik_regular"
-                    android:button="@drawable/selector_radio_small"/>
+                    android:gravity="end|center"
+                    android:layoutDirection="rtl"
+                    android:text="1 KG"
+                    android:textColor="@color/white" />
 
             </RadioGroup>
 
@@ -316,28 +321,29 @@
                 android:id="@+id/activity_second_info_work_stable_weight_rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/corners"
+                android:backgroundTint="#6640D876"
                 android:button="@drawable/selector_radio_xl"
-                android:layoutDirection="rtl"
-                android:text="Stability on weight"
                 android:fontFamily="@font/aeonik_medium"
-                android:textSize="@dimen/_15ssp"
-                android:textColor="#8CFFFFFF"
+                android:layoutDirection="rtl"
                 android:paddingStart="@dimen/_15sdp"
                 android:paddingEnd="@dimen/_15sdp"
-                android:background="@drawable/corners"
-                android:backgroundTint="#6640D876"/>
+                android:text="Stability on weight"
+                android:textColor="#8CFFFFFF"
+                android:textSize="@dimen/_15ssp" />
 
         </RadioGroup>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:weightSum="2"
             android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginBottom="@dimen/_20sdp">
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
             <ImageView
                 android:id="@+id/activity_first_info_back_image"

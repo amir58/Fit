@@ -134,7 +134,6 @@ public class HomeTrainSixFragment extends Fragment {
         Gson gson = new Gson();
         RegisterResponse response = gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
 
-
         Log.i(TAG, "getPrecisedCalories: " + response.getCalculateBMR());
         Log.i(TAG, "getPrecisedCalories: " + response.getCalculateTDEE());
         switch (response.getGoalType().trim()) {
