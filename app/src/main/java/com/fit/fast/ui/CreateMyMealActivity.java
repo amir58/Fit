@@ -38,6 +38,12 @@ public class CreateMyMealActivity extends AppCompatActivity {
         getFoodData();
 
         @SuppressLint("SetTextI18n") FoodData foodData = (food0) -> {
+
+//            SharedPreferences preferences = getSharedPreferences("quantity", MODE_PRIVATE);
+//            SharedPreferences.Editor editor = preferences.edit();
+//            editor.putString("foodQTY", String.valueOf(food0.getRealQuantity()));
+//            editor.apply();
+
             int calories = 0;
             int protein = 0;
             int carb = 0;

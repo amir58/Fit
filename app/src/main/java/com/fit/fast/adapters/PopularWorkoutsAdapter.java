@@ -72,7 +72,13 @@ public class PopularWorkoutsAdapter extends RecyclerView.Adapter<PopularWorkouts
 
     @Override
     public int getItemCount() {
-        return sport.size();
+        int i = 0;
+
+        while (sport.get(i).getName() != null){
+            ++i;
+        }
+
+        return i;
     }
 
     public class Holder extends RecyclerView.ViewHolder {

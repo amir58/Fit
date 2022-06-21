@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fit.fast.R;
 import com.fit.fast.callbacks.FoodData;
+import com.fit.fast.callbacks.FoodQTY;
 import com.fit.fast.databinding.FoodItemBinding;
 import com.fit.fast.databinding.ItemFoodBinding;
 import com.fit.fast.models.Food;
@@ -19,9 +20,11 @@ import java.util.List;
 
 public class FoodPlanAdapter extends RecyclerView.Adapter<FoodPlanAdapter.FoodHolder> {
     private final List<Food> foodData;
+//    private FoodQTY foodQTY;
 
-    public FoodPlanAdapter( List<Food> foodData) {
+    public FoodPlanAdapter(List<Food> foodData) {
         this.foodData = foodData;
+//        this.foodQTY = foodQTY;
 
     }
 
@@ -34,6 +37,7 @@ public class FoodPlanAdapter extends RecyclerView.Adapter<FoodPlanAdapter.FoodHo
     @Override
     public void onBindViewHolder(@NonNull FoodHolder holder, int position) {
         holder.binding.setFoodName(foodData.get(position).getName());
+//        foodQTY.getQTY(String.valueOf(foodData.get(position).getRealQuantity()));
     }
 
     @Override

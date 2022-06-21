@@ -21,6 +21,7 @@ import android.view.WindowManager;
 
 import com.fit.fast.adapters.FoodPlanAdapter;
 import com.fit.fast.adapters.MealAdapter;
+import com.fit.fast.callbacks.FoodQTY;
 import com.fit.fast.databinding.FragmentHomeTrainSixBinding;
 import com.fit.fast.models.ExcelFileReader;
 import com.fit.fast.models.Food;
@@ -125,7 +126,11 @@ public class HomeTrainSixFragment extends Fragment {
             calculateCalories += Double.parseDouble(food.getCalories());
         }
 
-        binding.firstMeal.setText(calculateCalories + " Calories");
+//        SharedPreferences preferences = getActivity().getSharedPreferences("quantity", MODE_PRIVATE);
+//        String quantity = preferences.getString("foodQTY", "100");
+        binding.firstMeal.setText("100 gm");
+
+
         binding.mealRv.setAdapter(new FoodPlanAdapter(selectedFoods));
     }
 

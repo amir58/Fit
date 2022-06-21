@@ -107,8 +107,9 @@ public class InBodyActivity extends AppCompatActivity {
 //                            String json = gson.toJson(response.body());
 //                            editor.putString("userData", json);
 //                            editor.apply();
-                            startActivity(new Intent(InBodyActivity.this, PhotoOrInBodyLoadingActivity.class));
-                            finish();
+
+        startActivity(new Intent(InBodyActivity.this, PhotoOrInBodyLoadingActivity.class));
+        finish();
 //                        } else {
 //
 //
@@ -162,7 +163,7 @@ public class InBodyActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 1 && grantResults.length > 0
-                && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
             TedImagePicker.with(this)
                     .start(uri -> {
@@ -175,7 +176,7 @@ public class InBodyActivity extends AppCompatActivity {
 
                         RegisterSingleton.setData().setImage(path);
                     });
-        }else{
+        } else {
             Toast.makeText(this, "Required a photo to continue !!", Toast.LENGTH_SHORT).show();
         }
     }

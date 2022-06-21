@@ -32,7 +32,7 @@ public class DetailsTrainTwoActivity extends AppCompatActivity {
 
         Workout sport = (Workout) getIntent().getSerializableExtra("sport");
 
-        String photo = sport.getPhoto().isEmpty() ?
+        String photo = sport.getPhoto() == null ?
                 "\thttps://cdn.shopify.com/s/files/1/0044/7266/8275/articles/Squat_f6a8765f-d8b5-" +
                         "46e3-8aff-c327ec994283_1000x.jpg?v=1647352001\n" :
                 sport.getPhoto();

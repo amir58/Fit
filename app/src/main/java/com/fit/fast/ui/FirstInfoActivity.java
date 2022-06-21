@@ -34,7 +34,7 @@ public class FirstInfoActivity extends AppCompatActivity {
         binding.activityFirstInfoSportMenu.setText("GYM EXERCISE");
         binding.activityFirstInfoSportMenu.setDropDownHeight(700);
         binding.activityFirstInfoSportMenu.setDropDownBackgroundResource(R.color.dropdown_background);
-        String[] sports = {"GYM EXERCISE", "SPRINTERS", "MMA", "FOOTBALL", "BASKETBALL"};
+        String[] sports = {"GYM EXERCISE", "SPRINTERS", "MMA", "BASKETBALL"};
         binding.activityFirstInfoSportMenu.setAdapter(new ArrayAdapter(this, R.layout.sport_item, sports));
 
         binding.activityFirstInfoExerciseMenu.setOnClickListener(new View.OnClickListener() {
@@ -93,9 +93,9 @@ public class FirstInfoActivity extends AppCompatActivity {
             case "MMA":
                 sport = "MMA";
                 break;
-            case "FOOTBALL":
-                sport = "FB";
-                break;
+//            case "FOOTBALL":
+//                sport = "FB";
+//                break;
             case "BASKETBALL":
                 sport = "BB";
                 break;

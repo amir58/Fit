@@ -79,6 +79,11 @@ public class PhotoOrInBodyLoadingActivity extends AppCompatActivity {
     private void requestRegister() {
         //pass it like this
         File file = null;
+        if (RegisterSingleton.registerRequestBody.getImage() == null){
+            Toast.makeText(this, "Please upload an image", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, InBodyActivity.class));
+            return;
+        }
         try {
             file = new File(RegisterSingleton.registerRequestBody.getImage());
         } catch (Exception e) {
