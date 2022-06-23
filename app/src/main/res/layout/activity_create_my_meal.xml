@@ -843,7 +843,7 @@
                                         android:layout_width="@dimen/_110sdp"
                                         android:layout_height="@dimen/_140sdp"
                                         android:scaleType="fitXY"
-                                        android:src="@drawable/six_packs_image" />
+                                        android:src="@drawable/meat_image" />
 
                                 </com.google.android.material.card.MaterialCardView>
 
@@ -892,7 +892,7 @@
                                         android:layout_width="@dimen/_110sdp"
                                         android:layout_height="@dimen/_140sdp"
                                         android:scaleType="fitXY"
-                                        android:src="@drawable/six_packs_image" />
+                                        android:src="@drawable/meat_image" />
 
                                 </com.google.android.material.card.MaterialCardView>
 
@@ -940,7 +940,7 @@
                                         android:layout_width="@dimen/_110sdp"
                                         android:layout_height="@dimen/_140sdp"
                                         android:scaleType="fitXY"
-                                        android:src="@drawable/six_packs_image" />
+                                        android:src="@drawable/meat_image" />
 
                                 </com.google.android.material.card.MaterialCardView>
 

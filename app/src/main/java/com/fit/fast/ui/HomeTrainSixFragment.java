@@ -119,17 +119,15 @@ public class HomeTrainSixFragment extends Fragment {
         double calculateCalories = 0;
 
         for (Food food : foodData) {
-            if (calculateCalories + 150 >= totalCalories) break;
-            Log.i("PLANS", "createMeals: " + calculateCalories);
-            Log.i("PLANS", "createMeals: " + food.toString());
+            if (calculateCalories + 150 >= totalCalories) {
+                break;
+            }
             selectedFoods.add(food);
             calculateCalories += Double.parseDouble(food.getCalories());
         }
 
-//        SharedPreferences preferences = getActivity().getSharedPreferences("quantity", MODE_PRIVATE);
-//        String quantity = preferences.getString("foodQTY", "100");
         binding.firstMeal.setText("100 gm");
-
+        binding.tvCalories.setText(totalCalories + " Calories");
 
         binding.mealRv.setAdapter(new FoodPlanAdapter(selectedFoods));
     }
@@ -144,20 +142,20 @@ public class HomeTrainSixFragment extends Fragment {
         switch (response.getGoalType().trim()) {
             case "L":
                 switch (response.getGoalWeight().trim()) {
-                    case "1":
+                    case "3":
                         return response.getCalculateTDEE() - 1100;
-                    case "1/2":
+                    case "2":
                         return response.getCalculateTDEE() - 550;
-                    case "1/4":
+                    case "1":
                         return response.getCalculateTDEE() - 275;
                 }
             case "G":
                 switch (response.getGoalWeight().trim()) {
-                    case "1":
+                    case "3":
                         return response.getCalculateTDEE() + 1100;
-                    case "1/2":
+                    case "2":
                         return response.getCalculateTDEE() + 550;
-                    case "1/4":
+                    case "1":
                         return response.getCalculateTDEE() + 275;
                 }
             default:
