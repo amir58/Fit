@@ -41,7 +41,7 @@ public class HomeTrainActivityOne extends AppCompatActivity {
     }
 
     private int getCarbs() {
-        return getPrecisedCalories() - (getProtein() * 4) - (getFat() * 9) / 4;
+        return (getPrecisedCalories() - (getProtein() * 4) - (getFat() * 9)) / 4;
     }
 
     private int getProtein() {
@@ -49,9 +49,9 @@ public class HomeTrainActivityOne extends AppCompatActivity {
         Gson gson = new Gson();
         RegisterResponse response = gson.fromJson(preferences.getString("userData", ""), RegisterResponse.class);
 
-        if (response.getWeight() >= 95){
+        if (response.getWeight() >= 95) {
             return (int) (response.getWeight() * 2.2);
-        }else {
+        } else {
             return (int) (response.getWeight() * 1.8);
         }
     }

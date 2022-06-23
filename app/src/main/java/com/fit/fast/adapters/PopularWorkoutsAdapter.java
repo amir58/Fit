@@ -74,7 +74,8 @@ public class PopularWorkoutsAdapter extends RecyclerView.Adapter<PopularWorkouts
     public int getItemCount() {
         int i = 0;
 
-        while (sport.get(i).getName() != null){
+        for (Workout workout : sport) {
+            if (workout.getName() == null || workout.getName().isEmpty()) break;
             ++i;
         }
 

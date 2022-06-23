@@ -72,16 +72,20 @@ public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.Holder
                     return new ExcelFileReader("b1.xls", context).getWorkoutDataFromExcel();
                 else if (position == 2)
                     return new ExcelFileReader("b2.xls", context).getWorkoutDataFromExcel();
-            default:
+            case "FB":
+                if (position == 1)
+                    return new ExcelFileReader("b1.xls", context).getWorkoutDataFromExcel();
+                else if (position == 2)
+                    return new ExcelFileReader("b2.xls", context).getWorkoutDataFromExcel();
+
+            case  "GE":
                 if (position == 1) {
                     return new ExcelFileReader("g6_1.xls", context).getWorkoutDataFromExcel();
                 } else if (position == 2) {
                     return new ExcelFileReader("g6_2.xls", context).getWorkoutDataFromExcel();
                 } else if (position == 3) {
-                    Log.i("abdo", "getSportList: pppp " + position);
                     return new ExcelFileReader("g6_3.xls", context).getWorkoutDataFromExcel();
                 } else if (position == 4) {
-                    Log.i("abdo", "getSportList: pppp " + position);
                     return new ExcelFileReader("g6_4.xls", context).getWorkoutDataFromExcel();
                 } else if (position == 5) {
                     return new ExcelFileReader("g6_5.xls", context).getWorkoutDataFromExcel();
