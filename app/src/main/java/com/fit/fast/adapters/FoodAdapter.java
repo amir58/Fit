@@ -17,6 +17,7 @@ import com.fit.fast.callbacks.FoodData;
 import com.fit.fast.callbacks.ShowItemDataI;
 import com.fit.fast.databinding.FoodItemBinding;
 import com.fit.fast.models.Food;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -75,9 +75,10 @@
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.33375" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.27685185185185185" />
         <entry key="app/src/main/res/layout/food_item.xml" value="0.2425" />
-        <entry key="app/src/main/res/layout/fragment_follow_up.xml" value="0.46484375" />
+        <entry key="app/src/main/res/layout/fragment_follow_up.xml" value="0.21408711770157554" />
         <entry key="app/src/main/res/layout/fragment_home_train_six.xml" value="0.46484375" />
-        <entry key="app/src/main/res/layout/fragment_profile_dialog.xml" value="0.46484375" />
+        <entry key="app/src/main/res/layout/fragment_profile_dialog.xml" value="0.21408711770157554" />
+        <entry key="app/src/main/res/layout/item_food.xml" value="0.25224454895254383" />
         <entry key="app/src/main/res/layout/meal_image_item.xml" value="0.46484375" />
         <entry key="app/src/main/res/layout/meal_item.xml" value="0.46484375" />
       </map>

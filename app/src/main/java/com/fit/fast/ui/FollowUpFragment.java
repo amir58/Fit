@@ -35,8 +35,6 @@ import retrofit2.Response;
 public class FollowUpFragment extends Fragment {
     private static final String TAG = "FollowUpFragment";
     private FragmentFollowUpBinding binding;
-    //    NavController navController;
-    private boolean isFragmentVisible;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,15 +49,8 @@ public class FollowUpFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        this.view = view;
-//        navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerView);
-
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-
-        if (!isFragmentVisible) {
-//            navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerView);
-        }
 
         binding.newWeightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,11 +62,6 @@ public class FollowUpFragment extends Fragment {
                     return;
                 }
 
-                SharedPreferences registerPreferences = requireContext().getSharedPreferences(
-                        "registerResponse", MODE_PRIVATE);
-                Gson gson = new Gson();
-                RegisterResponse response =
-                        gson.fromJson(registerPreferences.getString("userData", ""), RegisterResponse.class);
 
                 SharedPreferences loginPreferences = requireContext().getSharedPreferences(
                         "login", MODE_PRIVATE);
@@ -134,28 +120,4 @@ public class FollowUpFragment extends Fragment {
                 });
     }
 
-
-    @Override
-    public void onStart() {
-        super.onStart();
-//        navController = Navigation.findNavController(view);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        isFragmentVisible = true;
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        isFragmentVisible = false;
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        isFragmentVisible = false;
-    }
 }

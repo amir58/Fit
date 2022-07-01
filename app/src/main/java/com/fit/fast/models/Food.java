@@ -9,6 +9,7 @@ public class Food {
     private String carb;
     private String fats;
     private String fibers;
+    private String imageUrl;
     private boolean selected = false;
     private String selectedQuantity;
 
@@ -38,6 +39,14 @@ public class Food {
                 ", fats='" + fats + '\'' +
                 ", fibers='" + fibers + '\'' +
                 '}';
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {

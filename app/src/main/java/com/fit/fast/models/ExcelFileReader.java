@@ -143,7 +143,7 @@ public class ExcelFileReader {
 
     public List<Food> getFoodDataFromExcel(String fileName) {
         try {
-            InputStream stream = context.getAssets().open("food_data.xls");
+            InputStream stream = context.getAssets().open("new_food_data.xls");
             POIFSFileSystem poifsFileSystem = new POIFSFileSystem(stream);
             HSSFWorkbook workbook = new HSSFWorkbook(poifsFileSystem);
             HSSFSheet sheet = workbook.getSheetAt(0);
@@ -173,6 +173,8 @@ public class ExcelFileReader {
                             food.setFats(cell.toString());
                         } else if (columnNumber == 6) {
                             food.setFibers(cell.toString());
+                        } else if (columnNumber == 7) {
+                            food.setImageUrl(cell.toString());
                         }
                         columnNumber++;
                     }

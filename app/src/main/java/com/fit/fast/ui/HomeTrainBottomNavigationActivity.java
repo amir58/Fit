@@ -77,9 +77,6 @@ public class HomeTrainBottomNavigationActivity extends AppCompatActivity {
                 break;
             case 1:
                 List<Food> foods = getFoodData();
-                for (Food food : foods) {
-                    Log.i(TAG, "openFragment: " + food.toString());
-                }
 
                 getSupportFragmentManager()
                         .beginTransaction()

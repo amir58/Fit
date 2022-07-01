@@ -15,6 +15,7 @@ import com.fit.fast.callbacks.FoodQTY;
 import com.fit.fast.databinding.FoodItemBinding;
 import com.fit.fast.databinding.ItemFoodBinding;
 import com.fit.fast.models.Food;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -37,6 +38,10 @@ public class FoodPlanAdapter extends RecyclerView.Adapter<FoodPlanAdapter.FoodHo
     @Override
     public void onBindViewHolder(@NonNull FoodHolder holder, int position) {
         holder.binding.setFoodName(foodData.get(position).getName());
+
+        Log.i("FOOD", "onBindViewHolder: " + foodData.get(position).getImageUrl());
+        Picasso.get().load(foodData.get(position).getImageUrl()).into(holder.binding.imageView);
+
 //        foodQTY.getQTY(String.valueOf(foodData.get(position).getRealQuantity()));
     }
 

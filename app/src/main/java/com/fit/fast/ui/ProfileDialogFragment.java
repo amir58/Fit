@@ -53,7 +53,7 @@ public class ProfileDialogFragment extends DialogFragment {
     }
 
     private int getCarbs() {
-        return (getPrecisedCalories() - (getProtein() * 4) - (getFat() * 9) ) / 4;
+        return (getPrecisedCalories() - (getProtein() * 4) - (getFat() * 9)) / 4;
     }
 
     private int getProtein() {
