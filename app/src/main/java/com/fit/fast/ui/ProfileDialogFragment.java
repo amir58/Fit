@@ -178,6 +178,11 @@ public class ProfileDialogFragment extends DialogFragment {
             startActivity(new Intent(requireContext(), LoginActivity.class));
             requireActivity().finish();
         });
+
+        binding.btnMoreInfo.setOnClickListener(view1 -> {
+            Intent intent = new Intent(requireContext(), AnalysisInBodyActivity.class);
+            startActivity(intent);
+        });
     }
 
     private RegisterResponse getRegisterResponse() {

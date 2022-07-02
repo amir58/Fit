@@ -14,14 +14,6 @@ public class RetrofitSingleton {
 
     public static Retrofit retrofit;
 
-
-//    Retrofit retrofit2 = new Retrofit.Builder()
-//            .baseUrl("https://backend.example.com")
-//            .client(client)
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .build();
-//    return retrofit.create(ApiClient .class);
-
     public static NetworkI getClient() {
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
@@ -38,7 +30,8 @@ public class RetrofitSingleton {
 
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("https://django-sport-api.herokuapp.com/")
+//                    .baseUrl("https://django-sport-api.herokuapp.com/")
+                    .baseUrl("http://127.0.0.1:8000/")
                     .client(mClient)
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();

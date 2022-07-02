@@ -7,6 +7,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class RegisterResponse{
 
+	@SerializedName("In_body")
+	@Expose
+	private String inBody;
 	@SerializedName("Name")
 	@Expose
 	private String name;
@@ -182,6 +185,14 @@ public class RegisterResponse{
 
 	public void setImage(Object image) {
 		this.image = image;
+	}
+
+	public String getInBody() {
+		return inBody;
+	}
+
+	public void setInBody(String inBody) {
+		this.inBody = inBody;
 	}
 
 	@NonNull
