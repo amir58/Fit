@@ -30,8 +30,8 @@ public class RetrofitSingleton {
 
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-//                    .baseUrl("https://django-sport-api.herokuapp.com/")
-                    .baseUrl("http://127.0.0.1:8000/")
+                    .baseUrl("https://django-sport-api.herokuapp.com/")
+//                    .baseUrl("http://127.0.0.1:8000/")
                     .client(mClient)
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();

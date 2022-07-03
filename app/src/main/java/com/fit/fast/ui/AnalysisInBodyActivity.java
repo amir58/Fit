@@ -24,6 +24,7 @@ public class AnalysisInBodyActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("registerResponse", MODE_PRIVATE);
         String dataJson = preferences.getString("userData", "");
         RegisterResponse data = new Gson().fromJson(dataJson, RegisterResponse.class);
+        if (data == null || data.getInBody() == null) return;
         binding.setData(data);
     }
 
