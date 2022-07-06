@@ -26,7 +26,7 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.Fit">
         <activity
-            android:name=".AnalysisInBodyActivity"
+            android:name=".ui.AnalysisInBodyActivity"
             android:exported="false" />
         <activity
             android:name=".ui.CreateMyMealActivity"
@@ -55,7 +55,7 @@
         <activity
             android:name=".ui.HomeTrainActivityOne"
             android:exported="true"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.PhotoOrInBodyLoadingActivity"
             android:exported="true"
@@ -87,7 +87,7 @@
         <activity
             android:name=".ui.FirstInfoActivity"
             android:exported="true"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.RegisterActivity"
             android:exported="false"
